@@ -1,0 +1,9007 @@
+{
+	"Success": true,
+	"Message": null,
+	"Data": [
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00326801,
+			"Amount": 0.9180618,
+			"Total": 0.00300024,
+			"Timestamp": 1516578416
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348538,
+			"Amount": 0.53988477,
+			"Total": 0.0018817,
+			"Timestamp": 1516578174
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348538,
+			"Amount": 4.27691259,
+			"Total": 0.01490667,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348538,
+			"Amount": 3.0,
+			"Total": 0.01045614,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348002,
+			"Amount": 1.46933512,
+			"Total": 0.00511332,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034791,
+			"Amount": 27.50034507,
+			"Total": 0.09567645,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003465,
+			"Amount": 5.0,
+			"Total": 0.017325,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00346499,
+			"Amount": 3.0,
+			"Total": 0.01039497,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345717,
+			"Amount": 0.162,
+			"Total": 5.6006E-4,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034545,
+			"Amount": 4.68218395,
+			"Total": 0.0161746,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034545,
+			"Amount": 4.92694452,
+			"Total": 0.01702013,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00344348,
+			"Amount": 0.53990801,
+			"Total": 0.00185916,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034272,
+			"Amount": 2.50482645,
+			"Total": 0.00858454,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00338895,
+			"Amount": 1.55937636,
+			"Total": 0.00528465,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00337597,
+			"Amount": 0.53990801,
+			"Total": 0.00182271,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033411,
+			"Amount": 1.21049005,
+			"Total": 0.00404437,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033411,
+			"Amount": 1.57133878,
+			"Total": 0.00525,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00334103,
+			"Amount": 1.18008278,
+			"Total": 0.00394269,
+			"Timestamp": 1516578166
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00332492,
+			"Amount": 0.22359005,
+			"Total": 7.4342E-4,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033128,
+			"Amount": 0.79840636,
+			"Total": 0.00264496,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331089,
+			"Amount": 0.53720115,
+			"Total": 0.00177861,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331025,
+			"Amount": 0.86368884,
+			"Total": 0.00285903,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331025,
+			"Amount": 10.10817952,
+			"Total": 0.0334606,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331024,
+			"Amount": 0.1515,
+			"Total": 5.015E-4,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331024,
+			"Amount": 5.31424257,
+			"Total": 0.01759142,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330978,
+			"Amount": 0.53990801,
+			"Total": 0.00178698,
+			"Timestamp": 1516578141
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003264,
+			"Amount": 52.37723948,
+			"Total": 0.17095931,
+			"Timestamp": 1516578120
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00326399,
+			"Amount": 3.70448609,
+			"Total": 0.01209141,
+			"Timestamp": 1516578015
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326399,
+			"Amount": 0.946033,
+			"Total": 0.00308784,
+			"Timestamp": 1516577959
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320291,
+			"Amount": 0.94603292,
+			"Total": 0.00303006,
+			"Timestamp": 1516577864
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032636,
+			"Amount": 4.26532631,
+			"Total": 0.01392032,
+			"Timestamp": 1516577831
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032635,
+			"Amount": 8.32449112,
+			"Total": 0.02716698,
+			"Timestamp": 1516577831
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326347,
+			"Amount": 0.16973577,
+			"Total": 5.5393E-4,
+			"Timestamp": 1516577831
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326343,
+			"Amount": 3.0,
+			"Total": 0.00979029,
+			"Timestamp": 1516577831
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320109,
+			"Amount": 0.162,
+			"Total": 5.1858E-4,
+			"Timestamp": 1516577378
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320115,
+			"Amount": 3.0,
+			"Total": 0.00960345,
+			"Timestamp": 1516577378
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003264,
+			"Amount": 2.92822737,
+			"Total": 0.00955773,
+			"Timestamp": 1516577359
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032645,
+			"Amount": 0.10379628,
+			"Total": 3.3884E-4,
+			"Timestamp": 1516577242
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032645,
+			"Amount": 3.88808848,
+			"Total": 0.01269266,
+			"Timestamp": 1516577190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032645,
+			"Amount": 0.30475706,
+			"Total": 9.9488E-4,
+			"Timestamp": 1516577053
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032781,
+			"Amount": 6.27627791,
+			"Total": 0.02057427,
+			"Timestamp": 1516576989
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327811,
+			"Amount": 0.45758074,
+			"Total": 0.0015,
+			"Timestamp": 1516576989
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032781,
+			"Amount": 2.27483935,
+			"Total": 0.00745715,
+			"Timestamp": 1516576920
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032781,
+			"Amount": 1.90647744,
+			"Total": 0.00624962,
+			"Timestamp": 1516576885
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033,
+			"Amount": 28.09491266,
+			"Total": 0.09271321,
+			"Timestamp": 1516576885
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033,
+			"Amount": 0.37174409,
+			"Total": 0.00122676,
+			"Timestamp": 1516576859
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033,
+			"Amount": 0.20959586,
+			"Total": 6.9167E-4,
+			"Timestamp": 1516576846
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330977,
+			"Amount": 0.25850216,
+			"Total": 8.5558E-4,
+			"Timestamp": 1516576836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033,
+			"Amount": 0.86017878,
+			"Total": 0.00283859,
+			"Timestamp": 1516576830
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033,
+			"Amount": 1.36565491,
+			"Total": 0.00450666,
+			"Timestamp": 1516576778
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033,
+			"Amount": 2.93774875,
+			"Total": 0.00969457,
+			"Timestamp": 1516576688
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329997,
+			"Amount": 0.6655283,
+			"Total": 0.00219622,
+			"Timestamp": 1516576688
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329997,
+			"Amount": 4.29611745,
+			"Total": 0.01417706,
+			"Timestamp": 1516576688
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329994,
+			"Amount": 4.91168076,
+			"Total": 0.01620825,
+			"Timestamp": 1516576688
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329997,
+			"Amount": 1.21049005,
+			"Total": 0.00399458,
+			"Timestamp": 1516576654
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327811,
+			"Amount": 0.33812257,
+			"Total": 0.0011084,
+			"Timestamp": 1516576561
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033,
+			"Amount": 17.01121998,
+			"Total": 0.05613703,
+			"Timestamp": 1516576537
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033,
+			"Amount": 3.05103127,
+			"Total": 0.0100684,
+			"Timestamp": 1516575698
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033,
+			"Amount": 0.79963709,
+			"Total": 0.0026388,
+			"Timestamp": 1516575698
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 0.51559361,
+			"Total": 0.00169733,
+			"Timestamp": 1516575658
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 0.9887514,
+			"Total": 0.00325497,
+			"Timestamp": 1516575653
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 0.16185623,
+			"Total": 5.3283E-4,
+			"Timestamp": 1516575635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 0.3653511,
+			"Total": 0.00120274,
+			"Timestamp": 1516575607
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 0.348,
+			"Total": 0.00114562,
+			"Timestamp": 1516575605
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003292,
+			"Amount": 3.88867401,
+			"Total": 0.01280151,
+			"Timestamp": 1516575557
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329,
+			"Amount": 20.0,
+			"Total": 0.0658,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328999,
+			"Amount": 10.81784465,
+			"Total": 0.0355906,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328727,
+			"Amount": 0.15244,
+			"Total": 5.0111E-4,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328727,
+			"Amount": 7.5,
+			"Total": 0.02465452,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328727,
+			"Amount": 0.2,
+			"Total": 6.5745E-4,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003285,
+			"Amount": 10.00439589,
+			"Total": 0.03286444,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328499,
+			"Amount": 0.2,
+			"Total": 6.57E-4,
+			"Timestamp": 1516575543
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032645,
+			"Amount": 0.18571505,
+			"Total": 6.0627E-4,
+			"Timestamp": 1516575282
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328372,
+			"Amount": 10.59570562,
+			"Total": 0.03479333,
+			"Timestamp": 1516575262
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328371,
+			"Amount": 0.22173433,
+			"Total": 7.2811E-4,
+			"Timestamp": 1516575262
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327351,
+			"Amount": 0.24107151,
+			"Total": 7.8915E-4,
+			"Timestamp": 1516575101
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327305,
+			"Amount": 0.15367737,
+			"Total": 5.0299E-4,
+			"Timestamp": 1516575101
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003264,
+			"Amount": 0.87529175,
+			"Total": 0.00285695,
+			"Timestamp": 1516575101
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003264,
+			"Amount": 0.15352084,
+			"Total": 5.0109E-4,
+			"Timestamp": 1516575091
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325,
+			"Amount": 20.0,
+			"Total": 0.065,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324992,
+			"Amount": 0.15462353,
+			"Total": 5.0251E-4,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003245,
+			"Amount": 4.07764429,
+			"Total": 0.01323196,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324489,
+			"Amount": 0.53990801,
+			"Total": 0.00175194,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324488,
+			"Amount": 116.91000843,
+			"Total": 0.37935895,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324487,
+			"Amount": 5.55652,
+			"Total": 0.01803019,
+			"Timestamp": 1516574985
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.1839332,
+			"Total": 5.8859E-4,
+			"Timestamp": 1516574823
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324493,
+			"Amount": 3.08999157,
+			"Total": 0.01002681,
+			"Timestamp": 1516574743
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324487,
+			"Amount": 3.0,
+			"Total": 0.00973461,
+			"Timestamp": 1516574743
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323772,
+			"Amount": 0.77562201,
+			"Total": 0.00251125,
+			"Timestamp": 1516574743
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323771,
+			"Amount": 0.59722759,
+			"Total": 0.00193365,
+			"Timestamp": 1516574743
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032377,
+			"Amount": 1.32865542,
+			"Total": 0.00430179,
+			"Timestamp": 1516574685
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320001,
+			"Amount": 5.58063609,
+			"Total": 0.01785809,
+			"Timestamp": 1516574497
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.43699933,
+			"Total": 0.0013984,
+			"Timestamp": 1516574449
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.31811737,
+			"Total": 0.00101798,
+			"Timestamp": 1516573945
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320001,
+			"Amount": 0.1681226,
+			"Total": 5.3799E-4,
+			"Timestamp": 1516573937
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.324,
+			"Total": 0.0010368,
+			"Timestamp": 1516573854
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 20.0,
+			"Total": 0.064,
+			"Timestamp": 1516573777
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.16925646,
+			"Total": 5.4162E-4,
+			"Timestamp": 1516573741
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 0.3474633,
+			"Total": 0.00111189,
+			"Timestamp": 1516573609
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 0.99842,
+			"Total": 0.00319495,
+			"Timestamp": 1516573449
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320001,
+			"Amount": 0.21349306,
+			"Total": 6.8318E-4,
+			"Timestamp": 1516573400
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.45945445,
+			"Total": 0.00147025,
+			"Timestamp": 1516573396
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.24470622,
+			"Total": 0.00398306,
+			"Timestamp": 1516573356
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.30051563,
+			"Total": 9.6165E-4,
+			"Timestamp": 1516573304
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.24729307,
+			"Total": 7.9134E-4,
+			"Timestamp": 1516573115
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.41765135,
+			"Total": 0.00133648,
+			"Timestamp": 1516572896
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 31.80212715,
+			"Total": 0.10176681,
+			"Timestamp": 1516572874
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.7490474,
+			"Total": 0.00559695,
+			"Timestamp": 1516572866
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.80318883,
+			"Total": 0.0025702,
+			"Timestamp": 1516572754
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320001,
+			"Amount": 0.61434127,
+			"Total": 0.0019659,
+			"Timestamp": 1516572547
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 7.50008056,
+			"Total": 0.02400026,
+			"Timestamp": 1516572434
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320001,
+			"Amount": 57.58152852,
+			"Total": 0.18426147,
+			"Timestamp": 1516572383
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 30.0026705,
+			"Total": 0.09600855,
+			"Timestamp": 1516572329
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 2.96289649,
+			"Total": 0.00948127,
+			"Timestamp": 1516572315
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 10.00000306,
+			"Total": 0.03200011,
+			"Timestamp": 1516572260
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 30.09536831,
+			"Total": 0.09630518,
+			"Timestamp": 1516571858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320003,
+			"Amount": 7.23676798,
+			"Total": 0.02315787,
+			"Timestamp": 1516571858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320004,
+			"Amount": 0.17246541,
+			"Total": 5.519E-4,
+			"Timestamp": 1516571858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324499,
+			"Amount": 0.17073763,
+			"Total": 5.5404E-4,
+			"Timestamp": 1516571847
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320019,
+			"Amount": 32.94520745,
+			"Total": 0.10543092,
+			"Timestamp": 1516571816
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032002,
+			"Amount": 5.55479255,
+			"Total": 0.01777645,
+			"Timestamp": 1516571816
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003245,
+			"Amount": 11.11504879,
+			"Total": 0.03606833,
+			"Timestamp": 1516571741
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320007,
+			"Amount": 0.35099176,
+			"Total": 0.0011232,
+			"Timestamp": 1516571722
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 0.56294486,
+			"Total": 0.00180143,
+			"Timestamp": 1516571675
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003245,
+			"Amount": 20.60181932,
+			"Total": 0.0668529,
+			"Timestamp": 1516571671
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324494,
+			"Amount": 0.601,
+			"Total": 0.00195021,
+			"Timestamp": 1516571671
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324488,
+			"Amount": 3.0,
+			"Total": 0.00973464,
+			"Timestamp": 1516571671
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00322,
+			"Amount": 7.5,
+			"Total": 0.02415,
+			"Timestamp": 1516571671
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321998,
+			"Amount": 0.59989779,
+			"Total": 0.00193166,
+			"Timestamp": 1516571649
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 2.54514573,
+			"Total": 0.00814449,
+			"Timestamp": 1516571630
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321997,
+			"Amount": 4.3740406,
+			"Total": 0.01408428,
+			"Timestamp": 1516571602
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 1.33,
+			"Total": 0.00425601,
+			"Timestamp": 1516571516
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320001,
+			"Amount": 3.01985469,
+			"Total": 0.00966357,
+			"Timestamp": 1516571466
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.24852225,
+			"Total": 7.9527E-4,
+			"Timestamp": 1516571012
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 5.7,
+			"Total": 0.01824,
+			"Timestamp": 1516571009
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00319,
+			"Amount": 5.10183723,
+			"Total": 0.01627486,
+			"Timestamp": 1516570905
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318936,
+			"Amount": 1.66028627,
+			"Total": 0.00529525,
+			"Timestamp": 1516570905
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0031893,
+			"Amount": 3.0,
+			"Total": 0.0095679,
+			"Timestamp": 1516570905
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318951,
+			"Amount": 1.85336536,
+			"Total": 0.00591133,
+			"Timestamp": 1516570804
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318663,
+			"Amount": 3.0,
+			"Total": 0.00955989,
+			"Timestamp": 1516570620
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318663,
+			"Amount": 3.0,
+			"Total": 0.00955989,
+			"Timestamp": 1516570605
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318676,
+			"Amount": 5.600507,
+			"Total": 0.01784747,
+			"Timestamp": 1516570538
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318729,
+			"Amount": 1.65041118,
+			"Total": 0.00526034,
+			"Timestamp": 1516570319
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317999,
+			"Amount": 0.92707389,
+			"Total": 0.00294809,
+			"Timestamp": 1516570221
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003114,
+			"Amount": 0.45229406,
+			"Total": 0.00140844,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003114,
+			"Amount": 0.167,
+			"Total": 5.2004E-4,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003114,
+			"Amount": 0.99515484,
+			"Total": 0.00309891,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031195,
+			"Amount": 0.36557716,
+			"Total": 0.00114042,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031195,
+			"Amount": 0.59592748,
+			"Total": 0.001859,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312,
+			"Amount": 0.31987307,
+			"Total": 9.98E-4,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314501,
+			"Amount": 0.19300631,
+			"Total": 6.0701E-4,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314514,
+			"Amount": 0.11059088,
+			"Total": 3.4782E-4,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00314514,
+			"Amount": 0.48989202,
+			"Total": 0.00154078,
+			"Timestamp": 1516570132
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314514,
+			"Amount": 1.51010798,
+			"Total": 0.0047495,
+			"Timestamp": 1516570081
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031467,
+			"Amount": 0.94039282,
+			"Total": 0.00295913,
+			"Timestamp": 1516569387
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318914,
+			"Amount": 1.85960718,
+			"Total": 0.00593055,
+			"Timestamp": 1516569387
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318914,
+			"Amount": 0.30837857,
+			"Total": 9.8346E-4,
+			"Timestamp": 1516569312
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318914,
+			"Amount": 2.18212422,
+			"Total": 0.0069591,
+			"Timestamp": 1516569126
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318885,
+			"Amount": 2.6136378,
+			"Total": 0.0083345,
+			"Timestamp": 1516569126
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318872,
+			"Amount": 3.0,
+			"Total": 0.00956616,
+			"Timestamp": 1516569126
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318871,
+			"Amount": 1.298369,
+			"Total": 0.00414012,
+			"Timestamp": 1516569126
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312001,
+			"Amount": 1.29836891,
+			"Total": 0.00405092,
+			"Timestamp": 1516569100
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312002,
+			"Amount": 0.34418301,
+			"Total": 0.00107386,
+			"Timestamp": 1516569064
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312685,
+			"Amount": 0.28475113,
+			"Total": 8.9037E-4,
+			"Timestamp": 1516568967
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00316,
+			"Amount": 0.22524887,
+			"Total": 7.1179E-4,
+			"Timestamp": 1516568967
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318972,
+			"Amount": 2.09035187,
+			"Total": 0.00666764,
+			"Timestamp": 1516568597
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312684,
+			"Amount": 0.6596926,
+			"Total": 0.00206275,
+			"Timestamp": 1516568482
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312693,
+			"Amount": 2.13265285,
+			"Total": 0.00666866,
+			"Timestamp": 1516568442
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319,
+			"Amount": 4.39816277,
+			"Total": 0.01403014,
+			"Timestamp": 1516568297
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319006,
+			"Amount": 3.0,
+			"Total": 0.00957018,
+			"Timestamp": 1516568297
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003191,
+			"Amount": 2.5,
+			"Total": 0.0079775,
+			"Timestamp": 1516568297
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319006,
+			"Amount": 2.01277557,
+			"Total": 0.00642087,
+			"Timestamp": 1516568265
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.04851912,
+			"Total": 1.5526E-4,
+			"Timestamp": 1516567996
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320008,
+			"Amount": 0.1792111,
+			"Total": 5.7349E-4,
+			"Timestamp": 1516567996
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320008,
+			"Amount": 11.50135785,
+			"Total": 0.03680527,
+			"Timestamp": 1516567963
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320008,
+			"Amount": 30.0005495,
+			"Total": 0.09600416,
+			"Timestamp": 1516567949
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320008,
+			"Amount": 34.1979071,
+			"Total": 0.10943604,
+			"Timestamp": 1516567940
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032005,
+			"Amount": 15.59137622,
+			"Total": 0.0499002,
+			"Timestamp": 1516567940
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032007,
+			"Amount": 1.09824629,
+			"Total": 0.00351516,
+			"Timestamp": 1516567940
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320072,
+			"Amount": 1.61320299,
+			"Total": 0.00516341,
+			"Timestamp": 1516567940
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320072,
+			"Amount": 0.24963412,
+			"Total": 7.9901E-4,
+			"Timestamp": 1516567939
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032007,
+			"Amount": 0.33018999,
+			"Total": 0.00105684,
+			"Timestamp": 1516567747
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032006,
+			"Amount": 0.30188781,
+			"Total": 9.6622E-4,
+			"Timestamp": 1516567486
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320064,
+			"Amount": 0.16974404,
+			"Total": 5.4329E-4,
+			"Timestamp": 1516567341
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032711,
+			"Amount": 27.0,
+			"Total": 0.0883197,
+			"Timestamp": 1516567332
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327088,
+			"Amount": 3.0,
+			"Total": 0.00981264,
+			"Timestamp": 1516567332
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326594,
+			"Amount": 1.35622783,
+			"Total": 0.00442936,
+			"Timestamp": 1516567076
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326964,
+			"Amount": 2.16965645,
+			"Total": 0.007094,
+			"Timestamp": 1516566519
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320101,
+			"Amount": 0.00698462,
+			"Total": 2.236E-5,
+			"Timestamp": 1516566519
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032005,
+			"Amount": 0.2348662,
+			"Total": 7.5169E-4,
+			"Timestamp": 1516566518
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320101,
+			"Amount": 0.2,
+			"Total": 6.402E-4,
+			"Timestamp": 1516566489
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326998,
+			"Amount": 0.15312638,
+			"Total": 5.0072E-4,
+			"Timestamp": 1516566471
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032005,
+			"Amount": 2.31294425,
+			"Total": 0.00740258,
+			"Timestamp": 1516566437
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320065,
+			"Amount": 2.18705575,
+			"Total": 0.007,
+			"Timestamp": 1516566437
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320071,
+			"Amount": 3.0,
+			"Total": 0.00960213,
+			"Timestamp": 1516566437
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327134,
+			"Amount": 0.22274028,
+			"Total": 7.2866E-4,
+			"Timestamp": 1516566275
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327134,
+			"Amount": 2.17725972,
+			"Total": 0.00712256,
+			"Timestamp": 1516566269
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327134,
+			"Amount": 3.0,
+			"Total": 0.00981402,
+			"Timestamp": 1516566267
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.27805888,
+			"Total": 0.00408979,
+			"Timestamp": 1516566067
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.71157975,
+			"Total": 0.00547706,
+			"Timestamp": 1516566033
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.28044974,
+			"Total": 8.9744E-4,
+			"Timestamp": 1516566018
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320006,
+			"Amount": 2.82,
+			"Total": 0.00902417,
+			"Timestamp": 1516566001
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327017,
+			"Amount": 0.2604152,
+			"Total": 8.516E-4,
+			"Timestamp": 1516565965
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320006,
+			"Amount": 0.18,
+			"Total": 5.7601E-4,
+			"Timestamp": 1516565929
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032,
+			"Amount": 11.01353815,
+			"Total": 0.03524332,
+			"Timestamp": 1516565736
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00319999,
+			"Amount": 2.84135934,
+			"Total": 0.00909232,
+			"Timestamp": 1516565736
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319,
+			"Amount": 0.3124203,
+			"Total": 9.9662E-4,
+			"Timestamp": 1516565575
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319,
+			"Amount": 2.171147,
+			"Total": 0.00692596,
+			"Timestamp": 1516565554
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 15.59381238,
+			"Total": 0.0499002,
+			"Timestamp": 1516565545
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 5.024014,
+			"Total": 0.01607976,
+			"Timestamp": 1516565545
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320064,
+			"Amount": 3.0,
+			"Total": 0.00960192,
+			"Timestamp": 1516565545
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322511,
+			"Amount": 4.41055683,
+			"Total": 0.01422453,
+			"Timestamp": 1516565545
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 7.20340036,
+			"Total": 0.02305506,
+			"Timestamp": 1516565427
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032006,
+			"Amount": 0.89397612,
+			"Total": 0.00286126,
+			"Timestamp": 1516565427
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 15.9529784,
+			"Total": 0.05105878,
+			"Timestamp": 1516565379
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 0.485,
+			"Total": 0.00155228,
+			"Timestamp": 1516565220
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 3.0,
+			"Total": 0.00960174,
+			"Timestamp": 1516565109
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 22.5,
+			"Total": 0.07201305,
+			"Timestamp": 1516565011
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 0.2695864,
+			"Total": 8.6283E-4,
+			"Timestamp": 1516564987
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 6.54549471,
+			"Total": 0.02094938,
+			"Timestamp": 1516564976
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032017,
+			"Amount": 1.0,
+			"Total": 0.0032017,
+			"Timestamp": 1516564956
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320058,
+			"Amount": 1.01952613,
+			"Total": 0.00326307,
+			"Timestamp": 1516564915
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00320171,
+			"Amount": 3.0,
+			"Total": 0.00960513,
+			"Timestamp": 1516564848
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320171,
+			"Amount": 3.0,
+			"Total": 0.00960513,
+			"Timestamp": 1516564845
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320172,
+			"Amount": 1.85560192,
+			"Total": 0.00594112,
+			"Timestamp": 1516564845
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326419,
+			"Amount": 1.82750118,
+			"Total": 0.00596531,
+			"Timestamp": 1516564727
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319072,
+			"Amount": 1.2832836,
+			"Total": 0.0040946,
+			"Timestamp": 1516564004
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327308,
+			"Amount": 16.50623848,
+			"Total": 0.05402624,
+			"Timestamp": 1516563825
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327294,
+			"Amount": 3.0,
+			"Total": 0.00981882,
+			"Timestamp": 1516563825
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00319002,
+			"Amount": 0.67859762,
+			"Total": 0.00216474,
+			"Timestamp": 1516563739
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00319,
+			"Amount": 0.93961783,
+			"Total": 0.00299738,
+			"Timestamp": 1516563657
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318888,
+			"Amount": 2.15016579,
+			"Total": 0.00685662,
+			"Timestamp": 1516563432
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318874,
+			"Amount": 1.67223367,
+			"Total": 0.00533232,
+			"Timestamp": 1516563426
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318857,
+			"Amount": 3.0,
+			"Total": 0.00956571,
+			"Timestamp": 1516563426
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318856,
+			"Amount": 0.80701192,
+			"Total": 0.00257321,
+			"Timestamp": 1516563426
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311551,
+			"Amount": 0.28204151,
+			"Total": 8.787E-4,
+			"Timestamp": 1516563092
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314986,
+			"Amount": 0.80701192,
+			"Total": 0.00254197,
+			"Timestamp": 1516563072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00314985,
+			"Amount": 0.20488002,
+			"Total": 6.4534E-4,
+			"Timestamp": 1516563042
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00319,
+			"Amount": 0.1595555,
+			"Total": 5.0898E-4,
+			"Timestamp": 1516562887
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323561,
+			"Amount": 7.41073806,
+			"Total": 0.02397826,
+			"Timestamp": 1516562875
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323603,
+			"Amount": 12.18840143,
+			"Total": 0.03944203,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323999,
+			"Amount": 7.58948339,
+			"Total": 0.02458985,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032411,
+			"Amount": 0.46280584,
+			"Total": 0.0015,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324117,
+			"Amount": 5.29982837,
+			"Total": 0.01717764,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324118,
+			"Amount": 1.51207276,
+			"Total": 0.0049009,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324119,
+			"Amount": 4.68458011,
+			"Total": 0.01518361,
+			"Timestamp": 1516562790
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032409,
+			"Amount": 1.11635011,
+			"Total": 0.00361798,
+			"Timestamp": 1516562708
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324075,
+			"Amount": 0.2072287,
+			"Total": 6.7158E-4,
+			"Timestamp": 1516562656
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324042,
+			"Amount": 3.0,
+			"Total": 0.00972126,
+			"Timestamp": 1516562578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325985,
+			"Amount": 0.20628238,
+			"Total": 6.7245E-4,
+			"Timestamp": 1516562325
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032596,
+			"Amount": 0.43181065,
+			"Total": 0.00140753,
+			"Timestamp": 1516562156
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033,
+			"Amount": 0.20036291,
+			"Total": 6.612E-4,
+			"Timestamp": 1516562122
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032968,
+			"Amount": 4.15295326,
+			"Total": 0.01369146,
+			"Timestamp": 1516561931
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032968,
+			"Amount": 0.7765711,
+			"Total": 0.0025602,
+			"Timestamp": 1516561885
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329536,
+			"Amount": 0.61411573,
+			"Total": 0.00202373,
+			"Timestamp": 1516561881
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329536,
+			"Amount": 0.29784671,
+			"Total": 9.8151E-4,
+			"Timestamp": 1516561816
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329536,
+			"Amount": 0.27872698,
+			"Total": 9.1851E-4,
+			"Timestamp": 1516561814
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329536,
+			"Amount": 0.27524961,
+			"Total": 9.0705E-4,
+			"Timestamp": 1516561791
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329536,
+			"Amount": 0.46422382,
+			"Total": 0.00152978,
+			"Timestamp": 1516561744
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329671,
+			"Amount": 0.15167234,
+			"Total": 5.0002E-4,
+			"Timestamp": 1516561739
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329384,
+			"Amount": 6.32300174,
+			"Total": 0.02082696,
+			"Timestamp": 1516561730
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329375,
+			"Amount": 2.14427485,
+			"Total": 0.00706271,
+			"Timestamp": 1516561730
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329368,
+			"Amount": 3.0,
+			"Total": 0.00988104,
+			"Timestamp": 1516561730
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329,
+			"Amount": 0.26767344,
+			"Total": 8.8065E-4,
+			"Timestamp": 1516561730
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323603,
+			"Amount": 34.5002299,
+			"Total": 0.11164378,
+			"Timestamp": 1516561692
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323644,
+			"Amount": 3.0,
+			"Total": 0.00970932,
+			"Timestamp": 1516561692
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329419,
+			"Amount": 0.76787433,
+			"Total": 0.00252952,
+			"Timestamp": 1516561652
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329418,
+			"Amount": 0.3,
+			"Total": 9.8825E-4,
+			"Timestamp": 1516561652
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329418,
+			"Amount": 0.3,
+			"Total": 9.8825E-4,
+			"Timestamp": 1516561652
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323624,
+			"Amount": 0.3,
+			"Total": 9.7087E-4,
+			"Timestamp": 1516561630
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324027,
+			"Amount": 0.19459355,
+			"Total": 6.3054E-4,
+			"Timestamp": 1516561578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323603,
+			"Amount": 13.31136867,
+			"Total": 0.04307599,
+			"Timestamp": 1516561492
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323999,
+			"Amount": 23.0,
+			"Total": 0.07451977,
+			"Timestamp": 1516561492
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324001,
+			"Amount": 1.18901793,
+			"Total": 0.00385243,
+			"Timestamp": 1516561492
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323642,
+			"Amount": 0.3166592,
+			"Total": 0.00102484,
+			"Timestamp": 1516561371
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032361,
+			"Amount": 0.58164004,
+			"Total": 0.00188225,
+			"Timestamp": 1516561303
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329584,
+			"Amount": 1.53847862,
+			"Total": 0.00507058,
+			"Timestamp": 1516561174
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323335,
+			"Amount": 0.32,
+			"Total": 0.00103467,
+			"Timestamp": 1516561146
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323296,
+			"Amount": 3.29890526,
+			"Total": 0.01066523,
+			"Timestamp": 1516561073
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323119,
+			"Amount": 4.6306288,
+			"Total": 0.01496244,
+			"Timestamp": 1516561015
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032312,
+			"Amount": 0.46422382,
+			"Total": 0.0015,
+			"Timestamp": 1516561015
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329643,
+			"Amount": 6.61732684,
+			"Total": 0.02181355,
+			"Timestamp": 1516560779
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329643,
+			"Amount": 0.63299831,
+			"Total": 0.00208663,
+			"Timestamp": 1516560775
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329636,
+			"Amount": 3.0,
+			"Total": 0.00988908,
+			"Timestamp": 1516560775
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329635,
+			"Amount": 0.346029,
+			"Total": 0.00114063,
+			"Timestamp": 1516560775
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320174,
+			"Amount": 0.95525692,
+			"Total": 0.00305848,
+			"Timestamp": 1516560771
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320175,
+			"Amount": 1.53847862,
+			"Total": 0.00492582,
+			"Timestamp": 1516560771
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032008,
+			"Amount": 0.34602813,
+			"Total": 0.00110757,
+			"Timestamp": 1516560698
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320066,
+			"Amount": 0.63299831,
+			"Total": 0.00202601,
+			"Timestamp": 1516560681
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00331,
+			"Amount": 6.72687564,
+			"Total": 0.02226596,
+			"Timestamp": 1516560651
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330849,
+			"Amount": 0.6665531,
+			"Total": 0.00220528,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033074,
+			"Amount": 1.34573628,
+			"Total": 0.00445089,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330733,
+			"Amount": 3.0,
+			"Total": 0.00992199,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325,
+			"Amount": 1.0,
+			"Total": 0.00325,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324983,
+			"Amount": 8.67129281,
+			"Total": 0.02818023,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324982,
+			"Amount": 5.514077,
+			"Total": 0.01791976,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324978,
+			"Amount": 0.9373916,
+			"Total": 0.00304632,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324976,
+			"Amount": 1.38471624,
+			"Total": 0.0045,
+			"Timestamp": 1516560627
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324986,
+			"Amount": 0.75647197,
+			"Total": 0.00245843,
+			"Timestamp": 1516560606
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320013,
+			"Amount": 5.09485262,
+			"Total": 0.01630419,
+			"Timestamp": 1516560528
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320013,
+			"Amount": 0.31249042,
+			"Total": 0.00100001,
+			"Timestamp": 1516560528
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320037,
+			"Amount": 0.9373916,
+			"Total": 0.003,
+			"Timestamp": 1516560528
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320039,
+			"Amount": 0.65526536,
+			"Total": 0.0020971,
+			"Timestamp": 1516560528
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320043,
+			"Amount": 3.0,
+			"Total": 0.00960129,
+			"Timestamp": 1516560528
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320011,
+			"Amount": 1.48592285,
+			"Total": 0.00475512,
+			"Timestamp": 1516560494
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320012,
+			"Amount": 5.51407715,
+			"Total": 0.01764571,
+			"Timestamp": 1516560494
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00320018,
+			"Amount": 3.0,
+			"Total": 0.00960054,
+			"Timestamp": 1516560494
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 2.417627,
+			"Total": 0.00773641,
+			"Timestamp": 1516560435
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317437,
+			"Amount": 5.44610393,
+			"Total": 0.01728795,
+			"Timestamp": 1516560433
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317376,
+			"Amount": 14.97954543,
+			"Total": 0.04754148,
+			"Timestamp": 1516560433
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317348,
+			"Amount": 0.78501415,
+			"Total": 0.00249123,
+			"Timestamp": 1516560433
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317322,
+			"Amount": 5.63745019,
+			"Total": 0.01788887,
+			"Timestamp": 1516560433
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317316,
+			"Amount": 3.0,
+			"Total": 0.00951948,
+			"Timestamp": 1516560433
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317634,
+			"Amount": 3.14191446,
+			"Total": 0.00997979,
+			"Timestamp": 1516559989
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00317645,
+			"Amount": 1.75,
+			"Total": 0.00555879,
+			"Timestamp": 1516559972
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310139,
+			"Amount": 0.25018159,
+			"Total": 7.7591E-4,
+			"Timestamp": 1516559797
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310138,
+			"Amount": 0.19402035,
+			"Total": 6.0173E-4,
+			"Timestamp": 1516559633
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310138,
+			"Amount": 0.33589932,
+			"Total": 0.00104175,
+			"Timestamp": 1516559478
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00310138,
+			"Amount": 4.62349825,
+			"Total": 0.01433923,
+			"Timestamp": 1516559477
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310135,
+			"Amount": 0.48366034,
+			"Total": 0.0015,
+			"Timestamp": 1516559437
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310138,
+			"Amount": 2.39285457,
+			"Total": 0.00742115,
+			"Timestamp": 1516559434
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310131,
+			"Amount": 0.30135381,
+			"Total": 9.3459E-4,
+			"Timestamp": 1516559396
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003119,
+			"Amount": 1.26390264,
+			"Total": 0.00394211,
+			"Timestamp": 1516559172
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310111,
+			"Amount": 4.29760762,
+			"Total": 0.01332735,
+			"Timestamp": 1516559170
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003113,
+			"Amount": 0.69469365,
+			"Total": 0.00216258,
+			"Timestamp": 1516559170
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311898,
+			"Amount": 0.74061456,
+			"Total": 0.00230996,
+			"Timestamp": 1516559134
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311897,
+			"Amount": 0.67487483,
+			"Total": 0.00210491,
+			"Timestamp": 1516559122
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003113,
+			"Amount": 0.30530635,
+			"Total": 9.5042E-4,
+			"Timestamp": 1516559120
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311214,
+			"Amount": 2.8295416,
+			"Total": 0.00880593,
+			"Timestamp": 1516559052
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311211,
+			"Amount": 0.2,
+			"Total": 6.2242E-4,
+			"Timestamp": 1516558877
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311007,
+			"Amount": 1.66518477,
+			"Total": 0.00517884,
+			"Timestamp": 1516558778
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00310111,
+			"Amount": 0.22163907,
+			"Total": 6.8733E-4,
+			"Timestamp": 1516558773
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311005,
+			"Amount": 4.70685669,
+			"Total": 0.01463856,
+			"Timestamp": 1516558741
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311007,
+			"Amount": 3.25096002,
+			"Total": 0.01011071,
+			"Timestamp": 1516558736
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311007,
+			"Amount": 1.92894792,
+			"Total": 0.00599916,
+			"Timestamp": 1516558719
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311007,
+			"Amount": 0.26619599,
+			"Total": 8.2789E-4,
+			"Timestamp": 1516558705
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312,
+			"Amount": 0.25,
+			"Total": 7.8E-4,
+			"Timestamp": 1516558669
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311005,
+			"Amount": 7.93943479,
+			"Total": 0.02469204,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311005,
+			"Amount": 5.88545495,
+			"Total": 0.01830406,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311006,
+			"Amount": 9.10389098,
+			"Total": 0.02831365,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003182,
+			"Amount": 1.57133878,
+			"Total": 0.005,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318206,
+			"Amount": 3.0,
+			"Total": 0.00954618,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 10.0,
+			"Total": 0.032,
+			"Timestamp": 1516558472
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322297,
+			"Amount": 0.18198027,
+			"Total": 5.8652E-4,
+			"Timestamp": 1516558449
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00322114,
+			"Amount": 0.18591139,
+			"Total": 5.9885E-4,
+			"Timestamp": 1516558277
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318206,
+			"Amount": 0.60260913,
+			"Total": 0.00191754,
+			"Timestamp": 1516558249
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032209,
+			"Amount": 0.4,
+			"Total": 0.00128836,
+			"Timestamp": 1516558148
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00322111,
+			"Amount": 0.4,
+			"Total": 0.00128844,
+			"Timestamp": 1516558145
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318196,
+			"Amount": 0.87823347,
+			"Total": 0.0027945,
+			"Timestamp": 1516558097
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311006,
+			"Amount": 6.68225522,
+			"Total": 0.02078221,
+			"Timestamp": 1516558092
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311009,
+			"Amount": 5.70389098,
+			"Total": 0.01773961,
+			"Timestamp": 1516558092
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00312468,
+			"Amount": 0.4,
+			"Total": 0.00124987,
+			"Timestamp": 1516558092
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 3.0,
+			"Total": 0.00954567,
+			"Timestamp": 1516558092
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031819,
+			"Amount": 0.4,
+			"Total": 0.00127276,
+			"Timestamp": 1516558090
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 7.36048956,
+			"Total": 0.02342027,
+			"Timestamp": 1516558088
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 0.06846384,
+			"Total": 2.1784E-4,
+			"Timestamp": 1516558088
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321806,
+			"Amount": 3.0,
+			"Total": 0.00965418,
+			"Timestamp": 1516558088
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003218,
+			"Amount": 2.5749218,
+			"Total": 0.0082861,
+			"Timestamp": 1516558085
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321815,
+			"Amount": 0.17794237,
+			"Total": 5.7265E-4,
+			"Timestamp": 1516558050
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003218,
+			"Amount": 2.39972183,
+			"Total": 0.0077223,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321806,
+			"Amount": 2.0,
+			"Total": 0.00643612,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003221,
+			"Amount": 2.93423708,
+			"Total": 0.00945118,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032215,
+			"Amount": 1.34573628,
+			"Total": 0.00433529,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322157,
+			"Amount": 4.91614479,
+			"Total": 0.0158377,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322187,
+			"Amount": 3.0,
+			"Total": 0.00966561,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322188,
+			"Amount": 5.55954153,
+			"Total": 0.01791218,
+			"Timestamp": 1516558014
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331016,
+			"Amount": 15.7861462,
+			"Total": 0.05225467,
+			"Timestamp": 1516557917
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331009,
+			"Amount": 3.0,
+			"Total": 0.00993027,
+			"Timestamp": 1516557917
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033101,
+			"Amount": 3.0,
+			"Total": 0.0099303,
+			"Timestamp": 1516557910
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032202,
+			"Amount": 0.56252834,
+			"Total": 0.00181145,
+			"Timestamp": 1516557871
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329234,
+			"Amount": 0.1544958,
+			"Total": 5.0865E-4,
+			"Timestamp": 1516557826
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329235,
+			"Amount": 0.45560162,
+			"Total": 0.0015,
+			"Timestamp": 1516557811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00329234,
+			"Amount": 0.21927321,
+			"Total": 7.2192E-4,
+			"Timestamp": 1516557623
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324247,
+			"Amount": 1.0,
+			"Total": 0.00324247,
+			"Timestamp": 1516557469
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331049,
+			"Amount": 4.05523433,
+			"Total": 0.01342481,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331048,
+			"Amount": 2.71914659,
+			"Total": 0.00900168,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00331048,
+			"Amount": 3.23468731,
+			"Total": 0.01070837,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003303,
+			"Amount": 1.3026371,
+			"Total": 0.00430261,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328231,
+			"Amount": 0.85232936,
+			"Total": 0.00279761,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328224,
+			"Amount": 3.0,
+			"Total": 0.00984672,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328163,
+			"Amount": 0.46606575,
+			"Total": 0.00152946,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328162,
+			"Amount": 5.178606,
+			"Total": 0.01699422,
+			"Timestamp": 1516557190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328231,
+			"Amount": 0.07343884,
+			"Total": 2.4105E-4,
+			"Timestamp": 1516557097
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328174,
+			"Amount": 3.0,
+			"Total": 0.00984522,
+			"Timestamp": 1516557097
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321801,
+			"Amount": 0.43873577,
+			"Total": 0.00141186,
+			"Timestamp": 1516557039
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321842,
+			"Amount": 2.87723146,
+			"Total": 0.00926014,
+			"Timestamp": 1516557002
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321842,
+			"Amount": 0.31670279,
+			"Total": 0.00101928,
+			"Timestamp": 1516556997
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321843,
+			"Amount": 0.46606575,
+			"Total": 0.0015,
+			"Timestamp": 1516556997
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321842,
+			"Amount": 0.45786803,
+			"Total": 0.00147361,
+			"Timestamp": 1516556984
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321842,
+			"Amount": 3.20602346,
+			"Total": 0.01031833,
+			"Timestamp": 1516556979
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321841,
+			"Amount": 9.08048029,
+			"Total": 0.02922471,
+			"Timestamp": 1516556959
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321795,
+			"Amount": 0.42734921,
+			"Total": 0.00137519,
+			"Timestamp": 1516556953
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321796,
+			"Amount": 0.9257682,
+			"Total": 0.00297909,
+			"Timestamp": 1516556933
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032179,
+			"Amount": 1.65844346,
+			"Total": 0.00533671,
+			"Timestamp": 1516556933
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003182,
+			"Amount": 0.71213074,
+			"Total": 0.002266,
+			"Timestamp": 1516556917
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003182,
+			"Amount": 0.63454433,
+			"Total": 0.00201912,
+			"Timestamp": 1516556891
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 0.41923238,
+			"Total": 0.00133395,
+			"Timestamp": 1516556770
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 0.21714569,
+			"Total": 6.9093E-4,
+			"Timestamp": 1516556769
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 0.19260286,
+			"Total": 6.1284E-4,
+			"Timestamp": 1516556726
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031819,
+			"Amount": 1.81874325,
+			"Total": 0.00578706,
+			"Timestamp": 1516556674
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00322856,
+			"Amount": 2.54514573,
+			"Total": 0.00821716,
+			"Timestamp": 1516556598
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 3.07,
+			"Total": 0.0097684,
+			"Timestamp": 1516556544
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 7.50049049,
+			"Total": 0.02386574,
+			"Timestamp": 1516556393
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 7.39691475,
+			"Total": 0.02353617,
+			"Timestamp": 1516556319
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 58.44210322,
+			"Total": 0.18595634,
+			"Timestamp": 1516556221
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 1.7570175,
+			"Total": 0.00559064,
+			"Timestamp": 1516556198
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031819,
+			"Amount": 21.41355027,
+			"Total": 0.06813578,
+			"Timestamp": 1516555912
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321002,
+			"Amount": 1.08661093,
+			"Total": 0.00348804,
+			"Timestamp": 1516555912
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321002,
+			"Amount": 0.157,
+			"Total": 5.0397E-4,
+			"Timestamp": 1516555900
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318189,
+			"Amount": 11.1093937,
+			"Total": 0.03534887,
+			"Timestamp": 1516555787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.75,
+			"Total": 0.0056,
+			"Timestamp": 1516555787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 1.0,
+			"Total": 0.0032,
+			"Timestamp": 1516555787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321001,
+			"Amount": 1.6406063,
+			"Total": 0.00526636,
+			"Timestamp": 1516555787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00321001,
+			"Amount": 0.55940426,
+			"Total": 0.00179569,
+			"Timestamp": 1516555770
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321001,
+			"Amount": 10.0,
+			"Total": 0.0321001,
+			"Timestamp": 1516555750
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321001,
+			"Amount": 10.26201302,
+			"Total": 0.03294116,
+			"Timestamp": 1516555611
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321001,
+			"Amount": 18.5,
+			"Total": 0.05938518,
+			"Timestamp": 1516555570
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321002,
+			"Amount": 0.48410476,
+			"Total": 0.00155399,
+			"Timestamp": 1516555532
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321001,
+			"Amount": 21.0158428,
+			"Total": 0.06746107,
+			"Timestamp": 1516555405
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00321002,
+			"Amount": 0.64928616,
+			"Total": 0.00208422,
+			"Timestamp": 1516555405
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 33.45233406,
+			"Total": 0.10941021,
+			"Timestamp": 1516555405
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 7.5,
+			"Total": 0.02452972,
+			"Timestamp": 1516555404
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 0.29133599,
+			"Total": 9.5285E-4,
+			"Timestamp": 1516555301
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330331,
+			"Amount": 0.3678935,
+			"Total": 0.00121527,
+			"Timestamp": 1516555298
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330335,
+			"Amount": 0.18681041,
+			"Total": 6.171E-4,
+			"Timestamp": 1516555283
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 0.15318211,
+			"Total": 5.01E-4,
+			"Timestamp": 1516555223
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 2.13830409,
+			"Total": 0.0069936,
+			"Timestamp": 1516555177
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 0.15318211,
+			"Total": 5.01E-4,
+			"Timestamp": 1516555139
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 0.19267771,
+			"Total": 6.3018E-4,
+			"Timestamp": 1516555124
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 1.1262771,
+			"Total": 0.00368364,
+			"Timestamp": 1516555079
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330385,
+			"Amount": 0.16973577,
+			"Total": 5.6078E-4,
+			"Timestamp": 1516554949
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327066,
+			"Amount": 0.80782515,
+			"Total": 0.00264212,
+			"Timestamp": 1516554799
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330385,
+			"Amount": 8.32449112,
+			"Total": 0.02750287,
+			"Timestamp": 1516554799
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327063,
+			"Amount": 12.38916404,
+			"Total": 0.04052037,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 56.66976291,
+			"Total": 0.18722443,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330381,
+			"Amount": 4.91168076,
+			"Total": 0.01622726,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330382,
+			"Amount": 5.5066075,
+			"Total": 0.01819284,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330382,
+			"Amount": 4.72076263,
+			"Total": 0.01559655,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330382,
+			"Amount": 7.05920414,
+			"Total": 0.02332234,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330391,
+			"Amount": 2.75058255,
+			"Total": 0.00908768,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330394,
+			"Amount": 1.40532222,
+			"Total": 0.0046431,
+			"Timestamp": 1516554788
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330382,
+			"Amount": 0.25091566,
+			"Total": 8.2898E-4,
+			"Timestamp": 1516554723
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 15.71579465,
+			"Total": 0.05192153,
+			"Timestamp": 1516554685
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330379,
+			"Amount": 9.08048029,
+			"Total": 0.03,
+			"Timestamp": 1516554685
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330381,
+			"Amount": 7.26467667,
+			"Total": 0.02400111,
+			"Timestamp": 1516554685
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00331,
+			"Amount": 7.02757325,
+			"Total": 0.02326127,
+			"Timestamp": 1516554685
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330381,
+			"Amount": 7.86936554,
+			"Total": 0.02599889,
+			"Timestamp": 1516554682
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033038,
+			"Amount": 0.53360151,
+			"Total": 0.00176291,
+			"Timestamp": 1516554679
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033038,
+			"Amount": 0.2420205,
+			"Total": 7.9959E-4,
+			"Timestamp": 1516554637
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345968,
+			"Amount": 0.17308028,
+			"Total": 5.988E-4,
+			"Timestamp": 1516554624
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 427.61444244,
+			"Total": 1.41274404,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 9.00011625,
+			"Total": 0.0297344,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00332304,
+			"Amount": 2.36029381,
+			"Total": 0.00784335,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00332304,
+			"Amount": 0.30713106,
+			"Total": 0.00102061,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00333498,
+			"Amount": 29.45878236,
+			"Total": 0.09824445,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343,
+			"Amount": 1.53956518,
+			"Total": 0.00528071,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 335.50265127,
+			"Total": 1.15319978,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344555,
+			"Amount": 75.3,
+			"Total": 0.25944992,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345487,
+			"Amount": 3.0,
+			"Total": 0.01036461,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345487,
+			"Amount": 3.0,
+			"Total": 0.01036461,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345487,
+			"Amount": 3.0,
+			"Total": 0.01036461,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345487,
+			"Amount": 3.0,
+			"Total": 0.01036461,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034551,
+			"Amount": 3.0,
+			"Total": 0.0103653,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034553,
+			"Amount": 0.641207,
+			"Total": 0.00221556,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034553,
+			"Amount": 3.0,
+			"Total": 0.0103659,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345531,
+			"Amount": 29.52216765,
+			"Total": 0.10200824,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345533,
+			"Amount": 4.90555909,
+			"Total": 0.01695033,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034554,
+			"Amount": 3.0,
+			"Total": 0.0103662,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 32.52216765,
+			"Total": 0.11237742,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 32.52216765,
+			"Total": 0.11237742,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 3.80351699,
+			"Total": 0.01314271,
+			"Timestamp": 1516554590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 10.38976071,
+			"Total": 0.03590088,
+			"Timestamp": 1516554525
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345607,
+			"Amount": 4.99844355,
+			"Total": 0.01727497,
+			"Timestamp": 1516554470
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345607,
+			"Amount": 0.5978351,
+			"Total": 0.00206616,
+			"Timestamp": 1516554412
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345607,
+			"Amount": 0.26850492,
+			"Total": 9.2797E-4,
+			"Timestamp": 1516554338
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00346,
+			"Amount": 6.43510667,
+			"Total": 0.02226547,
+			"Timestamp": 1516554123
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 0.20603822,
+			"Total": 7.1195E-4,
+			"Timestamp": 1516554032
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 6.78109164,
+			"Total": 0.02343145,
+			"Timestamp": 1516554017
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345548,
+			"Amount": 3.0,
+			"Total": 0.01036644,
+			"Timestamp": 1516553896
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 0.15211177,
+			"Total": 5.2561E-4,
+			"Timestamp": 1516553864
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345548,
+			"Amount": 1.58012704,
+			"Total": 0.0054601,
+			"Timestamp": 1516553717
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345548,
+			"Amount": 1.90285458,
+			"Total": 0.00657528,
+			"Timestamp": 1516553667
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345548,
+			"Amount": 0.30473832,
+			"Total": 0.00105302,
+			"Timestamp": 1516553512
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00346,
+			"Amount": 0.50453704,
+			"Total": 0.0017457,
+			"Timestamp": 1516553439
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 0.36369701,
+			"Total": 0.00125672,
+			"Timestamp": 1516553306
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345541,
+			"Amount": 10.82595131,
+			"Total": 0.0374081,
+			"Timestamp": 1516553225
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034581,
+			"Amount": 11.67391509,
+			"Total": 0.04036957,
+			"Timestamp": 1516553225
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034581,
+			"Amount": 3.05467983,
+			"Total": 0.01056339,
+			"Timestamp": 1516553224
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 5.68517098,
+			"Total": 0.01964573,
+			"Timestamp": 1516553181
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034581,
+			"Amount": 6.26,
+			"Total": 0.02164771,
+			"Timestamp": 1516553180
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 25.74238482,
+			"Total": 0.08895564,
+			"Timestamp": 1516553020
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 23.47102262,
+			"Total": 0.0811067,
+			"Timestamp": 1516553020
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345562,
+			"Amount": 3.28719056,
+			"Total": 0.01135928,
+			"Timestamp": 1516553020
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349997,
+			"Amount": 1.089541,
+			"Total": 0.00381336,
+			"Timestamp": 1516552694
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349996,
+			"Amount": 2.169085,
+			"Total": 0.00759171,
+			"Timestamp": 1516552694
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349997,
+			"Amount": 1.75502667,
+			"Total": 0.00614254,
+			"Timestamp": 1516552667
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349996,
+			"Amount": 1.089541,
+			"Total": 0.00381335,
+			"Timestamp": 1516552667
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 1.105361,
+			"Total": 0.00386873,
+			"Timestamp": 1516552650
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349998,
+			"Amount": 1.08954144,
+			"Total": 0.00381337,
+			"Timestamp": 1516552650
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00354499,
+			"Amount": 1.08,
+			"Total": 0.00382859,
+			"Timestamp": 1516552603
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003545,
+			"Amount": 1.2054876,
+			"Total": 0.00427345,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00354493,
+			"Amount": 3.0,
+			"Total": 0.01063479,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00353798,
+			"Amount": 6.0,
+			"Total": 0.02122788,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00353798,
+			"Amount": 0.38422114,
+			"Total": 0.00135937,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003525,
+			"Amount": 3.0,
+			"Total": 0.010575,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 1.1009398,
+			"Total": 0.00387531,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 1.76689045,
+			"Total": 0.00621945,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.24246101,
+			"Total": 8.4861E-4,
+			"Timestamp": 1516552586
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 2.9999096,
+			"Total": 0.01049959,
+			"Timestamp": 1516552384
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 0.27796003,
+			"Total": 9.7285E-4,
+			"Timestamp": 1516552367
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 0.87563149,
+			"Total": 0.00306468,
+			"Timestamp": 1516552278
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 0.38553515,
+			"Total": 0.00134936,
+			"Timestamp": 1516552271
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351999,
+			"Amount": 0.18918501,
+			"Total": 6.6593E-4,
+			"Timestamp": 1516552246
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349998,
+			"Amount": 0.292947,
+			"Total": 0.00102531,
+			"Timestamp": 1516552246
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349997,
+			"Amount": 0.45560273,
+			"Total": 0.0015946,
+			"Timestamp": 1516552245
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 0.44312077,
+			"Total": 0.00153125,
+			"Timestamp": 1516552196
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 0.26453132,
+			"Total": 9.1412E-4,
+			"Timestamp": 1516552143
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 3.8040715,
+			"Total": 0.01314539,
+			"Timestamp": 1516552123
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 0.318,
+			"Total": 0.00109888,
+			"Timestamp": 1516552026
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 1.6509373,
+			"Total": 0.005705,
+			"Timestamp": 1516552013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 1.00532486,
+			"Total": 0.00347401,
+			"Timestamp": 1516551998
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 0.15514775,
+			"Total": 5.3613E-4,
+			"Timestamp": 1516551946
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 0.31539968,
+			"Total": 0.0010899,
+			"Timestamp": 1516551945
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 4.34375666,
+			"Total": 0.01501033,
+			"Timestamp": 1516551945
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345561,
+			"Amount": 27.08379914,
+			"Total": 0.09359105,
+			"Timestamp": 1516551836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345572,
+			"Amount": 34.42750066,
+			"Total": 0.1189718,
+			"Timestamp": 1516551836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345573,
+			"Amount": 95.41308675,
+			"Total": 0.32972187,
+			"Timestamp": 1516551836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345594,
+			"Amount": 4.90522275,
+			"Total": 0.01695216,
+			"Timestamp": 1516551836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345595,
+			"Amount": 8.6703907,
+			"Total": 0.02996444,
+			"Timestamp": 1516551836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345595,
+			"Amount": 1.0615418,
+			"Total": 0.00366864,
+			"Timestamp": 1516551743
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 5.1070039,
+			"Total": 0.01787451,
+			"Timestamp": 1516551641
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 8.0,
+			"Total": 0.028,
+			"Timestamp": 1516551617
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 0.2,
+			"Total": 7.0E-4,
+			"Timestamp": 1516551577
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 0.37297637,
+			"Total": 0.00130542,
+			"Timestamp": 1516551432
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 0.26809216,
+			"Total": 9.3832E-4,
+			"Timestamp": 1516551181
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351985,
+			"Amount": 0.1422762,
+			"Total": 5.0079E-4,
+			"Timestamp": 1516551075
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345602,
+			"Amount": 0.48242111,
+			"Total": 0.00166726,
+			"Timestamp": 1516551072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345603,
+			"Amount": 19.79023515,
+			"Total": 0.06839565,
+			"Timestamp": 1516551013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034561,
+			"Amount": 3.0,
+			"Total": 0.0103683,
+			"Timestamp": 1516551013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 7.48923895,
+			"Total": 0.02621234,
+			"Timestamp": 1516551013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351922,
+			"Amount": 4.57943471,
+			"Total": 0.01611604,
+			"Timestamp": 1516551013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351999,
+			"Amount": 2.64277849,
+			"Total": 0.00930255,
+			"Timestamp": 1516551013
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351999,
+			"Amount": 0.44451264,
+			"Total": 0.00156468,
+			"Timestamp": 1516550948
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 0.31670466,
+			"Total": 0.0011148,
+			"Timestamp": 1516550683
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00352,
+			"Amount": 0.68862935,
+			"Total": 0.00242398,
+			"Timestamp": 1516550669
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 0.16430519,
+			"Total": 5.7835E-4,
+			"Timestamp": 1516550606
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 2.15221124,
+			"Total": 0.00757578,
+			"Timestamp": 1516550606
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352,
+			"Amount": 0.31231589,
+			"Total": 0.00109935,
+			"Timestamp": 1516550606
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351999,
+			"Amount": 0.143,
+			"Total": 5.0336E-4,
+			"Timestamp": 1516550331
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351999,
+			"Amount": 0.46970887,
+			"Total": 0.00165337,
+			"Timestamp": 1516550326
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351922,
+			"Amount": 0.1687,
+			"Total": 5.9369E-4,
+			"Timestamp": 1516550137
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351997,
+			"Amount": 3.5621131,
+			"Total": 0.01253853,
+			"Timestamp": 1516549783
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351922,
+			"Amount": 0.5946189,
+			"Total": 0.00209259,
+			"Timestamp": 1516549737
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 0.37250625,
+			"Total": 0.00130377,
+			"Timestamp": 1516549717
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 5.0,
+			"Total": 0.0175,
+			"Timestamp": 1516549462
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0035,
+			"Amount": 2.1382548,
+			"Total": 0.00748389,
+			"Timestamp": 1516549441
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 1.549083,
+			"Total": 0.00542179,
+			"Timestamp": 1516549334
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349998,
+			"Amount": 5.13928288,
+			"Total": 0.01798739,
+			"Timestamp": 1516549307
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345581,
+			"Amount": 0.53948418,
+			"Total": 0.00186435,
+			"Timestamp": 1516549185
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351876,
+			"Amount": 0.5137476,
+			"Total": 0.00180775,
+			"Timestamp": 1516549121
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351876,
+			"Amount": 3.0,
+			"Total": 0.01055628,
+			"Timestamp": 1516549094
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351876,
+			"Amount": 1.0941365,
+			"Total": 0.00385,
+			"Timestamp": 1516549089
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035179,
+			"Amount": 1.9058635,
+			"Total": 0.00670464,
+			"Timestamp": 1516549089
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345463,
+			"Amount": 0.47038076,
+			"Total": 0.00162499,
+			"Timestamp": 1516548885
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345463,
+			"Amount": 0.4,
+			"Total": 0.00138185,
+			"Timestamp": 1516548784
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345463,
+			"Amount": 0.15822297,
+			"Total": 5.466E-4,
+			"Timestamp": 1516548626
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345463,
+			"Amount": 1.27121201,
+			"Total": 0.00439157,
+			"Timestamp": 1516548525
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034587,
+			"Amount": 3.5621131,
+			"Total": 0.01232028,
+			"Timestamp": 1516548463
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345877,
+			"Amount": 3.0,
+			"Total": 0.01037631,
+			"Timestamp": 1516548463
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00354811,
+			"Amount": 0.9378869,
+			"Total": 0.00332773,
+			"Timestamp": 1516548463
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00354801,
+			"Amount": 3.0,
+			"Total": 0.01064403,
+			"Timestamp": 1516548462
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345893,
+			"Amount": 3.0,
+			"Total": 0.01037679,
+			"Timestamp": 1516548421
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00349999,
+			"Amount": 0.3261743,
+			"Total": 0.00114161,
+			"Timestamp": 1516548413
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345883,
+			"Amount": 5.13928276,
+			"Total": 0.01777591,
+			"Timestamp": 1516548336
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034589,
+			"Amount": 3.0,
+			"Total": 0.0103767,
+			"Timestamp": 1516548336
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345882,
+			"Amount": 1.13198032,
+			"Total": 0.00391532,
+			"Timestamp": 1516548314
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345882,
+			"Amount": 2.01226757,
+			"Total": 0.00696007,
+			"Timestamp": 1516548301
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345874,
+			"Amount": 1.18821338,
+			"Total": 0.00410972,
+			"Timestamp": 1516548293
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00356397,
+			"Amount": 0.83837084,
+			"Total": 0.00298793,
+			"Timestamp": 1516547907
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345283,
+			"Amount": 58.31552168,
+			"Total": 0.20135358,
+			"Timestamp": 1516547836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345294,
+			"Amount": 1.87443908,
+			"Total": 0.00647233,
+			"Timestamp": 1516547836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345301,
+			"Amount": 5.42816643,
+			"Total": 0.01874351,
+			"Timestamp": 1516547836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345307,
+			"Amount": 3.0,
+			"Total": 0.01035921,
+			"Timestamp": 1516547836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344841,
+			"Amount": 0.1867653,
+			"Total": 6.4404E-4,
+			"Timestamp": 1516547671
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00356455,
+			"Amount": 0.42734921,
+			"Total": 0.00152331,
+			"Timestamp": 1516547631
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00354,
+			"Amount": 1.120046,
+			"Total": 0.00396496,
+			"Timestamp": 1516547561
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00353993,
+			"Amount": 2.38157499,
+			"Total": 0.00843061,
+			"Timestamp": 1516547540
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351,
+			"Amount": 0.23282059,
+			"Total": 8.172E-4,
+			"Timestamp": 1516547529
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351,
+			"Amount": 0.03393139,
+			"Total": 1.191E-4,
+			"Timestamp": 1516547529
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00350989,
+			"Amount": 0.20018924,
+			"Total": 7.0264E-4,
+			"Timestamp": 1516547523
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00350904,
+			"Amount": 1.120046,
+			"Total": 0.00393029,
+			"Timestamp": 1516547514
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00350903,
+			"Amount": 1.879954,
+			"Total": 0.00659681,
+			"Timestamp": 1516547514
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00350908,
+			"Amount": 1.879954,
+			"Total": 0.00659691,
+			"Timestamp": 1516547510
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344563,
+			"Amount": 0.27636518,
+			"Total": 9.5225E-4,
+			"Timestamp": 1516547373
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351,
+			"Amount": 0.51458906,
+			"Total": 0.00180621,
+			"Timestamp": 1516547365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00351001,
+			"Amount": 0.42734921,
+			"Total": 0.0015,
+			"Timestamp": 1516547365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344479,
+			"Amount": 32.58965988,
+			"Total": 0.11226453,
+			"Timestamp": 1516547307
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344481,
+			"Amount": 1.91137842,
+			"Total": 0.00658434,
+			"Timestamp": 1516547307
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344488,
+			"Amount": 3.0,
+			"Total": 0.01033464,
+			"Timestamp": 1516547307
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00356459,
+			"Amount": 1.23910707,
+			"Total": 0.00441691,
+			"Timestamp": 1516547278
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00356459,
+			"Amount": 117.58265573,
+			"Total": 0.41913396,
+			"Timestamp": 1516547272
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351968,
+			"Amount": 3.0,
+			"Total": 0.01055904,
+			"Timestamp": 1516547272
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344348,
+			"Amount": 2.49138694,
+			"Total": 0.00857904,
+			"Timestamp": 1516547145
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344245,
+			"Amount": 1.58534414,
+			"Total": 0.00545747,
+			"Timestamp": 1516547081
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343933,
+			"Amount": 0.20390626,
+			"Total": 7.013E-4,
+			"Timestamp": 1516546763
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343815,
+			"Amount": 0.29461002,
+			"Total": 0.00101291,
+			"Timestamp": 1516546625
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00356491,
+			"Amount": 2.41734427,
+			"Total": 0.00861761,
+			"Timestamp": 1516546604
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00356492,
+			"Amount": 3.0,
+			"Total": 0.01069476,
+			"Timestamp": 1516546566
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00350597,
+			"Amount": 0.292947,
+			"Total": 0.00102706,
+			"Timestamp": 1516546548
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.1902,
+			"Total": 6.657E-4,
+			"Timestamp": 1516546548
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349173,
+			"Amount": 0.38087777,
+			"Total": 0.00132992,
+			"Timestamp": 1516546544
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349166,
+			"Amount": 3.0,
+			"Total": 0.01047498,
+			"Timestamp": 1516546537
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348,
+			"Amount": 6.76,
+			"Total": 0.0235248,
+			"Timestamp": 1516546533
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347992,
+			"Amount": 0.43632936,
+			"Total": 0.00151839,
+			"Timestamp": 1516546527
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347991,
+			"Amount": 2.264547,
+			"Total": 0.00788042,
+			"Timestamp": 1516546523
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347984,
+			"Amount": 0.84993189,
+			"Total": 0.00295763,
+			"Timestamp": 1516546517
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347983,
+			"Amount": 2.26454711,
+			"Total": 0.00788024,
+			"Timestamp": 1516546517
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347989,
+			"Amount": 2.26454711,
+			"Total": 0.00788037,
+			"Timestamp": 1516546509
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343728,
+			"Amount": 0.21765362,
+			"Total": 7.4814E-4,
+			"Timestamp": 1516546462
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343728,
+			"Amount": 0.20885956,
+			"Total": 7.1791E-4,
+			"Timestamp": 1516546265
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343728,
+			"Amount": 0.23025819,
+			"Total": 7.9146E-4,
+			"Timestamp": 1516546232
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 5.74175768,
+			"Total": 0.01973574,
+			"Timestamp": 1516546071
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343731,
+			"Amount": 25.37979291,
+			"Total": 0.08723822,
+			"Timestamp": 1516546071
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343777,
+			"Amount": 0.43632936,
+			"Total": 0.0015,
+			"Timestamp": 1516546071
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343779,
+			"Amount": 2.06365144,
+			"Total": 0.0070944,
+			"Timestamp": 1516546071
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034378,
+			"Amount": 5.37902611,
+			"Total": 0.01849202,
+			"Timestamp": 1516546071
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343745,
+			"Amount": 0.20089567,
+			"Total": 6.9057E-4,
+			"Timestamp": 1516545960
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349993,
+			"Amount": 3.0,
+			"Total": 0.01049979,
+			"Timestamp": 1516545924
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349174,
+			"Amount": 1.38888889,
+			"Total": 0.00484964,
+			"Timestamp": 1516545924
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349173,
+			"Amount": 5.317167,
+			"Total": 0.01856611,
+			"Timestamp": 1516545924
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348987,
+			"Amount": 0.43639664,
+			"Total": 0.00152297,
+			"Timestamp": 1516545913
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034896,
+			"Amount": 3.0,
+			"Total": 0.0104688,
+			"Timestamp": 1516545913
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345877,
+			"Amount": 1.29274665,
+			"Total": 0.00447131,
+			"Timestamp": 1516545913
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345856,
+			"Amount": 2.35945485,
+			"Total": 0.00816032,
+			"Timestamp": 1516545913
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345853,
+			"Amount": 0.32978719,
+			"Total": 0.00114058,
+			"Timestamp": 1516545913
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 0.47905337,
+			"Total": 0.00164662,
+			"Timestamp": 1516545887
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 0.4933585,
+			"Total": 0.00169579,
+			"Timestamp": 1516545414
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343767,
+			"Amount": 0.18779925,
+			"Total": 6.4559E-4,
+			"Timestamp": 1516545288
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349144,
+			"Amount": 0.56645212,
+			"Total": 0.00197773,
+			"Timestamp": 1516545110
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00349142,
+			"Amount": 1.43354788,
+			"Total": 0.00500512,
+			"Timestamp": 1516545110
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343724,
+			"Amount": 0.14198794,
+			"Total": 4.8805E-4,
+			"Timestamp": 1516545079
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343724,
+			"Amount": 0.45,
+			"Total": 0.00154676,
+			"Timestamp": 1516544842
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 1.0,
+			"Total": 0.00343723,
+			"Timestamp": 1516544684
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 100.0,
+			"Total": 0.343723,
+			"Timestamp": 1516544564
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 0.292947,
+			"Total": 0.00100693,
+			"Timestamp": 1516544328
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343724,
+			"Amount": 0.43639664,
+			"Total": 0.0015,
+			"Timestamp": 1516544190
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 0.2997776,
+			"Total": 0.0010304,
+			"Timestamp": 1516543996
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 13.71249705,
+			"Total": 0.04713301,
+			"Timestamp": 1516543974
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343724,
+			"Amount": 8.34180246,
+			"Total": 0.02867278,
+			"Timestamp": 1516543974
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345,
+			"Amount": 3.0,
+			"Total": 0.01035,
+			"Timestamp": 1516543974
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345007,
+			"Amount": 3.0,
+			"Total": 0.01035021,
+			"Timestamp": 1516543974
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348806,
+			"Amount": 1.94570049,
+			"Total": 0.00678672,
+			"Timestamp": 1516543974
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348806,
+			"Amount": 0.57020648,
+			"Total": 0.00198891,
+			"Timestamp": 1516543960
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348806,
+			"Amount": 0.41,
+			"Total": 0.0014301,
+			"Timestamp": 1516543890
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348806,
+			"Amount": 0.43626338,
+			"Total": 0.00152171,
+			"Timestamp": 1516543858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348803,
+			"Amount": 1.93667762,
+			"Total": 0.00675519,
+			"Timestamp": 1516543858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345008,
+			"Amount": 0.22877905,
+			"Total": 7.8931E-4,
+			"Timestamp": 1516543858
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345008,
+			"Amount": 10.02753109,
+			"Total": 0.03459578,
+			"Timestamp": 1516543795
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345,
+			"Amount": 33.43091506,
+			"Total": 0.11533666,
+			"Timestamp": 1516543787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00345007,
+			"Amount": 3.0,
+			"Total": 0.01035021,
+			"Timestamp": 1516543787
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343829,
+			"Amount": 0.69601948,
+			"Total": 0.00239312,
+			"Timestamp": 1516543784
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343829,
+			"Amount": 0.43626338,
+			"Total": 0.0015,
+			"Timestamp": 1516543783
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343821,
+			"Amount": 99.07490593,
+			"Total": 0.34064033,
+			"Timestamp": 1516543765
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343822,
+			"Amount": 2.92590697,
+			"Total": 0.01005991,
+			"Timestamp": 1516543765
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343828,
+			"Amount": 3.0,
+			"Total": 0.01031484,
+			"Timestamp": 1516543765
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00352091,
+			"Amount": 0.18787457,
+			"Total": 6.6149E-4,
+			"Timestamp": 1516543557
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.02700361,
+			"Total": 9.451E-5,
+			"Timestamp": 1516543517
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0034878,
+			"Amount": 0.16830369,
+			"Total": 5.8701E-4,
+			"Timestamp": 1516543490
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.15704306,
+			"Total": 5.4965E-4,
+			"Timestamp": 1516543477
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.30407919,
+			"Total": 0.00106428,
+			"Timestamp": 1516543388
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348773,
+			"Amount": 0.50695723,
+			"Total": 0.00176813,
+			"Timestamp": 1516543362
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348934,
+			"Amount": 0.15,
+			"Total": 5.234E-4,
+			"Timestamp": 1516543362
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348952,
+			"Amount": 1.09829433,
+			"Total": 0.00383252,
+			"Timestamp": 1516543362
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.22323353,
+			"Total": 7.8132E-4,
+			"Timestamp": 1516543274
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348934,
+			"Amount": 0.22390917,
+			"Total": 7.813E-4,
+			"Timestamp": 1516543219
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348928,
+			"Amount": 0.15574829,
+			"Total": 5.4345E-4,
+			"Timestamp": 1516543193
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.143,
+			"Total": 5.005E-4,
+			"Timestamp": 1516543179
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348904,
+			"Amount": 0.14872583,
+			"Total": 5.1891E-4,
+			"Timestamp": 1516543059
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348859,
+			"Amount": 0.19224335,
+			"Total": 6.7066E-4,
+			"Timestamp": 1516542894
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348825,
+			"Amount": 0.31,
+			"Total": 0.00108136,
+			"Timestamp": 1516542863
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348784,
+			"Amount": 2.55576052,
+			"Total": 0.00891408,
+			"Timestamp": 1516542804
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348785,
+			"Amount": 1.43354788,
+			"Total": 0.005,
+			"Timestamp": 1516542801
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348791,
+			"Amount": 3.0,
+			"Total": 0.01046373,
+			"Timestamp": 1516542800
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352815,
+			"Amount": 0.32956538,
+			"Total": 0.00116276,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352487,
+			"Amount": 0.69220662,
+			"Total": 0.00243994,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352487,
+			"Amount": 2.24220366,
+			"Total": 0.00790348,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352264,
+			"Amount": 0.43007546,
+			"Total": 0.001515,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003522,
+			"Amount": 0.68917897,
+			"Total": 0.00242729,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003522,
+			"Amount": 6.18957423,
+			"Total": 0.02179968,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352198,
+			"Amount": 0.17197333,
+			"Total": 6.0569E-4,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00352198,
+			"Amount": 1.24935187,
+			"Total": 0.00440019,
+			"Timestamp": 1516542780
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.50784033,
+			"Total": 0.00177744,
+			"Timestamp": 1516542611
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348773,
+			"Amount": 3.39704634,
+			"Total": 0.01184798,
+			"Timestamp": 1516542611
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348775,
+			"Amount": 0.17197333,
+			"Total": 5.998E-4,
+			"Timestamp": 1516542611
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348773,
+			"Amount": 2.60848584,
+			"Total": 0.00909769,
+			"Timestamp": 1516542464
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 0.78653967,
+			"Total": 0.00275289,
+			"Timestamp": 1516542462
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348773,
+			"Amount": 0.23717445,
+			"Total": 8.272E-4,
+			"Timestamp": 1516542387
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348775,
+			"Amount": 0.37,
+			"Total": 0.00129047,
+			"Timestamp": 1516542136
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348775,
+			"Amount": 0.14628405,
+			"Total": 5.102E-4,
+			"Timestamp": 1516542106
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348775,
+			"Amount": 0.73306782,
+			"Total": 0.00255676,
+			"Timestamp": 1516542103
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348776,
+			"Amount": 0.21319875,
+			"Total": 7.4359E-4,
+			"Timestamp": 1516542033
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348776,
+			"Amount": 0.21687671,
+			"Total": 7.5641E-4,
+			"Timestamp": 1516541905
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00351236,
+			"Amount": 0.41064193,
+			"Total": 0.00144232,
+			"Timestamp": 1516541836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 1.05,
+			"Total": 0.003675,
+			"Timestamp": 1516541836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0035,
+			"Amount": 1.3,
+			"Total": 0.00455,
+			"Timestamp": 1516541836
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003491,
+			"Amount": 0.76878488,
+			"Total": 0.00268383,
+			"Timestamp": 1516541826
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00348773,
+			"Amount": 0.43621643,
+			"Total": 0.00152141,
+			"Timestamp": 1516541811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348769,
+			"Amount": 2.01630339,
+			"Total": 0.00703224,
+			"Timestamp": 1516541811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348768,
+			"Amount": 12.112985,
+			"Total": 0.04224622,
+			"Timestamp": 1516541811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343723,
+			"Amount": 2.47795753,
+			"Total": 0.00851731,
+			"Timestamp": 1516541724
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343866,
+			"Amount": 0.43621643,
+			"Total": 0.0015,
+			"Timestamp": 1516541724
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343871,
+			"Amount": 0.66312367,
+			"Total": 0.00228029,
+			"Timestamp": 1516541724
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343876,
+			"Amount": 6.112985,
+			"Total": 0.02102109,
+			"Timestamp": 1516541724
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343877,
+			"Amount": 5.30988727,
+			"Total": 0.01825948,
+			"Timestamp": 1516541724
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348809,
+			"Amount": 0.26225953,
+			"Total": 9.1478E-4,
+			"Timestamp": 1516541588
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348435,
+			"Amount": 0.14451214,
+			"Total": 5.0353E-4,
+			"Timestamp": 1516541567
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348428,
+			"Amount": 2.03085394,
+			"Total": 0.00707606,
+			"Timestamp": 1516541406
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347498,
+			"Amount": 0.19176471,
+			"Total": 6.6638E-4,
+			"Timestamp": 1516541406
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347498,
+			"Amount": 3.2071769,
+			"Total": 0.01114488,
+			"Timestamp": 1516541406
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347496,
+			"Amount": 0.28881109,
+			"Total": 0.00100361,
+			"Timestamp": 1516541272
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347497,
+			"Amount": 0.29376213,
+			"Total": 0.00102081,
+			"Timestamp": 1516541236
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347497,
+			"Amount": 0.36004083,
+			"Total": 0.00125113,
+			"Timestamp": 1516541236
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00347498,
+			"Amount": 3.7128231,
+			"Total": 0.01290199,
+			"Timestamp": 1516541075
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345897,
+			"Amount": 0.32956538,
+			"Total": 0.00113996,
+			"Timestamp": 1516541028
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003457,
+			"Amount": 0.4061522,
+			"Total": 0.00140407,
+			"Timestamp": 1516540959
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345699,
+			"Amount": 0.4382966,
+			"Total": 0.00151519,
+			"Timestamp": 1516540959
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00342233,
+			"Amount": 1.21261415,
+			"Total": 0.00414997,
+			"Timestamp": 1516540768
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00342234,
+			"Amount": 0.4382966,
+			"Total": 0.0015,
+			"Timestamp": 1516540767
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003459,
+			"Amount": 0.81247785,
+			"Total": 0.00281036,
+			"Timestamp": 1516540601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00344007,
+			"Amount": 6.0,
+			"Total": 0.02064042,
+			"Timestamp": 1516540266
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00348425,
+			"Amount": 0.18787457,
+			"Total": 6.546E-4,
+			"Timestamp": 1516540224
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343737,
+			"Amount": 0.19515404,
+			"Total": 6.7082E-4,
+			"Timestamp": 1516540218
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00346,
+			"Amount": 0.35468947,
+			"Total": 0.00122723,
+			"Timestamp": 1516540192
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00346,
+			"Amount": 0.5,
+			"Total": 0.00173,
+			"Timestamp": 1516540070
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003402,
+			"Amount": 0.42937666,
+			"Total": 0.00146074,
+			"Timestamp": 1516540002
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00335653,
+			"Amount": 2.03102919,
+			"Total": 0.00681721,
+			"Timestamp": 1516539955
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343716,
+			"Amount": 11.49529503,
+			"Total": 0.03951117,
+			"Timestamp": 1516539875
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345114,
+			"Amount": 2.64709198,
+			"Total": 0.00913549,
+			"Timestamp": 1516539498
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345104,
+			"Amount": 6.25050796,
+			"Total": 0.02157075,
+			"Timestamp": 1516539491
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345097,
+			"Amount": 2.02752423,
+			"Total": 0.00699693,
+			"Timestamp": 1516539477
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345094,
+			"Amount": 0.63057323,
+			"Total": 0.00217607,
+			"Timestamp": 1516539465
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00334999,
+			"Amount": 0.89283719,
+			"Total": 0.002991,
+			"Timestamp": 1516539389
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00334999,
+			"Amount": 3.0,
+			"Total": 0.01004997,
+			"Timestamp": 1516539389
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00334,
+			"Amount": 0.62347124,
+			"Total": 0.00208239,
+			"Timestamp": 1516539389
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330744,
+			"Amount": 0.63057323,
+			"Total": 0.00208558,
+			"Timestamp": 1516539366
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330577,
+			"Amount": 0.54176193,
+			"Total": 0.00179094,
+			"Timestamp": 1516539016
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343717,
+			"Amount": 0.60523618,
+			"Total": 0.0020803,
+			"Timestamp": 1516538889
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034364,
+			"Amount": 3.68847944,
+			"Total": 0.01267509,
+			"Timestamp": 1516538876
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343633,
+			"Amount": 3.0,
+			"Total": 0.01030899,
+			"Timestamp": 1516538876
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343633,
+			"Amount": 0.14550697,
+			"Total": 5.0001E-4,
+			"Timestamp": 1516538829
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00340563,
+			"Amount": 13.39636939,
+			"Total": 0.04562308,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00340563,
+			"Amount": 0.2,
+			"Total": 6.8113E-4,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00333965,
+			"Amount": 0.45376992,
+			"Total": 0.00151543,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00333958,
+			"Amount": 3.0,
+			"Total": 0.01001874,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330566,
+			"Amount": 0.22188008,
+			"Total": 7.3346E-4,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330476,
+			"Amount": 0.5234,
+			"Total": 0.00172971,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330419,
+			"Amount": 4.23209955,
+			"Total": 0.01398366,
+			"Timestamp": 1516538803
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 0.46819596,
+			"Total": 0.00154682,
+			"Timestamp": 1516538700
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330378,
+			"Amount": 0.64661382,
+			"Total": 0.00213627,
+			"Timestamp": 1516538593
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330376,
+			"Amount": 6.33023597,
+			"Total": 0.02091358,
+			"Timestamp": 1516538578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033036,
+			"Amount": 3.0,
+			"Total": 0.0099108,
+			"Timestamp": 1516538578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330359,
+			"Amount": 5.554838,
+			"Total": 0.01835091,
+			"Timestamp": 1516538578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330379,
+			"Amount": 0.9075316,
+			"Total": 0.00299829,
+			"Timestamp": 1516538508
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330379,
+			"Amount": 56.05289128,
+			"Total": 0.18518698,
+			"Timestamp": 1516538508
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330368,
+			"Amount": 1.51255725,
+			"Total": 0.00499701,
+			"Timestamp": 1516538508
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330366,
+			"Amount": 29.4180455,
+			"Total": 0.09718722,
+			"Timestamp": 1516538508
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330362,
+			"Amount": 3.0,
+			"Total": 0.00991086,
+			"Timestamp": 1516538508
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318213,
+			"Amount": 41.14414087,
+			"Total": 0.130926,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330563,
+			"Amount": 0.32799596,
+			"Total": 0.00108423,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330564,
+			"Amount": 10.45322853,
+			"Total": 0.03455461,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330566,
+			"Amount": 1.51255725,
+			"Total": 0.005,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330567,
+			"Amount": 0.9075316,
+			"Total": 0.003,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00333563,
+			"Amount": 0.1,
+			"Total": 3.3356E-4,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00333564,
+			"Amount": 5.55483869,
+			"Total": 0.01852894,
+			"Timestamp": 1516538365
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00333563,
+			"Amount": 0.2,
+			"Total": 6.6713E-4,
+			"Timestamp": 1516538301
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330564,
+			"Amount": 1.64730268,
+			"Total": 0.00544539,
+			"Timestamp": 1516538223
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00330564,
+			"Amount": 0.45376992,
+			"Total": 0.0015,
+			"Timestamp": 1516538171
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00333511,
+			"Amount": 1.51014857,
+			"Total": 0.00503651,
+			"Timestamp": 1516538163
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00330563,
+			"Amount": 0.2,
+			"Total": 6.6113E-4,
+			"Timestamp": 1516538131
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318075,
+			"Amount": 0.16233321,
+			"Total": 5.1634E-4,
+			"Timestamp": 1516538056
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00318888,
+			"Amount": 0.25,
+			"Total": 7.9722E-4,
+			"Timestamp": 1516538056
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00316052,
+			"Amount": 30.92819407,
+			"Total": 0.09774918,
+			"Timestamp": 1516537915
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00316055,
+			"Amount": 3.0,
+			"Total": 0.00948165,
+			"Timestamp": 1516537915
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343719,
+			"Amount": 92.58015487,
+			"Total": 0.31821558,
+			"Timestamp": 1516537813
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343707,
+			"Amount": 14.7464172,
+			"Total": 0.05068447,
+			"Timestamp": 1516537813
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343717,
+			"Amount": 14.08945474,
+			"Total": 0.04842785,
+			"Timestamp": 1516537812
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343717,
+			"Amount": 0.48879572,
+			"Total": 0.00168007,
+			"Timestamp": 1516537812
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343717,
+			"Amount": 12.67342793,
+			"Total": 0.04356073,
+			"Timestamp": 1516537807
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343717,
+			"Amount": 1.58419355,
+			"Total": 0.00544514,
+			"Timestamp": 1516537807
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034371,
+			"Amount": 3.0,
+			"Total": 0.0103113,
+			"Timestamp": 1516537807
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315618,
+			"Amount": 60.97164098,
+			"Total": 0.19243747,
+			"Timestamp": 1516537782
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315618,
+			"Amount": 1.58419355,
+			"Total": 0.005,
+			"Timestamp": 1516537782
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031562,
+			"Amount": 28.83587194,
+			"Total": 0.09101178,
+			"Timestamp": 1516537782
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315621,
+			"Amount": 12.67342793,
+			"Total": 0.04,
+			"Timestamp": 1516537782
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315626,
+			"Amount": 3.0,
+			"Total": 0.00946878,
+			"Timestamp": 1516537782
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345104,
+			"Amount": 9.21154154,
+			"Total": 0.0317894,
+			"Timestamp": 1516537759
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345103,
+			"Amount": 120.0,
+			"Total": 0.4141236,
+			"Timestamp": 1516537759
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345097,
+			"Amount": 6.93176767,
+			"Total": 0.02392132,
+			"Timestamp": 1516537759
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034509,
+			"Amount": 0.85050477,
+			"Total": 0.00293501,
+			"Timestamp": 1516537759
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0034509,
+			"Amount": 2.14949523,
+			"Total": 0.00741769,
+			"Timestamp": 1516537758
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345114,
+			"Amount": 4.91549862,
+			"Total": 0.01696407,
+			"Timestamp": 1516537701
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345113,
+			"Amount": 2.64709198,
+			"Total": 0.00913546,
+			"Timestamp": 1516537701
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00345113,
+			"Amount": 3.23861546,
+			"Total": 0.01117688,
+			"Timestamp": 1516537687
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00343735,
+			"Amount": 1.24000918,
+			"Total": 0.00426235,
+			"Timestamp": 1516537641
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343735,
+			"Amount": 636.00728234,
+			"Total": 2.18617963,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343734,
+			"Amount": 1.0,
+			"Total": 0.00343734,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343734,
+			"Amount": 1.50783045,
+			"Total": 0.00518293,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343734,
+			"Amount": 0.60339429,
+			"Total": 0.00207407,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343423,
+			"Amount": 7.47648,
+			"Total": 0.02567595,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343421,
+			"Amount": 1.38322197,
+			"Total": 0.00475027,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343421,
+			"Amount": 0.22424324,
+			"Total": 7.701E-4,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343421,
+			"Amount": 1.28358721,
+			"Total": 0.00440811,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00343,
+			"Amount": 38.0,
+			"Total": 0.13034,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00342743,
+			"Amount": 0.73236751,
+			"Total": 0.00251014,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00342414,
+			"Amount": 0.52522169,
+			"Total": 0.00179843,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00342406,
+			"Amount": 1.0,
+			"Total": 0.00342406,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00342406,
+			"Amount": 0.60437632,
+			"Total": 0.00206942,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00341603,
+			"Amount": 0.65913076,
+			"Total": 0.00225161,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003399,
+			"Amount": 1.02249963,
+			"Total": 0.00347548,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003399,
+			"Amount": 7.5,
+			"Total": 0.0254925,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00339,
+			"Amount": 0.25236705,
+			"Total": 8.5552E-4,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00338929,
+			"Amount": 5.90428434,
+			"Total": 0.02001133,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00338928,
+			"Amount": 120.0,
+			"Total": 0.4067136,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00337211,
+			"Amount": 0.16425224,
+			"Total": 5.5388E-4,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00334905,
+			"Amount": 0.65913076,
+			"Total": 0.00220746,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00333965,
+			"Amount": 0.76415204,
+			"Total": 0.002552,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329999,
+			"Amount": 0.7711,
+			"Total": 0.00254462,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328338,
+			"Amount": 0.65913076,
+			"Total": 0.00216418,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328,
+			"Amount": 0.90967519,
+			"Total": 0.00298373,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00328,
+			"Amount": 0.77235368,
+			"Total": 0.00253332,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032545,
+			"Amount": 0.15422289,
+			"Total": 5.0192E-4,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032545,
+			"Amount": 0.20379572,
+			"Total": 6.6325E-4,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325,
+			"Amount": 22.96810286,
+			"Total": 0.07464633,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00324993,
+			"Amount": 3.0,
+			"Total": 0.00974979,
+			"Timestamp": 1516537639
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325,
+			"Amount": 30.89793387,
+			"Total": 0.10041829,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003219,
+			"Amount": 0.65913076,
+			"Total": 0.00212174,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0031864,
+			"Amount": 1.27287365,
+			"Total": 0.00405588,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318542,
+			"Amount": 6.25140717,
+			"Total": 0.01991336,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00318536,
+			"Amount": 3.0,
+			"Total": 0.00955608,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003156,
+			"Amount": 4.25623477,
+			"Total": 0.01343268,
+			"Timestamp": 1516537635
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315543,
+			"Amount": 20.49474652,
+			"Total": 0.06466974,
+			"Timestamp": 1516537559
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315588,
+			"Amount": 0.3461941,
+			"Total": 0.00109255,
+			"Timestamp": 1516537559
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315588,
+			"Amount": 0.65913076,
+			"Total": 0.00208014,
+			"Timestamp": 1516537557
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315543,
+			"Amount": 0.3776982,
+			"Total": 0.0011918,
+			"Timestamp": 1516537555
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315534,
+			"Amount": 0.48229495,
+			"Total": 0.0015218,
+			"Timestamp": 1516537522
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315532,
+			"Amount": 1.54606341,
+			"Total": 0.00487832,
+			"Timestamp": 1516537522
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315531,
+			"Amount": 5.8565,
+			"Total": 0.01847907,
+			"Timestamp": 1516537522
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311016,
+			"Amount": 0.8194904,
+			"Total": 0.00254875,
+			"Timestamp": 1516537378
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311016,
+			"Amount": 7.37291219,
+			"Total": 0.02293094,
+			"Timestamp": 1516537354
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311016,
+			"Amount": 0.53015586,
+			"Total": 0.00164887,
+			"Timestamp": 1516537352
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311013,
+			"Amount": 0.46732107,
+			"Total": 0.00145343,
+			"Timestamp": 1516537262
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311012,
+			"Amount": 0.29165105,
+			"Total": 9.0707E-4,
+			"Timestamp": 1516537228
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311012,
+			"Amount": 0.34913939,
+			"Total": 0.00108587,
+			"Timestamp": 1516537228
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311013,
+			"Amount": 0.48229495,
+			"Total": 0.0015,
+			"Timestamp": 1516537214
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003115,
+			"Amount": 0.60553051,
+			"Total": 0.00188623,
+			"Timestamp": 1516537034
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314091,
+			"Amount": 1.70042077,
+			"Total": 0.00534087,
+			"Timestamp": 1516537033
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003156,
+			"Amount": 0.83969788,
+			"Total": 0.00265009,
+			"Timestamp": 1516537031
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003156,
+			"Amount": 0.16030212,
+			"Total": 5.0591E-4,
+			"Timestamp": 1516537001
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315598,
+			"Amount": 8.30725004,
+			"Total": 0.02621751,
+			"Timestamp": 1516536816
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00315599,
+			"Amount": 1.32634614,
+			"Total": 0.00418594,
+			"Timestamp": 1516536809
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00315599,
+			"Amount": 0.48153939,
+			"Total": 0.00151973,
+			"Timestamp": 1516536792
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00314091,
+			"Amount": 0.29957923,
+			"Total": 9.4095E-4,
+			"Timestamp": 1516536656
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311501,
+			"Amount": 0.48153939,
+			"Total": 0.0015,
+			"Timestamp": 1516536581
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031101,
+			"Amount": 0.31570224,
+			"Total": 9.8187E-4,
+			"Timestamp": 1516536526
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311011,
+			"Amount": 2.84096841,
+			"Total": 0.00883572,
+			"Timestamp": 1516536517
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311011,
+			"Amount": 0.0544033,
+			"Total": 1.692E-4,
+			"Timestamp": 1516536517
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031101,
+			"Amount": 0.19042741,
+			"Total": 5.9225E-4,
+			"Timestamp": 1516536516
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00311011,
+			"Amount": 0.32564134,
+			"Total": 0.00101278,
+			"Timestamp": 1516536465
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031101,
+			"Amount": 0.46044049,
+			"Total": 0.00143202,
+			"Timestamp": 1516536435
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031101,
+			"Amount": 0.77996266,
+			"Total": 0.00242576,
+			"Timestamp": 1516536419
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0031101,
+			"Amount": 1.8899548,
+			"Total": 0.00587795,
+			"Timestamp": 1516536320
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311011,
+			"Amount": 0.39195536,
+			"Total": 0.00121902,
+			"Timestamp": 1516536255
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311011,
+			"Amount": 0.22096298,
+			"Total": 6.8722E-4,
+			"Timestamp": 1516536077
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00311008,
+			"Amount": 19.99375552,
+			"Total": 0.06218218,
+			"Timestamp": 1516536040
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003132,
+			"Amount": 1.27217149,
+			"Total": 0.00398444,
+			"Timestamp": 1516536040
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003132,
+			"Amount": 15.27394145,
+			"Total": 0.04783798,
+			"Timestamp": 1516536040
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00313208,
+			"Amount": 15.96383234,
+			"Total": 0.05,
+			"Timestamp": 1516536040
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00313207,
+			"Amount": 0.16704432,
+			"Total": 5.2319E-4,
+			"Timestamp": 1516536029
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003132,
+			"Amount": 4.52958626,
+			"Total": 0.01418666,
+			"Timestamp": 1516535928
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003132,
+			"Amount": 0.19647229,
+			"Total": 6.1535E-4,
+			"Timestamp": 1516535911
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 0.15996054,
+			"Total": 5.01E-4,
+			"Timestamp": 1516535898
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 5.0,
+			"Total": 0.01566005,
+			"Timestamp": 1516535861
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 2.77222446,
+			"Total": 0.00868263,
+			"Timestamp": 1516535852
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 0.32347398,
+			"Total": 0.00101312,
+			"Timestamp": 1516535833
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 0.90967519,
+			"Total": 0.00284911,
+			"Timestamp": 1516535809
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00313201,
+			"Amount": 10.0,
+			"Total": 0.0313201,
+			"Timestamp": 1516535708
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00313201,
+			"Amount": 19.06888228,
+			"Total": 0.05972393,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00313202,
+			"Amount": 1.34857184,
+			"Total": 0.00422375,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00313261,
+			"Amount": 3.31807807,
+			"Total": 0.01039424,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.31187625,
+			"Total": 9.98E-4,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 6.0,
+			"Total": 0.0192,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 2.0,
+			"Total": 0.0064,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032,
+			"Amount": 0.3,
+			"Total": 9.6E-4,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322005,
+			"Amount": 14.8737168,
+			"Total": 0.04789411,
+			"Timestamp": 1516535601
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00322972,
+			"Amount": 0.31,
+			"Total": 0.00100121,
+			"Timestamp": 1516535600
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322972,
+			"Amount": 1.22554887,
+			"Total": 0.00395818,
+			"Timestamp": 1516535552
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00322972,
+			"Amount": 0.18029244,
+			"Total": 5.8229E-4,
+			"Timestamp": 1516535466
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323212,
+			"Amount": 1.77338937,
+			"Total": 0.00573181,
+			"Timestamp": 1516535416
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 9.27905454,
+			"Total": 0.03000633,
+			"Timestamp": 1516535415
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 2.09418226,
+			"Total": 0.00681552,
+			"Timestamp": 1516535413
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325555,
+			"Amount": 1.60511095,
+			"Total": 0.00522552,
+			"Timestamp": 1516535411
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 0.47770589,
+			"Total": 0.00155469,
+			"Timestamp": 1516535254
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 2.09615193,
+			"Total": 0.00682193,
+			"Timestamp": 1516535222
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032545,
+			"Amount": 0.08267051,
+			"Total": 2.6905E-4,
+			"Timestamp": 1516535168
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 0.32094546,
+			"Total": 0.00103786,
+			"Timestamp": 1516535123
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 0.53735047,
+			"Total": 0.00174881,
+			"Timestamp": 1516535072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327995,
+			"Amount": 0.07436233,
+			"Total": 2.439E-4,
+			"Timestamp": 1516535072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327995,
+			"Amount": 0.25563767,
+			"Total": 8.3848E-4,
+			"Timestamp": 1516535072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327995,
+			"Amount": 0.17,
+			"Total": 5.5759E-4,
+			"Timestamp": 1516535072
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 0.15703284,
+			"Total": 5.1106E-4,
+			"Timestamp": 1516535069
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 1.54641777,
+			"Total": 0.00503282,
+			"Timestamp": 1516534920
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032545,
+			"Amount": 0.4094216,
+			"Total": 0.00133246,
+			"Timestamp": 1516534841
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0032545,
+			"Amount": 1.5363343,
+			"Total": 0.005,
+			"Timestamp": 1516534806
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323402,
+			"Amount": 1.64342791,
+			"Total": 0.00531488,
+			"Timestamp": 1516534613
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323403,
+			"Amount": 5.85649953,
+			"Total": 0.0189401,
+			"Timestamp": 1516534610
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323402,
+			"Amount": 0.17491706,
+			"Total": 5.6569E-4,
+			"Timestamp": 1516534464
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323402,
+			"Amount": 14.0113025,
+			"Total": 0.04531283,
+			"Timestamp": 1516534378
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323501,
+			"Amount": 0.99,
+			"Total": 0.00320266,
+			"Timestamp": 1516534378
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323402,
+			"Amount": 1.71879619,
+			"Total": 0.00555862,
+			"Timestamp": 1516534207
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323401,
+			"Amount": 1.5716508,
+			"Total": 0.00508273,
+			"Timestamp": 1516534128
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323402,
+			"Amount": 2.0,
+			"Total": 0.00646804,
+			"Timestamp": 1516534068
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323401,
+			"Amount": 0.29130698,
+			"Total": 9.4209E-4,
+			"Timestamp": 1516534002
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323401,
+			"Amount": 4.11013769,
+			"Total": 0.01329223,
+			"Timestamp": 1516534002
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 0.4,
+			"Total": 0.00129351,
+			"Timestamp": 1516533971
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323401,
+			"Amount": 0.63246842,
+			"Total": 0.00204541,
+			"Timestamp": 1516533852
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323401,
+			"Amount": 0.76067769,
+			"Total": 0.00246004,
+			"Timestamp": 1516533851
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323402,
+			"Amount": 0.91359612,
+			"Total": 0.00295459,
+			"Timestamp": 1516533774
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323402,
+			"Amount": 0.63246729,
+			"Total": 0.00204541,
+			"Timestamp": 1516533771
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 0.47011275,
+			"Total": 0.00154114,
+			"Timestamp": 1516533764
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 7.23279832,
+			"Total": 0.02371078,
+			"Timestamp": 1516533764
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 3.4484632,
+			"Total": 0.01130486,
+			"Timestamp": 1516533659
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 0.1646012,
+			"Total": 5.396E-4,
+			"Timestamp": 1516533652
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 0.25469927,
+			"Total": 8.3496E-4,
+			"Timestamp": 1516533595
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 1.43608573,
+			"Total": 0.00470782,
+			"Timestamp": 1516533583
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327823,
+			"Amount": 0.32928451,
+			"Total": 0.00107947,
+			"Timestamp": 1516533103
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327821,
+			"Amount": 2.08924041,
+			"Total": 0.00684897,
+			"Timestamp": 1516532808
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327821,
+			"Amount": 0.71570383,
+			"Total": 0.00234623,
+			"Timestamp": 1516532807
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327821,
+			"Amount": 0.05499578,
+			"Total": 1.8029E-4,
+			"Timestamp": 1516532806
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327821,
+			"Amount": 0.86145987,
+			"Total": 0.00282405,
+			"Timestamp": 1516532806
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327773,
+			"Amount": 1.34341045,
+			"Total": 0.00440334,
+			"Timestamp": 1516532805
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327772,
+			"Amount": 0.839474,
+			"Total": 0.00275156,
+			"Timestamp": 1516532805
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00327782,
+			"Amount": 5.0,
+			"Total": 0.0163891,
+			"Timestamp": 1516532779
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323213,
+			"Amount": 0.20507792,
+			"Total": 6.6284E-4,
+			"Timestamp": 1516532510
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00323377,
+			"Amount": 0.43541063,
+			"Total": 0.00140802,
+			"Timestamp": 1516532226
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 0.26458937,
+			"Total": 8.5562E-4,
+			"Timestamp": 1516532221
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 0.18491095,
+			"Total": 5.9796E-4,
+			"Timestamp": 1516532152
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00323377,
+			"Amount": 1.61013694,
+			"Total": 0.00520681,
+			"Timestamp": 1516532074
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324748,
+			"Amount": 5.89023611,
+			"Total": 0.01912842,
+			"Timestamp": 1516532070
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00324749,
+			"Amount": 5.5032838,
+			"Total": 0.01787186,
+			"Timestamp": 1516532025
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325452,
+			"Amount": 6.35565397,
+			"Total": 0.0206846,
+			"Timestamp": 1516532025
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325577,
+			"Amount": 0.73345294,
+			"Total": 0.00238795,
+			"Timestamp": 1516532025
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325577,
+			"Amount": 7.91206837,
+			"Total": 0.02575987,
+			"Timestamp": 1516532025
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325773,
+			"Amount": 1.99554092,
+			"Total": 0.00650093,
+			"Timestamp": 1516532025
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325773,
+			"Amount": 1.04263651,
+			"Total": 0.00339663,
+			"Timestamp": 1516531981
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325774,
+			"Amount": 1.22948097,
+			"Total": 0.00400533,
+			"Timestamp": 1516531981
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325775,
+			"Amount": 0.46044049,
+			"Total": 0.0015,
+			"Timestamp": 1516531981
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325812,
+			"Amount": 0.6717064,
+			"Total": 0.0021885,
+			"Timestamp": 1516531602
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325812,
+			"Amount": 0.19075097,
+			"Total": 6.2149E-4,
+			"Timestamp": 1516531602
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.003258,
+			"Amount": 0.34179863,
+			"Total": 0.00111358,
+			"Timestamp": 1516531590
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325773,
+			"Amount": 0.4874557,
+			"Total": 0.001588,
+			"Timestamp": 1516531449
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00325799,
+			"Amount": 0.44247527,
+			"Total": 0.00144158,
+			"Timestamp": 1516531369
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325773,
+			"Amount": 0.46835182,
+			"Total": 0.00152576,
+			"Timestamp": 1516531269
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 0.73945724,
+			"Total": 0.00240915,
+			"Timestamp": 1516530993
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 0.13669665,
+			"Total": 4.4536E-4,
+			"Timestamp": 1516530993
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 2.09416805,
+			"Total": 0.0068228,
+			"Timestamp": 1516530957
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 0.83237653,
+			"Total": 0.00271188,
+			"Timestamp": 1516530865
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 0.38049347,
+			"Total": 0.00123965,
+			"Timestamp": 1516530865
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 0.33405947,
+			"Total": 0.00108837,
+			"Timestamp": 1516530830
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325812,
+			"Amount": 0.09742363,
+			"Total": 3.1742E-4,
+			"Timestamp": 1516530830
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325812,
+			"Amount": 0.90186038,
+			"Total": 0.00293837,
+			"Timestamp": 1516530578
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00329998,
+			"Amount": 0.772,
+			"Total": 0.00254758,
+			"Timestamp": 1516530555
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325801,
+			"Amount": 66.0,
+			"Total": 0.21502866,
+			"Timestamp": 1516530530
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 25.0,
+			"Total": 0.08145,
+			"Timestamp": 1516530501
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.003258,
+			"Amount": 19.68360103,
+			"Total": 0.06412917,
+			"Timestamp": 1516530488
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00325789,
+			"Amount": 3.0,
+			"Total": 0.00977367,
+			"Timestamp": 1516530474
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0032578,
+			"Amount": 3.0,
+			"Total": 0.0097734,
+			"Timestamp": 1516530428
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00327015,
+			"Amount": 2.70153708,
+			"Total": 0.00883443,
+			"Timestamp": 1516530381
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00335051,
+			"Amount": 0.29846292,
+			"Total": 0.001,
+			"Timestamp": 1516530381
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00326137,
+			"Amount": 0.15853425,
+			"Total": 5.1704E-4,
+			"Timestamp": 1516530304
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00326128,
+			"Amount": 0.91645565,
+			"Total": 0.00298882,
+			"Timestamp": 1516530282
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00326128,
+			"Amount": 3.0,
+			"Total": 0.00978384,
+			"Timestamp": 1516530282
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00326121,
+			"Amount": 3.0,
+			"Total": 0.00978363,
+			"Timestamp": 1516530278
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033501,
+			"Amount": 0.58346955,
+			"Total": 0.00195468,
+			"Timestamp": 1516530276
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033501,
+			"Amount": 1.79975242,
+			"Total": 0.00602935,
+			"Timestamp": 1516530255
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033505,
+			"Amount": 2.40460763,
+			"Total": 0.00805664,
+			"Timestamp": 1516530255
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033505,
+			"Amount": 1.67607446,
+			"Total": 0.00561569,
+			"Timestamp": 1516530210
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033505,
+			"Amount": 9.46030582,
+			"Total": 0.03169675,
+			"Timestamp": 1516530073
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033505,
+			"Amount": 1.95410672,
+			"Total": 0.00654723,
+			"Timestamp": 1516530073
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00335069,
+			"Amount": 5.12928284,
+			"Total": 0.01718664,
+			"Timestamp": 1516530073
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00335069,
+			"Amount": 5.95700582,
+			"Total": 0.01996008,
+			"Timestamp": 1516530073
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033507,
+			"Amount": 0.94363587,
+			"Total": 0.00316184,
+			"Timestamp": 1516529852
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033507,
+			"Amount": 0.08280027,
+			"Total": 2.7744E-4,
+			"Timestamp": 1516529852
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033507,
+			"Amount": 0.06719973,
+			"Total": 2.2517E-4,
+			"Timestamp": 1516529811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.00335071,
+			"Amount": 1.21909396,
+			"Total": 0.00408483,
+			"Timestamp": 1516529811
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033507,
+			"Amount": 1.04366431,
+			"Total": 0.00349701,
+			"Timestamp": 1516529776
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00339899,
+			"Amount": 1.03285339,
+			"Total": 0.00351066,
+			"Timestamp": 1516529690
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.0033505,
+			"Amount": 0.80075959,
+			"Total": 0.00268295,
+			"Timestamp": 1516529489
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Buy",
+			"Price": 0.00335049,
+			"Amount": 0.26393715,
+			"Total": 8.8432E-4,
+			"Timestamp": 1516529489
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033505,
+			"Amount": 2.08924041,
+			"Total": 0.007,
+			"Timestamp": 1516529451
+		},
+		{
+			"TradePairId": 5719,
+			"Label": "GBX/BTC",
+			"Type": "Sell",
+			"Price": 0.0033502,
+			"Amount": 0.34483664,
+			"Total": 0.00115527,
+			"Timestamp": 1516529305
+		}
+	],
+	"Error": null
+}
