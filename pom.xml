@@ -7,6 +7,7 @@
   <properties>
     <maven.compiler.source>1.9</maven.compiler.source>
     <maven.compiler.target>1.9</maven.compiler.target>
+    <jooq.version>3.10.4</jooq.version>
   </properties>
   <dependencies>
     <dependency>
@@ -35,12 +36,36 @@
       <version>2.10.0</version>
     </dependency>
     <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>2.7.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.4.1208</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
+      <version>${jooq.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq-meta</artifactId>
+      <version>${jooq.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq-codegen</artifactId>
+      <version>${jooq.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -53,6 +78,57 @@
           <target>9</target>
           <showWarnings>true</showWarnings>
           <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+      <plugin>
+
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-codegen-maven</artifactId>
+        <version>${jooq.version}</version>
+        <!-- The plugin should hook into the generate goal -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <!-- Manage the plugin's dependency. In this example, we'll use a 
+          PostgreSQL database -->
+        <dependencies>
+          <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1212</version>
+          </dependency>
+        </dependencies>
+
+        <!-- Specify the plugin configuration. The configuration format is 
+          the same as for the standalone code generator-->
+        <configuration>
+
+          <!-- JDBC connection parameters -->
+          <jdbc>
+            <driver>org.postgresql.Driver</driver>
+            <url>jdbc:postgresql:postgres</url>
+            <user>maxroach</user>
+            <password></password>
+          </jdbc>
+
+          <!-- Generator parameters -->
+          <generator>
+            <database>
+              <name>org.jooq.util.postgres.PostgresDatabase</name>
+              <includes>.*</includes>
+              <excludes></excludes>
+              <inputSchema>public</inputSchema>
+            </database>
+            <target>
+              <packageName>quark.db.jooq</packageName>
+              <directory>src/main/java/jooq</directory>
+            </target>
+          </generator>
         </configuration>
       </plugin>
     </plugins>

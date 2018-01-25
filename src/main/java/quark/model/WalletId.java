@@ -1,4 +1,4 @@
-package quark;
+package quark.model;
 
 public class WalletId {
   private final Currency currency;

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
 
-import quark.TradePair;
+import quark.model.TradePair;
 
 public class TradePairAnalysis {
   public void analyze(List<TradePair> tradePairs) {

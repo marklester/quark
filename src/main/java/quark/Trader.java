@@ -8,8 +8,10 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.time.Duration;
 import java.util.Base64;
 import java.util.List;
+import java.util.Set;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -21,13 +23,19 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import quark.algorithms.Algorithm;
+import quark.model.Balance;
+import quark.model.Balances;
+import quark.model.OpenOrder;
+
 public class Trader {
   public static final String BASE_CRYPTOPIA_API_URL = "https://www.cryptopia.co.nz/Api/";
   private static ObjectMapper mapper = new ObjectMapper();
   private String apiKey = "1e6e97ff5b3f436ebe876ef321ee811a";
   private String privateKey = "sUC+JejXPucVPXpmNcfFGAxflKmMa97pidhYD2ksvro=";
-  
+
   HttpClient client = HttpClientBuilder.create().build();
+  private List<Algorithm> algorithms;
 
   List<Balance> getBalance() throws Exception {
     String urlMethod = BASE_CRYPTOPIA_API_URL + "GetBalance";
@@ -62,7 +70,15 @@ public class Trader {
     JsonNode node = mapper.readTree(response.toString());
     return Balances.convertToBalance(node);
   }
-
+  
+  void addAlgorithm(Algorithm algorithm){
+    algorithms.add(algorithm);
+  }
+  
+  void applyAlgorithms(){
+    
+  }
+  
   String generateAuth(String urlMethod, String postParams) throws Exception {
     String nonce = String.valueOf(System.currentTimeMillis());
     String reqSignature = apiKey + "POST"
@@ -86,10 +102,40 @@ public class Trader {
   }
 
   public MarketManager getMarketManager() throws Exception {
-     return MarketManager.create(getTradePairManager());
+    return MarketManager.create(getTradePairManager());
   }
-
+  
+  public long getAvg(long tradePairId, Duration overTime){
+    return 0;
+  }
+  
   public TradePairManager getTradePairManager() throws Exception {
     return TradePairManager.create();
+  }
+
+  Set<OpenOrder> getOpenOrders(){
+    return null;
+  }
+  
+  Set<OpenOrder> getOpenOrders(long tpId){
+    return null;
+  }
+  
+  public void start() throws Exception {
+    DatabaseManager dbManager = new DatabaseManager();
+    dbManager.start();
+    dbManager.createTables();
+    MarketHistory mhistory = new MarketHistory(dbManager, getMarketManager());
+    mhistory.startPolling();
+  }
+  
+  /**
+   * 
+   * @param tpId the coin to buy
+   * @param the percent of balance to use
+   */
+  public void order(long tpId, double d) {
+    // TODO Auto-generated method stub
+    
   }
 }

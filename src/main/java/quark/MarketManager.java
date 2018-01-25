@@ -16,6 +16,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
 
+import quark.model.Market;
+
 public class MarketManager {
   private static final ObjectMapper MAPPER = new ObjectMapper();
 

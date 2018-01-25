@@ -1,0 +1,42 @@
+package quark.orders;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+public interface Order{
+  enum OrderType {
+    BUY(0), SELL(1), UNKNOWN(-1);
+    public int symbol;
+
+    OrderType(int symbol) {
+      this.symbol = symbol;
+    }
+
+    public static OrderType parse(String typeStr) {
+      switch (typeStr) {
+        case "Sell":
+          return SELL;
+        case "Buy":
+          return BUY;
+        default:
+          return OrderType.UNKNOWN;
+      }
+    }
+  }
+
+  public long getTradePairId();
+
+  public OrderType getType();
+
+  public String getLabel();
+
+  public BigDecimal getPrice();
+
+  public BigDecimal getTotal();
+
+  public BigDecimal getAmount();
+
+  public LocalDateTime getTimestamp();
+
+  public String getHash();
+}

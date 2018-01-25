@@ -1,12 +1,11 @@
-package quark;
+package quark.model;
 
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
 
-import quark.model.MonetaryAmount;
-import quark.model.StandardMoney;
+import quark.TradePairManager;
 /**
  * {
     "TradePairId": 100,

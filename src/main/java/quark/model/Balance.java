@@ -1,21 +1,6 @@
-package quark;
-
-import java.util.ArrayList;
-import java.util.List;
+package quark.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
-
-class Balances {
-  public static List<Balance> convertToBalance(JsonNode response) {
-    JsonNode data = response.get("Data");
-    List<Balance> balances = new ArrayList<>();
-    for (JsonNode node : data) {
-      balances.add(new Balance(node));
-    }
-
-    return balances;
-  }
-}
 
 public class Balance {
   private JsonNode currencyNode;

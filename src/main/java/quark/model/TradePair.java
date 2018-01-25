@@ -1,4 +1,4 @@
-package quark;
+package quark.model;
 
 import java.math.BigDecimal;
 

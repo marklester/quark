@@ -19,13 +19,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 
-import quark.Currencies;
-import quark.Currency;
-import quark.WalletId;
 import quark.model.CoinMarketCapMoney;
+import quark.model.Currencies;
+import quark.model.Currency;
 import quark.model.MonetaryAmount;
 import quark.model.ParseException;
 import quark.model.StandardMoney;
+import quark.model.WalletId;
 
 public class MiningMonitor {
   private static final Logger LOGGER = LogManager.getLogger(MiningMonitor.class);
