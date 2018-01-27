@@ -2,8 +2,8 @@ package quark.algorithms;
 
 import java.time.Duration;
 
-import quark.Trader;
 import quark.model.Market;
+import quark.trader.Trader;
 
 public class MovingAverageAlgo implements Algorithm{
 
@@ -11,8 +11,8 @@ public class MovingAverageAlgo implements Algorithm{
   public void apply(Market market,Trader trader) {
     long tpId=market.getTradePair().getId();
     
-    long oneDayAvg = trader.getAvg(tpId, Duration.ofDays(1));
-    long threeDayAvg = trader.getAvg(tpId, Duration.ofDays(3));
+    long oneDayAvg = trader.getMarketStats().getAvg(tpId, Duration.ofDays(1));
+    long threeDayAvg = trader.getMarketStats().getAvg(tpId, Duration.ofDays(3));
     
     if(oneDayAvg > threeDayAvg) {
       //if no open orders

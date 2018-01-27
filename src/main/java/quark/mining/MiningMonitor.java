@@ -12,8 +12,8 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,7 +28,7 @@ import quark.model.StandardMoney;
 import quark.model.WalletId;
 
 public class MiningMonitor {
-  private static final Logger LOGGER = LogManager.getLogger(MiningMonitor.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(MiningMonitor.class);
 
   private static final String MINING_URL = "https://www.unimining.net/api/wallet?address=";
   private ObjectMapper mapper = new ObjectMapper();

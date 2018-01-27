@@ -50,7 +50,11 @@ public class Market {
   public String getLabel() {
     return node.get("Label").asText();
   }
-
+  
+  public double getVolume(){
+    return node.get("Volume").asDouble();
+  }
+  
   public String toString() {
     return MoreObjects.toStringHelper(this).add("label", getLabel()).add("ask", getAskPrice())
         .add("bid", getBidPrice()).toString();

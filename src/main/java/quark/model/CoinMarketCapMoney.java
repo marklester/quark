@@ -9,8 +9,8 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +24,7 @@ import com.google.common.base.MoreObjects;
  * "percent_change_7d": "-42.59", "last_updated": "1516535063" }
  */
 public class CoinMarketCapMoney implements MonetaryAmount {
-  private static final Logger LOGGER = LogManager.getLogger(CoinMarketCapMoney.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(CoinMarketCapMoney.class);
 
   private static final String coinCapUrl = "https://api.coinmarketcap.com/v1/ticker/";
   private static final ObjectMapper mapper = new ObjectMapper();

@@ -7,29 +7,48 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
 
 import quark.model.Market;
+import quark.model.ParseException;
 
 public class MarketManager {
+  private static Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);
+
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
   public static MarketManager create(TradePairManager tradePairManager) throws Exception {
-    String getMarketsUrl = Trader.BASE_CRYPTOPIA_API_URL + "GetMarkets";
-    HttpClient client = HttpClientBuilder.create().build();
+    String getMarketsUrl = CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetMarkets";
+    HttpClient client = HttpClientBuilder.create()
+        .setDefaultRequestConfig(RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build())
+        .build();
     HttpGet get = new HttpGet(getMarketsUrl);
     HttpResponse response = client.execute(get);
-    JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
-    List<Market> markets = StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
-        .map(marketNode -> new Market(marketNode, tradePairManager)).collect(Collectors.toList());
-    return new MarketManager(markets);
+    if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+      JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
+      
+      if(jsonNode.get("Success").asBoolean()==false) {
+        throw new ParseException("retreival failure:"+jsonNode,null);
+      }
+      
+      List<Market> markets = StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
+          .map(marketNode -> new Market(marketNode, tradePairManager)).collect(Collectors.toList());
+
+      return new MarketManager(markets);
+    }
+    throw new quark.model.ParseException("Cound not parse json " + response.getStatusLine(), null);
   }
 
   private Map<String, Market> markets = Maps.newHashMap();
@@ -43,13 +62,13 @@ public class MarketManager {
     return markets.get(label);
   }
 
-  Collection<Market> getMarkets() {
+  public Collection<Market> getMarkets() {
     return markets.values();
   }
 
   public Market updateMarket(String label, TradePairManager tradePairs) throws Exception {
     HttpClient client = HttpClientBuilder.create().build();
-    HttpGet get = new HttpGet(Trader.BASE_CRYPTOPIA_API_URL + "GetMarket/" + label);
+    HttpGet get = new HttpGet(CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetMarket/" + label);
     HttpResponse response = client.execute(get);
     JsonNode jsonNode = MAPPER.readTree(EntityUtils.toByteArray(response.getEntity()));
     return new Market(jsonNode.get("Data"), tradePairs);

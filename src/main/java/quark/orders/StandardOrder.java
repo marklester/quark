@@ -15,6 +15,61 @@ import com.google.common.base.MoreObjects;
  * "Total": 0.01045614, "Timestamp": 1516578166 }
  */
 public class StandardOrder implements Order {
+  
+
+  private final String hash;
+  private final long tradePairId;
+  private final OrderType type;
+  private final String label;
+  private final BigDecimal price;
+  private final BigDecimal total;
+  private final BigDecimal amount;
+  private final LocalDateTime timestamp;
+
+  public StandardOrder(JsonNode node) {
+    tradePairId = node.get("TradePairId").asLong();
+    type = OrderType.parse(node.get("Type").asText());
+    label = node.get("Label").asText();
+    price = new BigDecimal(node.get("Price").asText());
+    amount = new BigDecimal(node.get("Amount").asText());
+    total = new BigDecimal(node.get("Total").asText());
+    timestamp = LocalDateTime.ofInstant(Instant.ofEpochSecond(node.get("Timestamp").asLong()),
+        ZoneOffset.UTC);
+    hash = DigestUtils.sha256Hex(node.toString());
+  }
+
+  public long getTradePairId() {
+    return tradePairId;
+  }
+
+  public OrderType getType() {
+    return type;
+  }
+
+  public String getLabel() {
+    return label;
+  }
+
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public BigDecimal getTotal() {
+    return total;
+  }
+
+  public BigDecimal getAmount() {
+    return amount;
+  }
+
+  public LocalDateTime getTimestamp() {
+    return timestamp;
+  }
+
+  public String getHash() {
+    return hash;
+  }
+  
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -75,60 +130,7 @@ public class StandardOrder implements Order {
       return false;
     return true;
   }
-
-  private final String hash;
-  private final long tradePairId;
-  private final OrderType type;
-  private final String label;
-  private final BigDecimal price;
-  private final BigDecimal total;
-  private final BigDecimal amount;
-  private final LocalDateTime timestamp;
-
-  public StandardOrder(JsonNode node) {
-    tradePairId = node.get("TradePairId").asLong();
-    type = OrderType.parse(node.get("Type").asText());
-    label = node.get("Label").asText();
-    price = new BigDecimal(node.get("Price").asText());
-    amount = new BigDecimal(node.get("Amount").asText());
-    total = new BigDecimal(node.get("Total").asText());
-    timestamp = LocalDateTime.ofInstant(Instant.ofEpochSecond(node.get("Timestamp").asLong()),
-        ZoneOffset.UTC);
-    hash = DigestUtils.sha256Hex(node.toString());
-  }
-
-  public long getTradePairId() {
-    return tradePairId;
-  }
-
-  public OrderType getType() {
-    return type;
-  }
-
-  public String getLabel() {
-    return label;
-  }
-
-  public BigDecimal getPrice() {
-    return price;
-  }
-
-  public BigDecimal getTotal() {
-    return total;
-  }
-
-  public BigDecimal getAmount() {
-    return amount;
-  }
-
-  public LocalDateTime getTimestamp() {
-    return timestamp;
-  }
-
-  public String getHash() {
-    return hash;
-  }
-
+  
   public String toString() {
     return MoreObjects.toStringHelper(this).add("hash", getHash()).add("label", getLabel())
         .add("time", getTimestamp()).add("type", getType()).add("price", getPrice())

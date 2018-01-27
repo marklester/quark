@@ -38,6 +38,7 @@ public class DatabaseManager {
     config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
     ds = new HikariDataSource(config);
+    createTables();
     orderDao = new OrderDAO(DSL.using(ds, SQLDialect.POSTGRES));
   }
 

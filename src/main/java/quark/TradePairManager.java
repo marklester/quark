@@ -23,7 +23,7 @@ public class TradePairManager {
 
   public static TradePairManager create() throws Exception {
     HttpClient client = HttpClientBuilder.create().build();
-    String tradePairUrl = Trader.BASE_CRYPTOPIA_API_URL + "GetTradePairs/";
+    String tradePairUrl = CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetTradePairs/";
     HttpGet get = new HttpGet(tradePairUrl);
     HttpResponse response = client.execute(get);
 
