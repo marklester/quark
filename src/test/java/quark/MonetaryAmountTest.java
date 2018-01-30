@@ -11,7 +11,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import quark.model.CoinMarketCapMoney;
 import quark.model.MonetaryAmount;
-import quark.model.ParseException;
 
 public class MonetaryAmountTest {
   ObjectMapper mapper = new ObjectMapper();

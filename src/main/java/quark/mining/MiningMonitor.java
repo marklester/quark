@@ -19,11 +19,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 
+import quark.ParseException;
 import quark.model.CoinMarketCapMoney;
 import quark.model.Currencies;
 import quark.model.Currency;
 import quark.model.MonetaryAmount;
-import quark.model.ParseException;
 import quark.model.StandardMoney;
 import quark.model.WalletId;
 

@@ -16,6 +16,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.MoreObjects;
 
+import quark.ParseException;
+
 /**
  * Money derived from CoinMarketCap * { "id": "gobyte", "name": "GoByte", "symbol": "GBX", "rank":
  * "391", "price_usd": "39.2322", "price_btc": "0.00325576", "24h_volume_usd": "253317.0",

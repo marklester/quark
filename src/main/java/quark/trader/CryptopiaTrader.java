@@ -3,70 +3,62 @@ package quark.trader;
 import java.util.Set;
 
 import quark.CurrencyManager;
-import quark.DatabaseManager;
 import quark.MarketHistory;
 import quark.MarketManager;
 import quark.TradePairManager;
-import quark.balance.BalanceManager;
-import quark.market.stats.MarketStats;
+import quark.balance.CryptopiaBalanceManager;
+import quark.db.DatabaseManager;
 import quark.model.OpenOrder;
 
-public class CryptopiaTrader implements Trader{
+public class CryptopiaTrader implements Trader {
   private MarketHistory marketHistory;
   private MarketManager marketManager;
-  private TradePairManager tradePairManager;
   private CurrencyManager currencyManager;
-  private BalanceManager balanceManager;
-  
-  public CryptopiaTrader() throws Exception {
-    DatabaseManager dbManager = new DatabaseManager();
-    dbManager.start();
-    currencyManager = new CurrencyManager();
-    balanceManager = new BalanceManager(getCurrencyManager());
-    tradePairManager = TradePairManager.create();
-    marketManager = MarketManager.create(getTradePairManager());
-    marketHistory = new MarketHistory(dbManager, getMarketManager());
+  private CryptopiaBalanceManager balanceManager;
+
+  public CryptopiaTrader(DatabaseManager dbManager, CurrencyManager currencyManager,
+      MarketHistory marketHistory, MarketManager marketManager) throws Exception {
+    this.marketManager = marketManager;
+    this.currencyManager = currencyManager;
+    this.marketHistory = marketHistory;
+    balanceManager = new CryptopiaBalanceManager(currencyManager);
   }
-  public BalanceManager getBalanceManager() throws Exception {
+
+  public CryptopiaBalanceManager getBalanceManager() throws Exception {
     return balanceManager;
   }
 
-  private CurrencyManager getCurrencyManager() {
+  public CurrencyManager getCurrencyManager() {
     return currencyManager;
   }
 
   public MarketManager getMarketManager() throws Exception {
     return marketManager;
   }
-  
+
   public TradePairManager getTradePairManager() throws Exception {
-    return tradePairManager;
+    return marketManager.getTradePairManager();
   }
-  
+
   public MarketHistory getMarketHistory() {
     return marketHistory;
   }
-  
-  public Set<OpenOrder> getOpenOrders(){
+
+  public Set<OpenOrder> getOpenOrders() {
     return null;
   }
-  
-  public Set<OpenOrder> getOpenOrders(long tpId){
+
+  public Set<OpenOrder> getOpenOrders(long tpId) {
     return null;
   }
-  
+
   /**
    * 
    * @param tpId the coin to buy
    * @param the percent of balance to use
    */
-  public void order(long tpId, double d) {
+  public void order(int tpId, double d) {
     // TODO Auto-generated method stub
-    
-  }
 
-  public MarketStats getMarketStats() {
-    // TODO Auto-generated method stub
-    return null;
   }
 }

@@ -38,7 +38,7 @@ public class Currency {
       if (other.name != null)
         return false;
     } else if (!name.equals(other.name))
-      return false; 
+      return false;
     if (symbol == null) {
       if (other.symbol != null)
         return false;

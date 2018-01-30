@@ -35,7 +35,7 @@ public class TradePairManager {
     return new TradePairManager(jsonNode.get("Data"));
   }
 
-  private Map<Long, TradePair> tradePairs = Maps.newHashMap();
+  private Map<Integer, TradePair> tradePairs = Maps.newHashMap();
 
   public TradePairManager(JsonNode tradePairsJson) {
     tradePairs =

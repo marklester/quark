@@ -1,8 +1,10 @@
 package quark;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -19,17 +21,33 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.collect.Maps;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 
 import quark.model.Market;
-import quark.model.ParseException;
 
 public class MarketManager {
   private static Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
-  public static MarketManager create(TradePairManager tradePairManager) throws Exception {
+  private static final String CACHE = "CACHE";
+
+  private LoadingCache<String, Map<String, Market>> cache = CacheBuilder.newBuilder()
+      .expireAfterWrite(10, TimeUnit.MINUTES).build(new CacheLoader<String, Map<String, Market>>() {
+        public Map<String, Market> load(String key) throws Exception {
+          return retrieveMarkets();
+        }
+      });
+
+  private TradePairManager tpManager;
+
+  public MarketManager(TradePairManager tpManager) {
+    this.tpManager = tpManager;
+  }
+
+  private Map<String, Market> retrieveMarkets() throws Exception {
     String getMarketsUrl = CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetMarkets";
     HttpClient client = HttpClientBuilder.create()
         .setDefaultRequestConfig(RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build())
@@ -38,39 +56,36 @@ public class MarketManager {
     HttpResponse response = client.execute(get);
     if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
       JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
-      
-      if(jsonNode.get("Success").asBoolean()==false) {
-        throw new ParseException("retreival failure:"+jsonNode,null);
+
+      if (jsonNode.get("Success").asBoolean() == false) {
+        throw new ParseException("retreival failure:" + jsonNode, null);
       }
-      
-      List<Market> markets = StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
-          .map(marketNode -> new Market(marketNode, tradePairManager)).collect(Collectors.toList());
 
-      return new MarketManager(markets);
+      return StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
+          .map(marketNode -> new Market(marketNode, tpManager))
+          .filter(market -> !market.getTradePair().isClosing())
+          .collect(Collectors.toMap(k -> k.getLabel(), v -> v));
     }
-    throw new quark.model.ParseException("Cound not parse json " + response.getStatusLine(), null);
+    throw new ParseException("Cound not parse json " + response.getStatusLine(), null);
   }
 
-  private Map<String, Market> markets = Maps.newHashMap();
-
-  public MarketManager(List<Market> markets) {
-    this.markets = markets.stream().filter(market -> !market.getTradePair().isClosing())
-        .collect(Collectors.toMap(k -> k.getLabel(), v -> v));
+  public Market getMarket(String label) throws ExecutionException {
+    return cache.get(CACHE).get(label);
   }
 
-  public Market getMarket(String label) {
-    return markets.get(label);
+  public Collection<Market> getMarkets() throws ExecutionException {
+      return cache.get(CACHE).values();
   }
 
-  public Collection<Market> getMarkets() {
-    return markets.values();
-  }
-
-  public Market updateMarket(String label, TradePairManager tradePairs) throws Exception {
+  Market updateMarket(String label, TradePairManager tradePairs) throws Exception {
     HttpClient client = HttpClientBuilder.create().build();
     HttpGet get = new HttpGet(CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetMarket/" + label);
     HttpResponse response = client.execute(get);
     JsonNode jsonNode = MAPPER.readTree(EntityUtils.toByteArray(response.getEntity()));
     return new Market(jsonNode.get("Data"), tradePairs);
+  }
+
+  public TradePairManager getTradePairManager() {
+    return tpManager;
   }
 }

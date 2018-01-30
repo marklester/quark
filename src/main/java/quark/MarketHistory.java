@@ -4,10 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Flow.Subscriber;
-import java.util.concurrent.Flow.Subscription;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -25,11 +24,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Sets;
 
+import quark.db.DatabaseManager;
+import quark.db.OrderDAO;
 import quark.model.Market;
 import quark.orders.Order;
-import quark.orders.OrderDAO;
 import quark.orders.StandardOrder;
 
 public class MarketHistory {
@@ -41,11 +40,17 @@ public class MarketHistory {
     this.dbManager = dbManager;
     this.mktManager = mktManager;
   }
-
-
+  
+  public OrderDAO getOrderDAO(){
+    return dbManager.getOrderDao();
+  }
 
   public void startPolling() {
-    storeOrders();
+    try {
+      storeOrders();
+    } catch (ExecutionException e) {
+      LOGGER.error("could not store orders",e);
+    }
     // scheduler.scheduleAtFixedRate(() -> {
     // storeOrders();
     // }, 0, 15, TimeUnit.MINUTES);
@@ -60,7 +65,7 @@ public class MarketHistory {
   private ExecutorCompletionService<Boolean> executor =
       new ExecutorCompletionService<>(Executors.newFixedThreadPool(5));
 
-  private void storeOrders() {
+  private void storeOrders() throws ExecutionException {
 
     LocalDateTime lastOrder = getLastOrderDate();
     OrderDAO orderDao = dbManager.getOrderDao();
@@ -87,7 +92,7 @@ public class MarketHistory {
   }
 
   private LocalDateTime getLastOrderDate() {
-    return dbManager.getOrderDao().getLastOrder();
+    return dbManager.getOrderDao().getLastOrderDate();
   }
 }
 
@@ -168,57 +173,5 @@ class GetMarketHistory implements Callable<Boolean> {
     LOGGER.info("{}. insert of {} records took: {}", index, orders.size(),
         sw.elapsed(TimeUnit.MILLISECONDS));
     orders.clear();
-  }
-}
-
-
-class OrderInserter implements Subscriber<Order> {
-  private static Logger LOGGER = LoggerFactory.getLogger(OrderInserter.class);
-  private Subscription subscription;
-  private Set<Order> orderToSave = Sets.newHashSet();
-  private OrderDAO orderDao;
-  private int flushSize;
-  private int index;
-
-  public OrderInserter(int index, OrderDAO orderDao, int flushSize) {
-    this.index = index;
-    this.orderDao = orderDao;
-    this.flushSize = flushSize;
-  }
-
-  @Override
-  public void onComplete() {
-    if (!orderToSave.isEmpty()) {
-      flushOrders();
-    }
-    LOGGER.info("Subscriber {} complete", index);
-  }
-
-  @Override
-  public void onError(Throwable error) {
-    LOGGER.error("{} something bad happened", index, error);
-  }
-
-  @Override
-  public void onNext(Order order) {
-    orderToSave.add(order);
-    if (orderToSave.size() >= flushSize) {
-      flushOrders();
-    }
-    subscription.request(1);
-  }
-
-  @Override
-  public void onSubscribe(Subscription subscription) {
-    this.subscription = subscription;
-    this.subscription.request(1);
-  }
-
-  void flushOrders() {
-    Stopwatch sw = Stopwatch.createStarted();
-    orderDao.insert(orderToSave);
-    LOGGER.info("{}. insert of {} records took: {}", index, orderToSave.size(),
-        sw.elapsed(TimeUnit.MILLISECONDS));
-    orderToSave.clear();
   }
 }

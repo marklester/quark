@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import quark.analysis.TradePairAnalysis;
+import quark.algorithms.TradePairAnalysis;
 import quark.model.TradePair;
 
 public class TradePairsTest {

@@ -15,10 +15,8 @@ import com.google.common.base.MoreObjects;
  * "Total": 0.01045614, "Timestamp": 1516578166 }
  */
 public class StandardOrder implements Order {
-  
-
   private final String hash;
-  private final long tradePairId;
+  private final int tradePairId;
   private final OrderType type;
   private final String label;
   private final BigDecimal price;
@@ -27,7 +25,7 @@ public class StandardOrder implements Order {
   private final LocalDateTime timestamp;
 
   public StandardOrder(JsonNode node) {
-    tradePairId = node.get("TradePairId").asLong();
+    tradePairId = node.get("TradePairId").asInt();
     type = OrderType.parse(node.get("Type").asText());
     label = node.get("Label").asText();
     price = new BigDecimal(node.get("Price").asText());
@@ -37,8 +35,20 @@ public class StandardOrder implements Order {
         ZoneOffset.UTC);
     hash = DigestUtils.sha256Hex(node.toString());
   }
+  
+  public StandardOrder(String hash, int tradePairId, OrderType type, String label,
+      BigDecimal price, BigDecimal total, BigDecimal amount, LocalDateTime timestamp) {
+    this.hash = hash;
+    this.tradePairId = tradePairId;
+    this.type = type;
+    this.label = label;
+    this.price = price;
+    this.total = total;
+    this.amount = amount;
+    this.timestamp = timestamp;
+  }
 
-  public long getTradePairId() {
+  public int getTradePairId() {
     return tradePairId;
   }
 

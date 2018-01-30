@@ -21,8 +21,8 @@ public class JsonOrder implements Order{
     this.node = node;
   }
 
-  public long getTradePairId() {
-    return node.get("TradePairId").asLong();
+  public int getTradePairId() {
+    return node.get("TradePairId").asInt();
   }
 
   public OrderType getType() {

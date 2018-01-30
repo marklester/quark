@@ -1,12 +1,12 @@
 --CREATE DATABASE quark;
 
-USE quark;
+--USE quark;
 
-CREATE TABLE IF NOT EXISTS quark.orders (
-	id STRING PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS orders (
+	id VARCHAR(64) PRIMARY KEY,
 	tradePairId INT,
 	orderDate TIMESTAMP, 
-	label STRING, 
+	label VARCHAR(100), 
 	price DECIMAL,
 	amount DECIMAL, 
 	total DECIMAL,

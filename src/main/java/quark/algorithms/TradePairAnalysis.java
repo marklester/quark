@@ -1,4 +1,4 @@
-package quark.analysis;
+package quark.algorithms;
 
 import java.util.List;
 import java.util.Map;

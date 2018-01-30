@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public interface Order{
-  enum OrderType {
+  public enum OrderType {
     BUY(0), SELL(1), UNKNOWN(-1);
     public int symbol;
 
@@ -22,9 +22,19 @@ public interface Order{
           return OrderType.UNKNOWN;
       }
     }
+    public static OrderType parse(int typeStr) {
+      switch (typeStr) {
+        case 1:
+          return SELL;
+        case 0:
+          return BUY;
+        default:
+          return OrderType.UNKNOWN;
+      }
+    }
   }
 
-  public long getTradePairId();
+  public int getTradePairId();
 
   public OrderType getType();
 

@@ -48,8 +48,8 @@ public class TradePair {
     return node.get("Label").asText();
   }
 
-  public long getId() {
-    return node.get("Id").asLong();
+  public int getId() {
+    return node.get("Id").asInt();
   }
 
   public BigDecimal getMinimumTrade() {
