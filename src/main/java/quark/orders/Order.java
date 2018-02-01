@@ -22,8 +22,8 @@ public interface Order{
           return OrderType.UNKNOWN;
       }
     }
-    public static OrderType parse(int typeStr) {
-      switch (typeStr) {
+    public static OrderType parse(long typeStr) {
+      switch ((int)typeStr) {
         case 1:
           return SELL;
         case 0:

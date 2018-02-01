@@ -3,21 +3,22 @@ package quark.trader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import quark.MarketHistory;
 import quark.MarketManager;
 import quark.TradePairManager;
 import quark.balance.BalanceManager;
 import quark.balance.CryptopiaBalanceManager;
 import quark.balance.MapBalanceManager;
+import quark.db.DatabaseManager;
 
-public class TestTrader implements Trader{
+public class TestTrader implements Trader {
   private static Logger LOGGER = LoggerFactory.getLogger(TestTrader.class);
-  
-  private MarketHistory marketHistory;
+
   private BalanceManager balanceManager = new MapBalanceManager();
-  
-  public TestTrader(MarketHistory marketHistory) {
-    this.marketHistory = marketHistory;
+
+  private DatabaseManager dbManager;
+
+  public TestTrader(DatabaseManager dbManager) {
+    this.dbManager = dbManager;
   }
 
   @Override
@@ -28,8 +29,8 @@ public class TestTrader implements Trader{
 
   @Override
   public void order(int tpId, double d) {
-    marketHistory.getOrderDAO().getLastOrderFor(tpId);
-    LOGGER.info("trading for {} with {}% of balance");    
+    dbManager.getOrderDao().getLastOrderFor(tpId);
+    LOGGER.info("trading for {} with {}% of balance");
   }
 
   @Override
@@ -44,8 +45,8 @@ public class TestTrader implements Trader{
   }
 
   @Override
-  public MarketHistory getMarketHistory() {
-    return marketHistory;
+  public DatabaseManager getDBManager() {
+    return dbManager;
   }
 
 }

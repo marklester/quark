@@ -5,3 +5,4 @@ Things to do:
 1. Wallet Controller
 2. Mining Controller
 3. BackTester
+4. create marketsimulator for BackTester

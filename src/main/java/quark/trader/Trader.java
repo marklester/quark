@@ -1,9 +1,9 @@
 package quark.trader;
 
-import quark.MarketHistory;
 import quark.MarketManager;
 import quark.TradePairManager;
 import quark.balance.CryptopiaBalanceManager;
+import quark.db.DatabaseManager;
 
 public interface Trader {
   CryptopiaBalanceManager getBalanceManager() throws Exception;
@@ -14,5 +14,5 @@ public interface Trader {
 
   TradePairManager getTradePairManager() throws Exception;
   
-  public MarketHistory getMarketHistory();
+  public DatabaseManager getDBManager();
 }

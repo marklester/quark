@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import quark.orders.Order;
 
@@ -23,4 +24,5 @@ public interface OrderDAO {
   Order getLastOrderFor(int tpId);
   
   Set<Order> getOrders(int tpId);
+  Stream<Order> getOrders();
 }

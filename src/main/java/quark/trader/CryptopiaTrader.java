@@ -3,24 +3,25 @@ package quark.trader;
 import java.util.Set;
 
 import quark.CurrencyManager;
-import quark.MarketHistory;
 import quark.MarketManager;
 import quark.TradePairManager;
 import quark.balance.CryptopiaBalanceManager;
 import quark.db.DatabaseManager;
 import quark.model.OpenOrder;
+import quark.populator.MarketHistory;
 
 public class CryptopiaTrader implements Trader {
   private MarketHistory marketHistory;
   private MarketManager marketManager;
   private CurrencyManager currencyManager;
   private CryptopiaBalanceManager balanceManager;
+  private DatabaseManager dbManager;
 
   public CryptopiaTrader(DatabaseManager dbManager, CurrencyManager currencyManager,
-      MarketHistory marketHistory, MarketManager marketManager) throws Exception {
+      MarketManager marketManager) throws Exception {
     this.marketManager = marketManager;
     this.currencyManager = currencyManager;
-    this.marketHistory = marketHistory;
+    this.dbManager = dbManager;
     balanceManager = new CryptopiaBalanceManager(currencyManager);
   }
 
@@ -60,5 +61,10 @@ public class CryptopiaTrader implements Trader {
   public void order(int tpId, double d) {
     // TODO Auto-generated method stub
 
+  }
+
+  @Override
+  public DatabaseManager getDBManager() {
+    return dbManager;
   }
 }

@@ -32,7 +32,7 @@ public class Market {
 
   public Market(JsonNode node, TradePairManager tradePairManager) {
     this.node = node;
-    this.tradePair = tradePairManager.getTradePair(node.get("TradePairId").asLong());
+    this.tradePair = tradePairManager.getTradePair(node.get("TradePairId").asInt());
   }
 
   public TradePair getTradePair() {

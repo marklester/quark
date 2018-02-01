@@ -11,7 +11,6 @@ import static quark.db.OrderFields.TRADE_PAIR_ID;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -20,26 +19,33 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.jooq.DSLContext;
 import org.jooq.Field;
 import org.jooq.InsertReturningStep;
 import org.jooq.Record;
 import org.jooq.Record1;
+import org.jooq.RecordMapper;
 import org.jooq.exception.DataAccessException;
 import org.jooq.impl.DSL;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Sets;
 
 import quark.orders.Order;
 
 public class PostgresOrderDAO implements OrderDAO {
+  private static Logger LOGGER = LoggerFactory.getLogger(PostgresOrderDAO.class);
+  
   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
   private DSLContext ctx;
+  RecordMapper<Record,Order> mapper;
 
-
-  public PostgresOrderDAO(DSLContext ctx) {
+  public PostgresOrderDAO(DSLContext ctx,RecordMapper<Record, Order> mapper) {
     this.ctx = ctx;
+    this.mapper = mapper;
   }
 
   public void insert(Order order) {
@@ -56,6 +62,7 @@ public class PostgresOrderDAO implements OrderDAO {
 
   public void insert(Collection<Order> orders) {
     try {
+      LOGGER.info("inserting {} records",orders.size());
       List<InsertReturningStep<Record>> queries =
           orders.stream().map(order -> createQuery(order)).collect(Collectors.toList());
       ctx.batch(queries).execute();
@@ -84,18 +91,19 @@ public class PostgresOrderDAO implements OrderDAO {
 
   @Override
   public LocalDateTime getLastOrderDate() {
-    Field<Object> dateField = DSL.field("orderdate");
-    Record result = ctx.select(dateField).from(DSL.table("orders")).orderBy(dateField.desc())
-        .limit(1).fetchOne();
-    LocalDateTime date = result.get(DSL.field("orderdate"), LocalDateTime.class);
-    return date;
+    Order result = ctx.selectFrom(DSL.table("orders")).orderBy(OrderFields.ORDER_DATE.desc())
+        .limit(1).fetchOne(mapper);
+    if(result==null) {
+      return null;
+    }
+    return result.getTimestamp();
   }
 
   @Override
   public Set<Order> getOrdersFrom(LocalDateTime start, LocalDateTime end) {
     Field<Object> dateField = DSL.field("orderdate");
     List<Order> result = ctx.selectFrom(DSL.table("orders")).where(dateField.between(start, end))
-        .fetch(new OrderRecordMapper());
+        .fetch(new PGRecordMapper());
     return Sets.newHashSet(result);
   }
 
@@ -103,7 +111,7 @@ public class PostgresOrderDAO implements OrderDAO {
   public Order getLastOrderFor(int tpId) {
     Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
     Order result = ctx.selectFrom(DSL.table("orders")).where(tradePairField.eq(tpId))
-        .orderBy(OrderFields.ORDER_DATE.desc()).limit(1).fetchOne(new OrderRecordMapper());
+        .orderBy(OrderFields.ORDER_DATE.desc()).limit(1).fetchOne(new PGRecordMapper());
     return result;
   }
 
@@ -112,7 +120,12 @@ public class PostgresOrderDAO implements OrderDAO {
   public Set<Order> getOrders(int tpId) {
     Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
     List<Order> result = ctx.selectFrom(DSL.table("orders")).where(tradePairField.eq(tpId))
-        .orderBy(OrderFields.ORDER_DATE.desc()).fetch(new OrderRecordMapper());
+        .orderBy(OrderFields.ORDER_DATE.desc()).fetch(mapper);
     return Sets.newHashSet(result);
+  }
+
+  @Override
+  public Stream<Order> getOrders() {
+    return ctx.selectFrom(DSL.table("orders")).stream().map(r->mapper.map(r));
   }
 }

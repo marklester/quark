@@ -43,7 +43,7 @@ public class TradePairManager {
             .collect(Collectors.toMap(tpair -> tpair.getId(), tpair -> tpair));
   }
 
-  public TradePair getTradePair(long id) {
+  public TradePair getTradePair(int id) {
     return tradePairs.get(id);
   }
 

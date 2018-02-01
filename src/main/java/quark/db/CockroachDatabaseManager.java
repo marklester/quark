@@ -15,41 +15,44 @@ import com.google.common.io.Files;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-public class PostgresDatabaseManager implements DatabaseManager{
+/**
+ * Represent how to interact with the datastore 
+ * TODO should test postgres since cockroach
+ * is a bit slow
+ */
+public class CockroachDatabaseManager implements DatabaseManager{
+  static String username = "maxroach";
+  static String password = "";
+  static String jdbcurl = "jdbc:postgresql://127.0.0.1:26257/quark?sslmode=disable";
 
   private PostgresOrderDAO orderDao;
   private DataSource ds;
-  String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
-  public PostgresDatabaseManager() throws Exception {
-//    createDatabase();
+  public CockroachDatabaseManager() throws Exception {
     start();
   }
   
-//  private void createDatabase() throws IOException {
-//    String homeDir = System.getProperty("user.home");
-//    Path dataDir = Paths.get(homeDir, ".quark","data");
-//    try(database = EmbeddedPostgres.builder().setDataDirectory(dataDir).start();
-//        ){
-//      
-//    }
-//
-//  }
-
+  public CockroachDatabaseManager(DataSource postgresDatabase) throws SQLException, IOException {
+    ds = postgresDatabase;
+    createTables();
+    orderDao = new PostgresOrderDAO(getContext(ds),new CockroachRecordMapper());
+  }
+  
+  DSLContext getContext(DataSource ds){
+    return DSL.using(ds,SQLDialect.POSTGRES);
+  }
+  
   public void start() throws Exception {
     HikariConfig config = new HikariConfig();
-    String username = "postgres";
-    String password = "postgres";
-//    String dbName = "postgres";
-    config.setJdbcUrl(jdbcUrl);
+    config.setJdbcUrl(jdbcurl);
     config.setUsername(username);
     config.setPassword(password);
-
     config.addDataSourceProperty("cachePrepStmts", "true");
     config.addDataSourceProperty("prepStmtCacheSize", "250");
     config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+
     ds = new HikariDataSource(config);
     createTables();
-    orderDao = new PostgresOrderDAO(DSL.using(ds, SQLDialect.POSTGRES_9_5),new PGRecordMapper());
+    orderDao = new PostgresOrderDAO(getContext(ds),new CockroachRecordMapper());
   }
 
   public OrderDAO getOrderDao() {
@@ -57,13 +60,9 @@ public class PostgresDatabaseManager implements DatabaseManager{
   }
 
   void createTables() throws SQLException, IOException {
-    DSLContext ctx = DSL.using(ds, SQLDialect.POSTGRES_9_5);
+    DSLContext ctx = DSL.using(ds, SQLDialect.POSTGRES_9_4);
     String ddl = Files
         .asCharSource(Paths.get("src/main/resources/quark.sql").toFile(), Charsets.UTF_8).read();
     ctx.execute(ddl);
-  }
-  
-  public static void main(String args[]) throws Exception {
-    PostgresDatabaseManager pg = new PostgresDatabaseManager();
   }
 }

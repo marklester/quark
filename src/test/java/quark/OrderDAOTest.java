@@ -21,7 +21,7 @@ import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.SingleInstancePostgresRule;
 
 import quark.db.OrderDAO;
-import quark.db.PostgresDatabaseManager;
+import quark.db.CockroachDatabaseManager;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 import quark.orders.StandardOrder;
@@ -35,8 +35,8 @@ public class OrderDAOTest {
   @Before
   public void setUp() throws SQLException, IOException {
     pg.getEmbeddedPostgres().getPostgresDatabase();
-    PostgresDatabaseManager manager =
-        new PostgresDatabaseManager(pg.getEmbeddedPostgres().getPostgresDatabase());
+    CockroachDatabaseManager manager =
+        new CockroachDatabaseManager(pg.getEmbeddedPostgres().getPostgresDatabase());
     dao = manager.getOrderDao();
   }
 
@@ -103,6 +103,25 @@ public class OrderDAOTest {
     Assert.assertNotNull(outOrder);
     Assert.assertEquals("hash2", outOrder.getHash());
     Assert.assertEquals(dtfuture.format(formatter), outOrder.getTimestamp().format(formatter));
+  }
+
+  @Test
+  public void testGetLastOrderDate() {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+    int tpId = 1;
+
+    LocalDateTime dt = LocalDateTime.now();
+    LocalDateTime dtfuture = dt.plus(Duration.ofMinutes(10));
+
+    Order order = new StandardOrder("hash1", tpId, OrderType.BUY, "label", new BigDecimal(0),
+        new BigDecimal(0), new BigDecimal(0), dt);
+    Order order2 = new StandardOrder("hash2", tpId, OrderType.BUY, "label", new BigDecimal(0),
+        new BigDecimal(0), new BigDecimal(0), dtfuture);
+    dao.insert(order);
+    dao.insert(order2);
+    LocalDateTime lastDate = dao.getLastOrderDate();
+    Assert.assertNotNull(lastDate);
+    Assert.assertEquals(dtfuture.format(formatter), lastDate.format(formatter));
   }
 
   @Test

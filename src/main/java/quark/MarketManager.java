@@ -1,7 +1,6 @@
 package quark;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +25,7 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 import quark.model.Market;
+import quark.populator.MarketHistory;
 
 public class MarketManager {
   private static Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);

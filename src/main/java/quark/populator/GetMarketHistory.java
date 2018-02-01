@@ -1,12 +1,8 @@
-package quark;
+package quark.populator;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.Set;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -25,100 +21,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Stopwatch;
 
-import quark.db.DatabaseManager;
+import quark.CryptopiaGetter;
 import quark.db.OrderDAO;
 import quark.model.Market;
 import quark.orders.Order;
 import quark.orders.StandardOrder;
-
-public class MarketHistory {
-  private static final Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);
-  private DatabaseManager dbManager;
-  private MarketManager mktManager;
-
-  public MarketHistory(DatabaseManager dbManager, MarketManager mktManager) {
-    this.dbManager = dbManager;
-    this.mktManager = mktManager;
-  }
-  
-  public OrderDAO getOrderDAO(){
-    return dbManager.getOrderDao();
-  }
-
-  public void startPolling() {
-    try {
-      storeOrders();
-    } catch (ExecutionException e) {
-      LOGGER.error("could not store orders",e);
-    }
-    // scheduler.scheduleAtFixedRate(() -> {
-    // storeOrders();
-    // }, 0, 15, TimeUnit.MINUTES);
-    // try {
-    // scheduler.awaitTermination(1, TimeUnit.DAYS);
-    // } catch (Exception e) {
-    // // TODO Auto-generated catch block
-    // e.printStackTrace();
-    // }
-  }
-
-  private ExecutorCompletionService<Boolean> executor =
-      new ExecutorCompletionService<>(Executors.newFixedThreadPool(5));
-
-  private void storeOrders() throws ExecutionException {
-
-    LocalDateTime lastOrder = getLastOrderDate();
-    OrderDAO orderDao = dbManager.getOrderDao();
-    LOGGER.info("Getting orders after: " + lastOrder);
-    Stopwatch total = Stopwatch.createStarted();
-    Collection<Market> markets = mktManager.getMarkets();
-    int count = 0;
-    for (Market market : markets) {
-      Callable<Boolean> history =
-          new GetMarketHistory(orderDao,market, new Position(count, markets.size()), lastOrder);
-      executor.submit(history);
-      count += 1;
-    } 
-    
-    markets.stream().forEach(mkt->{
-      try {
-        executor.take();
-      } catch (InterruptedException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
-    });
-    LOGGER.info("took {} mins", total.stop().elapsed(TimeUnit.MINUTES));
-  }
-
-  private LocalDateTime getLastOrderDate() {
-    return dbManager.getOrderDao().getLastOrderDate();
-  }
-}
-
-
-class Position {
-  final int position;
-  final int total;
-
-  public Position(int position, int total) {
-    this.position = position;
-    this.total = total;
-  }
-
-  public int getPosition() {
-    return position;
-  }
-
-  public int getTotal() {
-    return total;
-  }
-
-  public String toString() {
-    return String.format("(%s/%s)", position, total);
-  }
-}
-
 
 class GetMarketHistory implements Callable<Boolean> {
   private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -130,7 +37,8 @@ class GetMarketHistory implements Callable<Boolean> {
 
   private OrderDAO orderDao;
 
-  public GetMarketHistory(OrderDAO orderDao,Market market, Position index, LocalDateTime lastOrder) {
+  public GetMarketHistory(OrderDAO orderDao, Market market, Position index,
+      LocalDateTime lastOrder) {
     this.market = market;
     this.index = index;
     this.lastOrder = lastOrder;
@@ -157,6 +65,7 @@ class GetMarketHistory implements Callable<Boolean> {
 
   @Override
   public Boolean call() throws Exception {
+    try {
     LOGGER.info("{} retrieving orders for: {}", index, market.getLabel());
     Stopwatch marketTime = Stopwatch.createStarted();
     Set<Order> orders = createMarketHistory(market.getTradePair().getId(), lastOrder);
@@ -164,10 +73,13 @@ class GetMarketHistory implements Callable<Boolean> {
         marketTime.stop().elapsed(TimeUnit.MILLISECONDS));
     LOGGER.info(orders.size() + " orders to store");
     insertOrders(orders);
+    }catch(Exception e) {
+      LOGGER.error("could not store orders",e);
+    }
     return true;
   }
-  
-  void insertOrders(Set<Order> orders){
+
+  void insertOrders(Set<Order> orders) {
     Stopwatch sw = Stopwatch.createStarted();
     orderDao.insert(orders);
     LOGGER.info("{}. insert of {} records took: {}", index, orders.size(),
