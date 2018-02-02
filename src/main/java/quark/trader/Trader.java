@@ -1,18 +1,23 @@
 package quark.trader;
 
+import java.math.BigDecimal;
+
 import quark.MarketManager;
-import quark.TradePairManager;
-import quark.balance.CryptopiaBalanceManager;
-import quark.db.DatabaseManager;
+import quark.balance.BalanceManager;
+import quark.db.OrderDAO;
+import quark.model.TradePair;
+import quark.orders.Order.OrderType;
 
 public interface Trader {
-  CryptopiaBalanceManager getBalanceManager() throws Exception;
+  BalanceManager getBalanceManager() throws Exception;
   
   MarketManager getMarketManager() throws Exception; 
   
-  void order(int tpId, double d);
-
-  TradePairManager getTradePairManager() throws Exception;
+  void buy(TradePair tpId, double d);
   
-  public DatabaseManager getDBManager();
+  void sell(TradePair tpId, double d);
+
+  void order(TradePair tradePair, OrderType type, BigDecimal price, BigDecimal amount);
+
+  OrderDAO getOrderDao();
 }

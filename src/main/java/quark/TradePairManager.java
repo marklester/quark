@@ -21,7 +21,7 @@ import quark.model.TradePair;
 public class TradePairManager {
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
-  public static TradePairManager create() throws Exception {
+  public static TradePairManager create(CurrencyManager currencyManager) throws Exception {
     HttpClient client = HttpClientBuilder.create().build();
     String tradePairUrl = CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetTradePairs/";
     HttpGet get = new HttpGet(tradePairUrl);
@@ -32,14 +32,16 @@ public class TradePairManager {
     }
 
     JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
-    return new TradePairManager(jsonNode.get("Data"));
+    return new TradePairManager(jsonNode.get("Data"),currencyManager);
   }
 
   private Map<Integer, TradePair> tradePairs = Maps.newHashMap();
+  private CurrencyManager currencyManager;
 
-  public TradePairManager(JsonNode tradePairsJson) {
+  public TradePairManager(JsonNode tradePairsJson,CurrencyManager currencyManager) {
+    this.currencyManager = currencyManager;
     tradePairs =
-        StreamSupport.stream(tradePairsJson.spliterator(), false).map(node -> new TradePair(node))
+        StreamSupport.stream(tradePairsJson.spliterator(), false).map(node -> new TradePair(node,currencyManager))
             .collect(Collectors.toMap(tpair -> tpair.getId(), tpair -> tpair));
   }
 

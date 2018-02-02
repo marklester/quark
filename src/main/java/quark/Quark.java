@@ -1,36 +1,39 @@
 package quark;
 
 import java.time.Duration;
-import java.util.Set;
+import java.time.LocalDateTime;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import quark.algorithms.MovingAverageAlgo;
+import quark.balance.MapBalanceManager;
 import quark.db.DatabaseManager;
 import quark.db.PostgresDatabaseManager;
-import quark.orders.Order;
-import quark.populator.MarketHistory;
 import quark.trader.TestTrader;
 import quark.trader.Trader;
 
 public class Quark {
+  private static final Logger LOGGER = LoggerFactory.getLogger(Quark.class);
 
   public static void main(String[] args) throws Exception {
     DatabaseManager dbManager = new PostgresDatabaseManager();
-    
-//    CurrencyManager currencyManager = new CurrencyManager();
-    TradePairManager tradePairManager = TradePairManager.create();
-    MarketManager marketManager = new MarketManager(tradePairManager);
-    MarketHistory fullMarketHistory = new MarketHistory(dbManager, marketManager);
-    fullMarketHistory.startPolling();
-//    Trader realTrader =
-//        new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
-//    MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
-    Trader testTrader = new TestTrader(dbManager);
-    OrderBatch orderBatch = new OrderBatch(dbManager.getOrderDao(), Duration.ofMinutes(15));
 
-    MarketSimulator simulator = dbManager.getMarketSimulator();
+    CurrencyManager currencyManager = new CurrencyManager();
+    TradePairManager tradePairManager = TradePairManager.create(currencyManager);
+    MarketManager marketManager = new MarketManager(tradePairManager);
+    // Trader realTrader =
+    // new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
+    // MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
+
+
+    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofMinutes(15));
+    Trader testTrader =
+        new TestTrader(simulator.getOrderDao(), new MapBalanceManager(), marketManager);
+
     AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo());
-    for (Set<Order> orders : orderBatch) {
-//      inMemManager.getOrderDao().insert(orders);
+    for (LocalDateTime time : simulator) {
+      LOGGER.info("running algo at {}", time);
       runner.run();
     }
 

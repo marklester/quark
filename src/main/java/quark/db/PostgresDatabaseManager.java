@@ -3,6 +3,7 @@ package quark.db;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.time.Duration;
 
 import javax.sql.DataSource;
 
@@ -14,6 +15,8 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import quark.MarketSimulator;
 
 public class PostgresDatabaseManager implements DatabaseManager{
 
@@ -39,7 +42,6 @@ public class PostgresDatabaseManager implements DatabaseManager{
     HikariConfig config = new HikariConfig();
     String username = "postgres";
     String password = "postgres";
-//    String dbName = "postgres";
     config.setJdbcUrl(jdbcUrl);
     config.setUsername(username);
     config.setPassword(password);
@@ -49,21 +51,26 @@ public class PostgresDatabaseManager implements DatabaseManager{
     config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
     ds = new HikariDataSource(config);
     createTables();
-    orderDao = new PostgresOrderDAO(DSL.using(ds, SQLDialect.POSTGRES_9_5),new PGRecordMapper());
+    orderDao = new PostgresOrderDAO(getContext(),new PGRecordMapper());
   }
 
   public OrderDAO getOrderDao() {
     return orderDao;
   }
+ 
+  DSLContext getContext(){
+    return DSL.using(ds, SQLDialect.POSTGRES_9_5);
+  }
 
   void createTables() throws SQLException, IOException {
-    DSLContext ctx = DSL.using(ds, SQLDialect.POSTGRES_9_5);
+    DSLContext ctx = getContext();
     String ddl = Files
         .asCharSource(Paths.get("src/main/resources/quark.sql").toFile(), Charsets.UTF_8).read();
     ctx.execute(ddl);
   }
-  
-  public static void main(String args[]) throws Exception {
-    PostgresDatabaseManager pg = new PostgresDatabaseManager();
+
+  @Override
+  public MarketSimulator getMarketSimulator(Duration tickRate) {
+    return new MarketSimulator(getContext(), tickRate,getOrderDao());
   }
 }

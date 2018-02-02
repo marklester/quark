@@ -2,6 +2,7 @@ package quark;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -26,7 +27,7 @@ public class OrderBatch implements Iterable<Set<Order>> {
 
 
 class OrderIterator implements Iterator<Set<Order>> {
-  LocalDateTime bookMark = LocalDateTime.MIN;
+  LocalDateTime bookMark = LocalDateTime.ofEpochSecond(0, 0, ZoneOffset.UTC);
   private OrderDAO orderDao;
   private Duration batchSize;
   private Set<Order> orders;
@@ -34,6 +35,7 @@ class OrderIterator implements Iterator<Set<Order>> {
   public OrderIterator(OrderDAO orderDao, Duration batchSize) {
     this.orderDao = orderDao;
     this.batchSize = batchSize;
+    bookMark = orderDao.getFirstOrderDate();
   }
 
   @Override

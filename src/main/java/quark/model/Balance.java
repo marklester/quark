@@ -1,6 +1,7 @@
 package quark.model;
 
 import java.math.BigDecimal;
+import java.util.concurrent.ExecutionException;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -50,7 +51,7 @@ public class Balance {
     return currencyNode.get("Symbol").asText();
   }
 
-  public CryptopiaCurrency getCurrency() {
+  public CryptopiaCurrency getCurrency() throws ExecutionException {
     return currencyManager.getCurrency(getCurrencyId());
   }
 

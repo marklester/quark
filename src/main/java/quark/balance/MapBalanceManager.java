@@ -4,11 +4,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import quark.CryptopiaCurrency;
 import quark.model.Balance;
 
-public class MapBalanceManager implements BalanceManager{
-  Map<Integer,Balance> balances = new HashMap<>();
-  
+public class MapBalanceManager implements BalanceManager {
+  Map<Integer, Balance> balances = new HashMap<>();
+
   @Override
   public Balance getBalance(int currencyID) {
     return balances.get(currencyID);
@@ -22,7 +23,12 @@ public class MapBalanceManager implements BalanceManager{
   @Override
   public void updateBalance(Balance balance) {
     // TODO Auto-generated method stub
-    
+
   }
-  
+
+  @Override
+  public Balance getBalance(CryptopiaCurrency currency) {
+    return getBalance(currency.getId());
+  }
+
 }

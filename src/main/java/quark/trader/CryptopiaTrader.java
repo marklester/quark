@@ -5,16 +5,18 @@ import java.util.Set;
 import quark.CurrencyManager;
 import quark.MarketManager;
 import quark.TradePairManager;
+import quark.balance.BalanceManager;
 import quark.balance.CryptopiaBalanceManager;
 import quark.db.DatabaseManager;
 import quark.model.OpenOrder;
+import quark.model.TradePair;
 import quark.populator.MarketHistory;
 
 public class CryptopiaTrader implements Trader {
   private MarketHistory marketHistory;
   private MarketManager marketManager;
   private CurrencyManager currencyManager;
-  private CryptopiaBalanceManager balanceManager;
+  private BalanceManager balanceManager;
   private DatabaseManager dbManager;
 
   public CryptopiaTrader(DatabaseManager dbManager, CurrencyManager currencyManager,
@@ -25,7 +27,7 @@ public class CryptopiaTrader implements Trader {
     balanceManager = new CryptopiaBalanceManager(currencyManager);
   }
 
-  public CryptopiaBalanceManager getBalanceManager() throws Exception {
+  public BalanceManager getBalanceManager() throws Exception {
     return balanceManager;
   }
 
@@ -58,13 +60,8 @@ public class CryptopiaTrader implements Trader {
    * @param tpId the coin to buy
    * @param the percent of balance to use
    */
-  public void order(int tpId, double d) {
+  public void order(TradePair tp, double d) {
     // TODO Auto-generated method stub
 
-  }
-
-  @Override
-  public DatabaseManager getDBManager() {
-    return dbManager;
   }
 }

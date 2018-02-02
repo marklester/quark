@@ -2,6 +2,8 @@ package quark;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -22,7 +24,7 @@ import com.google.common.cache.LoadingCache;
 public class CurrencyManager {
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static final String CACHE = "CACHE";
-  
+
   private LoadingCache<String, Map<Integer, CryptopiaCurrency>> graphs =
       CacheBuilder.newBuilder().expireAfterWrite(10, TimeUnit.MINUTES)
           .build(new CacheLoader<String, Map<Integer, CryptopiaCurrency>>() {
@@ -43,11 +45,16 @@ public class CurrencyManager {
         .map(node -> new CryptopiaCurrency(node)).collect(Collectors.toMap(k -> k.getId(), v -> v));
   }
 
-  public CryptopiaCurrency getCurrency(int currencyId){
-    return graphs.getIfPresent(CACHE).get(currencyId);
+  public CryptopiaCurrency getCurrency(int currencyId) throws ExecutionException {
+    return graphs.get(CACHE).get(currencyId);
   }
-  
-  public Collection<CryptopiaCurrency> getCurrencies(){
-    return graphs.getIfPresent(CACHE).values();
+
+  public Collection<CryptopiaCurrency> getCurrencies() throws ExecutionException {
+    return graphs.get(CACHE).values();
+  }
+
+  public Optional<CryptopiaCurrency> getCurrency(String symbol) throws ExecutionException {
+    return graphs.get(CACHE).values().stream().filter(c -> c.getSymbol().equals(symbol))
+        .findFirst();
   }
 }

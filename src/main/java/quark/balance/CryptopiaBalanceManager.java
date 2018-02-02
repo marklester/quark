@@ -10,11 +10,12 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Maps;
 
+import quark.CryptopiaCurrency;
 import quark.CryptopiaGetter;
 import quark.CurrencyManager;
 import quark.model.Balance;
 
-public class CryptopiaBalanceManager implements BalanceListing{
+public class CryptopiaBalanceManager implements BalanceListing {
   private static final String CACHE = "CACHE";
 
   private LoadingCache<String, Map<Integer, Balance>> cache =
@@ -51,5 +52,10 @@ public class CryptopiaBalanceManager implements BalanceListing{
       balances.put(balance.getCurrencyId(), balance);
     }
     return balances;
+  }
+
+  @Override
+  public Balance getBalance(CryptopiaCurrency currency) {
+    return getBalance(currency.getId());
   }
 }

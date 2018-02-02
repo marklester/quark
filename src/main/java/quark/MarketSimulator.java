@@ -1,15 +1,70 @@
 package quark;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Iterator;
+import java.util.Set;
 
-public class MarketSimulator {
-  Duration tickRate;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
 
-  public MarketSimulator(Duration tickRate) {
+import quark.db.OrderDAO;
+import quark.db.OrderFields;
+import quark.db.PGRecordMapper;
+import quark.db.PostgresOrderDAO;
+import quark.orders.Order;
+
+public class MarketSimulator implements Iterable<LocalDateTime>{
+  private Duration tickRate;
+  private DSLContext ctx;
+  private String tempTableName;
+  private OrderDAO sourceDao;
+  private PostgresOrderDAO destDao;
+  
+  public MarketSimulator(DSLContext ctx,Duration tickRate,OrderDAO sourceDao) {
     this.tickRate = tickRate;
+    this.ctx = ctx;
+    this.tempTableName = "msorders";
+    this.sourceDao = sourceDao;
+    prepare();
+  }
+  
+  public void prepare() {
+    String query = String.format("CREATE TEMPORARY TABLE %s AS SELECT * FROM %s WITH NO DATA",
+        tempTableName, OrderFields.ORDERS.getName());
+    ctx.execute(query);
+    destDao = new PostgresOrderDAO(ctx, new PGRecordMapper(),DSL.table(tempTableName));
+  }
+  
+  @Override
+  public Iterator<LocalDateTime> iterator() {
+    return new BatchInsertIterator(new OrderBatch(sourceDao, tickRate), destDao);
   }
 
-  public void tick() {
-
+  public OrderDAO getOrderDao() {
+    return destDao;
   }
+}
+
+
+class BatchInsertIterator implements Iterator<LocalDateTime> {
+  private Iterator<Set<Order>> orderIterator;
+  private OrderDAO destDao;
+
+  public BatchInsertIterator(OrderBatch orderBatch, OrderDAO destDao) {
+    this.orderIterator = orderBatch.iterator();
+    this.destDao = destDao;
+  }
+
+  @Override
+  public boolean hasNext() {
+    return orderIterator.hasNext();
+  }
+
+  @Override
+  public LocalDateTime next() {
+    destDao.insert(orderIterator.next());
+    return destDao.getLastOrderDate();
+  }
+
 }

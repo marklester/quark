@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Stopwatch;
 
+import quark.CurrencyManager;
 import quark.MarketManager;
 import quark.TradePairManager;
 import quark.db.DatabaseManager;
@@ -25,7 +26,7 @@ public class MarketHistory {
   private static final Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);
   ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
   private ExecutorCompletionService<Boolean> executor =
-      new ExecutorCompletionService<>(Executors.newFixedThreadPool(5));
+      new ExecutorCompletionService<>(Executors.newFixedThreadPool(7));
 
   private DatabaseManager dbManager;
   private MarketManager mktManager;
@@ -70,7 +71,7 @@ public class MarketHistory {
         LOGGER.error("could not take", e);
       }
     }
-    LOGGER.info("took {} mins", total.stop().elapsed(TimeUnit.SECONDS));
+    LOGGER.info("took {}", total.stop());
   }
 
   private LocalDateTime getLastOrderDate() {
@@ -79,7 +80,8 @@ public class MarketHistory {
 
   public static void main(String args[]) throws Exception {
     DatabaseManager dbManager = new PostgresDatabaseManager();
-    TradePairManager tradePairManager = TradePairManager.create();
+    CurrencyManager currencyManager = new CurrencyManager();
+    TradePairManager tradePairManager = TradePairManager.create(currencyManager);
     MarketManager marketManager = new MarketManager(tradePairManager);
     MarketHistory fullMarketHistory = new MarketHistory(dbManager, marketManager);
     fullMarketHistory.startPolling();

@@ -3,6 +3,7 @@ package quark.db;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.time.Duration;
 
 import javax.sql.DataSource;
 
@@ -14,6 +15,8 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import quark.MarketSimulator;
 
 /**
  * Represent how to interact with the datastore 
@@ -64,5 +67,11 @@ public class CockroachDatabaseManager implements DatabaseManager{
     String ddl = Files
         .asCharSource(Paths.get("src/main/resources/quark.sql").toFile(), Charsets.UTF_8).read();
     ctx.execute(ddl);
+  }
+
+  @Override
+  public MarketSimulator getMarketSimulator(Duration tickRate) {
+    // TODO Auto-generated method stub
+    return null;
   }
 }

@@ -25,4 +25,6 @@ public interface OrderDAO {
   
   Set<Order> getOrders(int tpId);
   Stream<Order> getOrders();
+
+  LocalDateTime getFirstOrderDate();
 }
