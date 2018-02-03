@@ -16,7 +16,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -26,16 +28,21 @@ import org.jooq.Field;
 import org.jooq.InsertReturningStep;
 import org.jooq.Record;
 import org.jooq.Record1;
+import org.jooq.Record2;
 import org.jooq.RecordMapper;
+import org.jooq.Result;
+import org.jooq.SelectConditionStep;
 import org.jooq.Table;
 import org.jooq.exception.DataAccessException;
 import org.jooq.impl.DSL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 
 import quark.orders.Order;
+import quark.orders.Order.OrderType;
 
 public class PostgresOrderDAO implements OrderDAO {
   private static Logger LOGGER = LoggerFactory.getLogger(PostgresOrderDAO.class);
@@ -71,7 +78,7 @@ public class PostgresOrderDAO implements OrderDAO {
 
   public void insert(Collection<Order> orders) {
     try {
-      LOGGER.info("inserting {} records", orders.size());
+      LOGGER.debug("inserting {} records", orders.size());
       List<InsertReturningStep<Record>> queries =
           orders.stream().map(order -> createQuery(order)).collect(Collectors.toList());
       ctx.batch(queries).execute();
@@ -93,9 +100,30 @@ public class PostgresOrderDAO implements OrderDAO {
     Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
     Field<BigDecimal> price = OrderFields.PRICE;
 
-    Record1<BigDecimal> result = ctx.select(DSL.avg(price)).from(table)
-        .where(tradePairField.eq(tradePairId).and(dateField.between(start, end))).fetchOne();
-    return result.value1();
+    Record1<BigDecimal> result =
+        ctx.select(DSL.avg(price)).from(table).where(tradePairField.eq(tradePairId)
+            .and(dateField.greaterOrEqual(start).and(dateField.lessOrEqual(end)))).fetchOne();
+    return MoreObjects.firstNonNull(result.value1(), new BigDecimal(0));
+  }
+
+  @Override
+  public Map<Integer, BigDecimal> getAllAvg(Duration overTime) {
+    LocalDateTime ldtNow = LocalDateTime.now();
+    LocalDateTime dtFut = ldtNow.minus(overTime);
+    Timestamp end = Timestamp.valueOf(ldtNow);
+    Timestamp start = Timestamp.valueOf(dtFut);
+
+    Field<Timestamp> dateField = OrderFields.ORDER_DATE;
+    Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
+    Field<BigDecimal> price = OrderFields.PRICE;
+
+    Result<Record2<Integer, BigDecimal>> result =
+        ctx.select(OrderFields.TRADE_PAIR_ID, DSL.avg(price)).from(table)
+            .where(dateField.greaterOrEqual(start).and(dateField.lessOrEqual(end)))
+            .groupBy(OrderFields.TRADE_PAIR_ID).fetch();
+    Map<Integer, BigDecimal> map =
+        result.stream().collect(Collectors.toMap(k -> k.value1(), v -> v.value2()));
+    return MoreObjects.firstNonNull(map, Collections.emptyMap());
   }
 
   @Override
@@ -107,7 +135,7 @@ public class PostgresOrderDAO implements OrderDAO {
     }
     return result.getTimestamp();
   }
-  
+
   @Override
   public LocalDateTime getFirstOrderDate() {
     Order result =
@@ -147,5 +175,15 @@ public class PostgresOrderDAO implements OrderDAO {
   @Override
   public Stream<Order> getOrders() {
     return ctx.selectFrom(table).stream().map(r -> mapper.map(r));
+  }
+
+  @Override
+  public int getOrderCount(int tpId, OrderType type) {
+    SelectConditionStep<Record1<Integer>> query =
+        ctx.selectCount().from(OrderFields.ORDERS).where(OrderFields.TRADE_PAIR_ID.eq(tpId));
+    if (type == OrderType.BUY || type == OrderType.SELL) {
+      query = query.and(OrderFields.ORDER_TYPE.eq(type.symbol));
+    }
+    return query.fetchOne().value1();
   }
 }

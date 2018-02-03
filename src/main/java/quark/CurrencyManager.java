@@ -14,6 +14,8 @@ import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,6 +24,7 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 public class CurrencyManager {
+  private static final Logger LOGGER = LoggerFactory.getLogger(CurrencyManager.class);
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static final String CACHE = "CACHE";
 
@@ -45,8 +48,13 @@ public class CurrencyManager {
         .map(node -> new CryptopiaCurrency(node)).collect(Collectors.toMap(k -> k.getId(), v -> v));
   }
 
-  public CryptopiaCurrency getCurrency(int currencyId) throws ExecutionException {
-    return graphs.get(CACHE).get(currencyId);
+  public CryptopiaCurrency getCurrency(int currencyId) {
+    try {
+      return graphs.get(CACHE).get(currencyId);
+    } catch (ExecutionException e) {
+      LOGGER.error("could not retrieve cached currencies", e);
+    }
+    return CryptopiaCurrency.UNKNOWN;
   }
 
   public Collection<CryptopiaCurrency> getCurrencies() throws ExecutionException {

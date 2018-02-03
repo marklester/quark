@@ -1,6 +1,6 @@
 package quark.model;
 
 public class Currencies {
-  public static Currency GOBYTE = new Currency("gobyte", "GBX");
-  public static Currency TREZARCOIN = new Currency("trezarcoin", "TZC");
+  public static SimpleCurrency GOBYTE = new SimpleCurrency("gobyte", "GBX");
+  public static SimpleCurrency TREZARCOIN = new SimpleCurrency("trezarcoin", "TZC");
 }

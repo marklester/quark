@@ -31,19 +31,21 @@ class OrderIterator implements Iterator<Set<Order>> {
   private OrderDAO orderDao;
   private Duration batchSize;
   private Set<Order> orders;
+  private LocalDateTime bookEnd;
 
   public OrderIterator(OrderDAO orderDao, Duration batchSize) {
     this.orderDao = orderDao;
     this.batchSize = batchSize;
     bookMark = orderDao.getFirstOrderDate();
+    bookEnd = orderDao.getLastOrderDate();
   }
 
   @Override
   public boolean hasNext() {
     LocalDateTime nextBookMark = bookMark.plus(batchSize);
     orders = orderDao.getOrdersFrom(bookMark, nextBookMark);
-    if (orders.isEmpty()) {
-      orders = null;
+    bookMark = nextBookMark;
+    if(nextBookMark.compareTo(bookEnd)>0) {
       return false;
     }
     return true;

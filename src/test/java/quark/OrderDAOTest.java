@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Set;
 
 import org.hamcrest.Matchers;
@@ -20,8 +21,8 @@ import com.google.common.collect.Lists;
 import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.SingleInstancePostgresRule;
 
-import quark.db.OrderDAO;
 import quark.db.CockroachDatabaseManager;
+import quark.db.OrderDAO;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 import quark.orders.StandardOrder;
@@ -149,8 +150,14 @@ public class OrderDAOTest {
 
   @Test
   public void testMovingAverage() {
+
     int tpId = 1;
     LocalDateTime time = LocalDateTime.now();
+
+    // should be 0 avg for now records
+    BigDecimal avgFromDb = dao.getAvg(tpId, Duration.ofHours(1));
+    Assert.assertThat(avgFromDb, Matchers.comparesEqualTo(new BigDecimal(0)));
+
     BigDecimal sum = new BigDecimal(0);
     int range = 10;
     for (int i = 0; i < range; i++) {
@@ -161,7 +168,52 @@ public class OrderDAOTest {
       dao.insert(order);
     }
     BigDecimal avg = sum.divide(new BigDecimal(10));
-    BigDecimal avgFromDb = dao.getAvg(tpId, Duration.ofHours(1));
+    avgFromDb = dao.getAvg(tpId, Duration.ofHours(1));
     Assert.assertThat(avgFromDb, Matchers.comparesEqualTo(avg));
+  }
+
+  @Test
+  public void testMovingAverageAll() {
+
+    int tpId = 1;
+    LocalDateTime time = LocalDateTime.now();
+
+    // should be 0 avg for now records
+    Map<Integer, BigDecimal> avgFromDb = dao.getAllAvg(Duration.ofHours(1));
+    Assert.assertEquals(0, avgFromDb.size());
+
+    BigDecimal sum = new BigDecimal(0);
+    int range = 10;
+    for (int i = 0; i < range; i++) {
+      BigDecimal d = new BigDecimal(i);
+      sum = sum.add(d);
+      StandardOrder order = new StandardOrder("hash" + i, tpId, OrderType.BUY, "", d, d, d,
+          time.minus(Duration.ofMinutes(1)));
+      dao.insert(order);
+    }
+    BigDecimal avg = sum.divide(new BigDecimal(10));
+
+    avgFromDb = dao.getAllAvg(Duration.ofHours(1));
+    Assert.assertEquals(1, avgFromDb.size());
+    BigDecimal actual = avgFromDb.get(tpId);
+    Assert.assertThat(actual, Matchers.comparesEqualTo(avg));
+  }
+
+  @Test
+  public void testOrderCount() {
+    int tpId = 1;
+
+    LocalDateTime dt = LocalDateTime.now();
+    LocalDateTime dtfuture = dt.plus(Duration.ofMinutes(10));
+
+    Order order = new StandardOrder("hash1", tpId, OrderType.BUY, "label", new BigDecimal(0),
+        new BigDecimal(0), new BigDecimal(0), dt);
+    Order order2 = new StandardOrder("hash2", tpId, OrderType.SELL, "label", new BigDecimal(0),
+        new BigDecimal(0), new BigDecimal(0), dtfuture);
+    dao.insert(order);
+    dao.insert(order2);
+    Assert.assertEquals(1, dao.getOrderCount(tpId, OrderType.BUY));
+    Assert.assertEquals(1, dao.getOrderCount(tpId, OrderType.SELL));
+    Assert.assertEquals(2, dao.getOrderCount(tpId, OrderType.ALL));
   }
 }

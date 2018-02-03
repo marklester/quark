@@ -1,7 +1,11 @@
 package quark;
 
+import java.util.Collection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Stopwatch;
 
 import quark.algorithms.Algorithm;
 import quark.model.Market;
@@ -11,17 +15,27 @@ public class AlgoRunner {
   private static Logger LOGGER = LoggerFactory.getLogger(AlgoRunner.class);
   private Algorithm algo;
   private Trader trader;
-  public AlgoRunner(Trader trader,Algorithm algo) {
+  private Collection<Market> markets;
+
+  public AlgoRunner(Trader trader, Algorithm algo) throws Exception {
     this.trader = trader;
     this.algo = algo;
+    markets = trader.getMarketManager().getMarkets(10000);
   }
-  public void run(){
+
+  public void run() {
+    Stopwatch sw = Stopwatch.createStarted();
     try {
-      for(Market market: trader.getMarketManager().getMarkets()) {
+
+      LOGGER.info("applying algorith to {} markets", markets.size());
+      for (Market market : markets) {
+
         algo.apply(market, trader);
       }
     } catch (Exception e) {
-      LOGGER.error("could not run algo",e);
+      LOGGER.error("could not run algo", e);
     }
+
+    LOGGER.info("algo took {} to {}", algo, sw);
   }
 }

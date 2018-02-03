@@ -34,12 +34,18 @@ public class TradePair {
   public String getBaseSymbol() {
     return node.get("BaseSymbol").asText();
   }
-  
-  public CryptopiaCurrency getBuyIntoCurrency() throws ExecutionException{
+
+  public CryptopiaCurrency getCurrency() throws ExecutionException {
     return currencyManager.getCurrency(getSymbol()).get();
   }
-  
-  public CryptopiaCurrency getSellToCurrency() throws ExecutionException{
+
+  /**
+   * base is the market that alt coins can be bought in currency cc has btc,usdt,nzdt
+   * 
+   * @return
+   * @throws ExecutionException
+   */
+  public CryptopiaCurrency getBaseCurrency() throws ExecutionException {
     return currencyManager.getCurrency(getBaseSymbol()).get();
   }
 

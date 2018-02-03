@@ -30,7 +30,7 @@ public class MarketSimulator implements Iterable<LocalDateTime>{
   }
   
   public void prepare() {
-    String query = String.format("CREATE TEMPORARY TABLE %s AS SELECT * FROM %s WITH NO DATA",
+    String query = String.format("CREATE TEMPORARY TABLE %s (like %s including all)",
         tempTableName, OrderFields.ORDERS.getName());
     ctx.execute(query);
     destDao = new PostgresOrderDAO(ctx, new PGRecordMapper(),DSL.table(tempTableName));

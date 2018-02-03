@@ -22,7 +22,7 @@ import com.google.common.collect.Lists;
 import quark.ParseException;
 import quark.model.CoinMarketCapMoney;
 import quark.model.Currencies;
-import quark.model.Currency;
+import quark.model.SimpleCurrency;
 import quark.model.MonetaryAmount;
 import quark.model.StandardMoney;
 import quark.model.WalletId;
@@ -82,9 +82,9 @@ public class MiningMonitor {
 class MiningStatus {
   private JsonNode node;
   private MonetaryAmount currentPrice;
-  private Currency currency;
+  private SimpleCurrency currency;
 
-  MiningStatus(JsonNode node, Currency currency) throws ParseException {
+  MiningStatus(JsonNode node, SimpleCurrency currency) throws ParseException {
     this.node = node;
     this.currency = currency;
     this.currentPrice = CoinMarketCapMoney.create(currency.getName());

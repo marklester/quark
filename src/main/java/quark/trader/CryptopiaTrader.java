@@ -1,22 +1,26 @@
 package quark.trader;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import quark.CurrencyManager;
 import quark.MarketManager;
 import quark.TradePairManager;
+import quark.balance.BalanceListing;
 import quark.balance.BalanceManager;
 import quark.balance.CryptopiaBalanceManager;
 import quark.db.DatabaseManager;
+import quark.db.OrderDAO;
 import quark.model.OpenOrder;
 import quark.model.TradePair;
+import quark.orders.Order.OrderType;
 import quark.populator.MarketHistory;
 
 public class CryptopiaTrader implements Trader {
   private MarketHistory marketHistory;
   private MarketManager marketManager;
   private CurrencyManager currencyManager;
-  private BalanceManager balanceManager;
+  private BalanceListing balanceManager;
   private DatabaseManager dbManager;
 
   public CryptopiaTrader(DatabaseManager dbManager, CurrencyManager currencyManager,
@@ -28,7 +32,7 @@ public class CryptopiaTrader implements Trader {
   }
 
   public BalanceManager getBalanceManager() throws Exception {
-    return balanceManager;
+    return null;
   }
 
   public CurrencyManager getCurrencyManager() {
@@ -63,5 +67,29 @@ public class CryptopiaTrader implements Trader {
   public void order(TradePair tp, double d) {
     // TODO Auto-generated method stub
 
+  }
+
+  @Override
+  public void buy(TradePair tpId, double d) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void sell(TradePair tpId, double d) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void order(TradePair tradePair, OrderType type, BigDecimal price, BigDecimal amount) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public OrderDAO getOrderDao() {
+    // TODO Auto-generated method stub
+    return null;
   }
 }

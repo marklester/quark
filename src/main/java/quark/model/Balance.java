@@ -4,62 +4,67 @@ import java.math.BigDecimal;
 import java.util.concurrent.ExecutionException;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.google.common.base.MoreObjects;
 
 import quark.CryptopiaCurrency;
 import quark.CurrencyManager;
 
 /**
-{
-  "Success":true,
-  "Error":null,
-  "Data":[
-          {
-              "CurrencyId":1,
-              "Symbol":"BTC",
-              "Total":"10300",
-              "Available":"6700.00000000",
-              "Unconfirmed":"2.00000000",
-              "HeldForTrades":"3400,00000000",
-              "PendingWithdraw":"200.00000000",
-              "Address":"4HMjBARzTNdUpXCYkZDTHq8vmJQkdxXyFg",
-      "BaseAddress": "ZDTHq8vmJQkdxXyFgZDTHq8vmJQkdxXyFgZDTHq8vmJQkdxXyFg",
-              "Status":"OK",
-              "StatusMessage":""
-          },
-          {
-              ...
-          }
-         ]
-}**/
+ * { "Success":true, "Error":null, "Data":[ { "CurrencyId":1, "Symbol":"BTC", "Total":"10300",
+ * "Available":"6700.00000000", "Unconfirmed":"2.00000000", "HeldForTrades":"3400,00000000",
+ * "PendingWithdraw":"200.00000000", "Address":"4HMjBARzTNdUpXCYkZDTHq8vmJQkdxXyFg", "BaseAddress":
+ * "ZDTHq8vmJQkdxXyFgZDTHq8vmJQkdxXyFgZDTHq8vmJQkdxXyFg", "Status":"OK", "StatusMessage":"" }, { ...
+ * } ] }
+ **/
 public class Balance {
-  CryptopiaCurrency currency;
+  private final CryptopiaCurrency currency;
+  private final int currencyId;
+  private final String symbol;
+  private final BigDecimal available;
+  
+  public Balance(CryptopiaCurrency currency, BigDecimal available) {
+    this.currency = currency;    
+    this.currencyId = currency.getId();
+    this.symbol = currency.getSymbol();
+    this.available = available;
+  }
 
-  private JsonNode currencyNode;
+  public Balance(JsonNode currencyNode, CurrencyManager currencyManager) throws ExecutionException {
+    this.currencyId = currencyNode.get("CurrencyId").asInt();
+    this.currency = currencyManager.getCurrency(currencyId);
+    this.symbol = currencyNode.get("Symbol").asText();
+    this.available = new BigDecimal(currencyNode.get("Available").asText());
 
-  private CurrencyManager currencyManager;
-
-  public Balance(JsonNode currencyNode, CurrencyManager currencyManager) {
-    this.currencyNode = currencyNode;
-    this.currencyManager = currencyManager;
   }
 
   public int getCurrencyId() {
-    return currencyNode.get("CurrencyId").asInt();
+    return currencyId;
   }
 
   public String getSymbol() {
-    return currencyNode.get("Symbol").asText();
+    return symbol;
   }
 
-  public CryptopiaCurrency getCurrency() throws ExecutionException {
-    return currencyManager.getCurrency(getCurrencyId());
+  public CryptopiaCurrency getCurrency() {
+    return currency;
   }
 
   public BigDecimal getAvailable() {
-    return new BigDecimal(currencyNode.get("Available").asText());
+    return available;
   }
-
+  
+  public Balance substract(BigDecimal amountOfChange){
+     BigDecimal newAmount = available.subtract(amountOfChange);
+     return new Balance(getCurrency(), newAmount);
+  }
+  
+  public Balance add(BigDecimal amountOfChange){
+    BigDecimal newAmount = available.add(amountOfChange);
+    return new Balance(getCurrency(), newAmount);
+ }
+  
   public String toString() {
-    return currencyNode.toString();
+    return MoreObjects.toStringHelper(this).add("currency", getCurrency().getName())
+        .add("available", getAvailable()).toString();
   }
 }

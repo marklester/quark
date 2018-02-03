@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
 
+import quark.model.Currency;
+
 /**
  * { "Success":true, "Message":null, "Data":[ { "Id":1, "Name":"Bitcoin", "Symbol":"BTC",
  * "Algorithm":"sha256" "WithdrawFee":0.00010000, "MinWithdraw":0.00040000, "MinBaseTrade":0.0,
@@ -12,7 +14,9 @@ import com.google.common.base.MoreObjects;
  * "StatusMessage":"Unable to sync network", "ListingStatus": "Active" }, { ... } ] }
  *
  */
-public class CryptopiaCurrency {
+public class CryptopiaCurrency implements Currency {
+  public static final CryptopiaCurrency UNKNOWN = new CryptopiaCurrency(-1, "UNKOWN", "", "", "",
+      "", new BigDecimal(0), new BigDecimal(0), new BigDecimal(0));
   private final int id;
   private final String name;
   private final String symbol;
@@ -33,6 +37,20 @@ public class CryptopiaCurrency {
     this.minWithDraw = new BigDecimal(node.get("MinWithdraw").asText());
     this.minBaseTrade = new BigDecimal(node.get("MinBaseTrade").asText());
     this.withdrawFee = new BigDecimal(node.get("WithdrawFee").asText());
+  }
+
+  public CryptopiaCurrency(int id, String name, String symbol, String status, String statusMessage,
+      String listingStatus, BigDecimal minWithDraw, BigDecimal withdrawFee,
+      BigDecimal minBaseTrade) {
+    this.id = id;
+    this.name = name;
+    this.symbol = symbol;
+    this.status = status;
+    this.statusMessage = statusMessage;
+    this.listingStatus = listingStatus;
+    this.minWithDraw = minWithDraw;
+    this.withdrawFee = withdrawFee;
+    this.minBaseTrade = minBaseTrade;
   }
 
   public int getId() {

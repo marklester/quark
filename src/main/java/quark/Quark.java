@@ -1,5 +1,7 @@
 package quark;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -7,10 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import quark.algorithms.MovingAverageAlgo;
+import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
 import quark.db.DatabaseManager;
 import quark.db.PostgresDatabaseManager;
-import quark.trader.TestTrader;
+import quark.model.Balance;
+import quark.model.CoinMarketCapMoney;
+import quark.model.MonetaryAmount;
+import quark.trader.MockTrader;
 import quark.trader.Trader;
 
 public class Quark {
@@ -26,16 +32,26 @@ public class Quark {
     // new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
     // MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
 
+    BalanceManager balanceManager = new MapBalanceManager(currencyManager);
 
-    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofMinutes(15));
-    Trader testTrader =
-        new TestTrader(simulator.getOrderDao(), new MapBalanceManager(), marketManager);
+    MonetaryAmount money = CoinMarketCapMoney.create("bitcoin");
+    BigDecimal startingFund =
+        new BigDecimal(100).divide(money.getAmount(), 10, RoundingMode.HALF_EVEN);
+    LOGGER.info("starting with {}",startingFund);
+    CryptopiaCurrency currency = currencyManager.getCurrency("BTC").get();
+    Balance balance = new Balance(currency, startingFund);
+    balanceManager.setBalance(balance);
+
+    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofMinutes(120));
+
+    Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 
     AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo());
+    System.out.println(testTrader.getBalanceManager());
     for (LocalDateTime time : simulator) {
       LOGGER.info("running algo at {}", time);
       runner.run();
     }
-
+    System.out.println(testTrader.getBalanceManager());
   }
 }

@@ -24,7 +24,9 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
+import quark.db.OrderDAO;
 import quark.model.Market;
+import quark.orders.Order.OrderType;
 import quark.populator.MarketHistory;
 
 public class MarketManager {
@@ -74,7 +76,19 @@ public class MarketManager {
   }
 
   public Collection<Market> getMarkets() throws ExecutionException {
-      return cache.get(CACHE).values();
+    return cache.get(CACHE).values();
+  }
+
+  public Collection<Market> getMarkets(double minVolume) throws ExecutionException {
+    return cache.get(CACHE).values().stream().filter(m -> m.getVolume() > minVolume)
+        .collect(Collectors.toSet());
+  }
+
+  public Collection<Market> getMarketsWithMinOrders(OrderDAO orderDao, double orders)
+      throws ExecutionException {
+    return cache.get(CACHE).values().stream()
+        .filter(m -> orderDao.getOrderCount(m.getTradePair().getId(), OrderType.ALL) >= orders)
+        .collect(Collectors.toSet());
   }
 
   Market updateMarket(String label, TradePairManager tradePairs) throws Exception {

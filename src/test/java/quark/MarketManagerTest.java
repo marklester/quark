@@ -6,7 +6,8 @@ import org.junit.Test;
 public class MarketManagerTest {
   @Test
   public void testMarketManager() throws Exception{
-    TradePairManager tradePairManager = TradePairManager.create();
+    CurrencyManager currencyManager = new CurrencyManager();
+    TradePairManager tradePairManager = TradePairManager.create(currencyManager);
     MarketManager manager = new MarketManager(tradePairManager);
     Assert.assertTrue(manager.getMarkets().size()>0);
   }

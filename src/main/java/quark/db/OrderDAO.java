@@ -4,10 +4,12 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
 import quark.orders.Order;
+import quark.orders.Order.OrderType;
 
 public interface OrderDAO {
   
@@ -24,7 +26,12 @@ public interface OrderDAO {
   Order getLastOrderFor(int tpId);
   
   Set<Order> getOrders(int tpId);
+  
+  int getOrderCount(int tpId, OrderType type);
+  
   Stream<Order> getOrders();
 
   LocalDateTime getFirstOrderDate();
+
+  Map<Integer, BigDecimal> getAllAvg(Duration overTime);
 }
