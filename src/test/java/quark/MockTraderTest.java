@@ -33,8 +33,8 @@ public class MockTraderTest {
     TradePairManager tpManager = TradePairManager.create(currencyManager);
     MarketManager marketManager = new MarketManager(tpManager);
      
-    BalanceManager balanceManager = new MapBalanceManager(currencyManager);
-    balanceManager.setBalance(new Balance(currencyManager.getCurrency("TZC").get(),new  BigDecimal(10000)));
+    BalanceManager balanceManager = new MapBalanceManager(currencyManager,10);
+    balanceManager.putBalance(new Balance(currencyManager.getCurrency("TZC").get(),new  BigDecimal(10000)));
 
     MockTrader trader = new MockTrader(orderDAO, balanceManager, marketManager);
 
@@ -61,8 +61,8 @@ public class MockTraderTest {
     TradePairManager tpManager = TradePairManager.create(currencyManager);
     MarketManager marketManager = new MarketManager(tpManager);
      
-    BalanceManager balanceManager = new MapBalanceManager(currencyManager);
-    balanceManager.setBalance(new Balance(currencyManager.getCurrency("BTC").get(),new  BigDecimal(1)));
+    BalanceManager balanceManager = new MapBalanceManager(currencyManager,10);
+    balanceManager.putBalance(new Balance(currencyManager.getCurrency("BTC").get(),new  BigDecimal(1)));
 
     MockTrader trader = new MockTrader(orderDAO, balanceManager, marketManager);
 

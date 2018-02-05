@@ -58,4 +58,15 @@ public class CryptopiaBalanceManager implements BalanceListing {
   public Balance getBalance(CryptopiaCurrency currency) {
     return getBalance(currency.getId());
   }
+
+  @Override
+  public int size() {
+    return 0;
+  }
+
+  @Override
+  public String summary() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 }

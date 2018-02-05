@@ -40,13 +40,10 @@ public class CoinMarketCapMoney implements MonetaryAmount {
       HttpGet get = new HttpGet(currencyUrl);
       HttpResponse response = client.execute(get);
       if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-        throw new HttpException("could not retrieve info:" + response.getStatusLine());
+        throw new HttpException(
+            "could not retrieve info for:" + currencyName + ":" + response.getStatusLine());
       }
       JsonNode jsonNode = mapper.readTree(response.getEntity().getContent());
-      if (LOGGER.isDebugEnabled()) {
-        LOGGER.debug("jsonMessage:{}", jsonNode);
-      }
-
       JsonNode price = jsonNode.get(0);
       return new CoinMarketCapMoney(price);
     } catch (IOException | HttpException ex) {

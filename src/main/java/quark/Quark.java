@@ -32,17 +32,17 @@ public class Quark {
     // new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
     // MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
 
-    BalanceManager balanceManager = new MapBalanceManager(currencyManager);
+    BalanceManager balanceManager = new MapBalanceManager(currencyManager, 10);
 
     MonetaryAmount money = CoinMarketCapMoney.create("bitcoin");
     BigDecimal startingFund =
         new BigDecimal(100).divide(money.getAmount(), 10, RoundingMode.HALF_EVEN);
-    LOGGER.info("starting with {}",startingFund);
+    LOGGER.info("starting with {}", startingFund);
     CryptopiaCurrency currency = currencyManager.getCurrency("BTC").get();
     Balance balance = new Balance(currency, startingFund);
-    balanceManager.setBalance(balance);
-
-    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofMinutes(120));
+    balanceManager.putBalance(balance);
+    String startSummary = balanceManager.summary();
+    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofHours(4));
 
     Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 
@@ -52,6 +52,7 @@ public class Quark {
       LOGGER.info("running algo at {}", time);
       runner.run();
     }
-    System.out.println(testTrader.getBalanceManager());
+    System.out.println("START" + startSummary);
+    System.out.println("END" + testTrader.getBalanceManager().summary());
   }
 }

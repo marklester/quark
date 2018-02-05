@@ -114,7 +114,6 @@ public class PostgresOrderDAO implements OrderDAO {
     Timestamp start = Timestamp.valueOf(dtFut);
 
     Field<Timestamp> dateField = OrderFields.ORDER_DATE;
-    Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
     Field<BigDecimal> price = OrderFields.PRICE;
 
     Result<Record2<Integer, BigDecimal>> result =

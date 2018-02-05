@@ -25,8 +25,9 @@ public class AlgoRunner {
 
   public void run() {
     Stopwatch sw = Stopwatch.createStarted();
+    
     try {
-
+      algo.init(trader);
       LOGGER.info("applying algorith to {} markets", markets.size());
       for (Market market : markets) {
 

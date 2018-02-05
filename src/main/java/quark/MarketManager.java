@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.google.common.collect.Maps;
 
 import quark.db.OrderDAO;
 import quark.model.Market;
@@ -62,11 +62,18 @@ public class MarketManager {
       if (jsonNode.get("Success").asBoolean() == false) {
         throw new ParseException("retreival failure:" + jsonNode, null);
       }
-
-      return StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
-          .map(marketNode -> new Market(marketNode, tpManager))
-          .filter(market -> !market.getTradePair().isClosing())
-          .collect(Collectors.toMap(k -> k.getLabel(), v -> v));
+      Map<String, Market> markets = Maps.newHashMap();
+      for (JsonNode node : jsonNode.get("Data")) {
+        try {
+          Market market = new Market(node, tpManager);
+          if (!market.getTradePair().isClosing()) {
+            markets.put(market.getLabel(), market);
+          }
+        } catch (Exception e) {
+          LOGGER.error("Could not create market for node: {}", node);
+        }
+      }
+      return markets;
     }
     throw new ParseException("Cound not parse json " + response.getStatusLine(), null);
   }

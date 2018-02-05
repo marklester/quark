@@ -6,6 +6,11 @@ import java.time.ZoneOffset;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Stopwatch;
+
 import quark.db.OrderDAO;
 import quark.orders.Order;
 
@@ -27,7 +32,8 @@ public class OrderBatch implements Iterable<Set<Order>> {
 
 
 class OrderIterator implements Iterator<Set<Order>> {
-  LocalDateTime bookMark = LocalDateTime.ofEpochSecond(0, 0, ZoneOffset.UTC);
+  private static final Logger LOGGER = LoggerFactory.getLogger(OrderIterator.class);
+  private LocalDateTime bookMark = LocalDateTime.ofEpochSecond(0, 0, ZoneOffset.UTC);
   private OrderDAO orderDao;
   private Duration batchSize;
   private Set<Order> orders;
@@ -42,10 +48,12 @@ class OrderIterator implements Iterator<Set<Order>> {
 
   @Override
   public boolean hasNext() {
+    Stopwatch sw = Stopwatch.createStarted();
     LocalDateTime nextBookMark = bookMark.plus(batchSize);
     orders = orderDao.getOrdersFrom(bookMark, nextBookMark);
     bookMark = nextBookMark;
-    if(nextBookMark.compareTo(bookEnd)>0) {
+    LOGGER.info("next batch took {}", sw);
+    if (nextBookMark.compareTo(bookEnd) > 0) {
       return false;
     }
     return true;

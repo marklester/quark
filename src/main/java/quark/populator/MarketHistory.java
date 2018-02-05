@@ -45,7 +45,7 @@ public class MarketHistory {
       } catch (ExecutionException e) {
         LOGGER.error("could not store orders", e);
       }
-    }, 0, 15, TimeUnit.MINUTES);
+    }, 0, 20, TimeUnit.MINUTES);
   }
 
 

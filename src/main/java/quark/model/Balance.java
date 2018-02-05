@@ -5,9 +5,11 @@ import java.util.concurrent.ExecutionException;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
 import quark.CryptopiaCurrency;
 import quark.CurrencyManager;
+import quark.ParseException;
 
 /**
  * { "Success":true, "Error":null, "Data":[ { "CurrencyId":1, "Symbol":"BTC", "Total":"10300",
@@ -21,9 +23,10 @@ public class Balance {
   private final int currencyId;
   private final String symbol;
   private final BigDecimal available;
-  
+
   public Balance(CryptopiaCurrency currency, BigDecimal available) {
-    this.currency = currency;    
+    Preconditions.checkNotNull(currency, "Currency can't be null");
+    this.currency = currency;
     this.currencyId = currency.getId();
     this.symbol = currency.getSymbol();
     this.available = available;
@@ -52,17 +55,21 @@ public class Balance {
   public BigDecimal getAvailable() {
     return available;
   }
-  
-  public Balance substract(BigDecimal amountOfChange){
-     BigDecimal newAmount = available.subtract(amountOfChange);
-     return new Balance(getCurrency(), newAmount);
+
+  public Balance substract(BigDecimal amountOfChange) {
+    BigDecimal newAmount = available.subtract(amountOfChange);
+    return new Balance(getCurrency(), newAmount);
   }
-  
-  public Balance add(BigDecimal amountOfChange){
+
+  public Balance add(BigDecimal amountOfChange) {
     BigDecimal newAmount = available.add(amountOfChange);
     return new Balance(getCurrency(), newAmount);
- }
+  }
   
+  public MonetaryAmount toUSD() throws ParseException {
+      return CoinMarketCapMoney.create(currency.getName().toLowerCase());
+  }
+
   public String toString() {
     return MoreObjects.toStringHelper(this).add("currency", getCurrency().getName())
         .add("available", getAvailable()).toString();

@@ -18,12 +18,43 @@ import quark.CurrencyManager;
  * <code>
  */
 public class TradePair {
-  private JsonNode node;
-  private CurrencyManager currencyManager;
+  private int id;
+  private String label;
+  private String symbol;
+  private CryptopiaCurrency currency;
+  private String baseSymbol;
+  private CryptopiaCurrency baseCurrency;
+  private BigDecimal tradeFee;
+  private BigDecimal minimumTrade;
+  private BigDecimal minimumBaseTrade;
+  private String status;
+  
+  public TradePair(int id, String label, String symbol, CryptopiaCurrency currency,
+      String baseSymbol, CryptopiaCurrency baseCurrency, BigDecimal tradeFee,
+      BigDecimal minimumTrade, BigDecimal minimumBaseTrade, String status) {
+    this.id = id;
+    this.label = label;
+    this.symbol = symbol;
+    this.currency = currency;
+    this.baseSymbol = baseSymbol;
+    this.baseCurrency = baseCurrency;
+    this.tradeFee = tradeFee;
+    this.minimumTrade = minimumTrade;
+    this.minimumBaseTrade = minimumBaseTrade;
+    this.status = status;
+  }
 
-  public TradePair(JsonNode jsonNode, CurrencyManager currencyManager) {
-    this.node = jsonNode;
-    this.currencyManager = currencyManager;
+  public TradePair(JsonNode node, CurrencyManager currencyManager) throws ExecutionException {
+    this.id = node.get("Id").asInt();
+    this.symbol = node.get("Symbol").asText();
+    this.label = node.get("Label").asText();
+    this.baseSymbol = node.get("BaseSymbol").asText();
+    this.currency = currencyManager.getCurrency(symbol).get();
+    this.baseCurrency = currencyManager.getCurrency(baseSymbol).get();
+    this.tradeFee = new BigDecimal(node.get("TradeFee").asText());
+    this.minimumTrade = new BigDecimal(node.get("MinimumTrade").asText());
+    this.minimumBaseTrade = new BigDecimal(node.get("MinimumBaseTrade").asText());
+    this.status = node.get("Status").asText();
   }
 
   /**
@@ -32,11 +63,11 @@ public class TradePair {
    * @return
    */
   public String getBaseSymbol() {
-    return node.get("BaseSymbol").asText();
+    return baseSymbol;
   }
 
   public CryptopiaCurrency getCurrency() throws ExecutionException {
-    return currencyManager.getCurrency(getSymbol()).get();
+    return currency;
   }
 
   /**
@@ -46,11 +77,11 @@ public class TradePair {
    * @throws ExecutionException
    */
   public CryptopiaCurrency getBaseCurrency() throws ExecutionException {
-    return currencyManager.getCurrency(getBaseSymbol()).get();
+    return baseCurrency;
   }
 
   public BigDecimal getTradeFee() {
-    return new BigDecimal(node.get("BaseSymbol").asText());
+    return tradeFee;
   }
 
   /**
@@ -59,30 +90,30 @@ public class TradePair {
    * @return
    */
   public String getSymbol() {
-    return node.get("Symbol").asText();
+    return symbol;
   }
 
   public boolean isClosing() {
-    if (node.get("Status").asText().equals("Closing")) {
+    if (status.equals("Closing")) {
       return true;
     }
     return false;
   }
 
   public String getLabel() {
-    return node.get("Label").asText();
+    return label;
   }
 
   public int getId() {
-    return node.get("Id").asInt();
+    return id;
   }
 
   public BigDecimal getMinimumTrade() {
-    return node.get("MinimumTrade").decimalValue();
+    return minimumTrade;
   }
 
   public BigDecimal getMinimumBaseTrade() {
-    return node.get("MinimumBaseTrade").decimalValue();
+    return minimumBaseTrade;
   }
 
   public String toString() {

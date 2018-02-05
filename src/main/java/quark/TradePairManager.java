@@ -2,8 +2,6 @@ package quark;
 
 import java.util.Collection;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -11,6 +9,8 @@ import org.apache.http.ParseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +19,7 @@ import com.google.common.collect.Maps;
 import quark.model.TradePair;
 
 public class TradePairManager {
+  private static Logger LOGGER = LoggerFactory.getLogger(TradePairManager.class);
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
   public static TradePairManager create(CurrencyManager currencyManager) throws Exception {
@@ -32,17 +33,21 @@ public class TradePairManager {
     }
 
     JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
-    return new TradePairManager(jsonNode.get("Data"),currencyManager);
+    return new TradePairManager(jsonNode.get("Data"), currencyManager);
   }
 
   private Map<Integer, TradePair> tradePairs = Maps.newHashMap();
-  private CurrencyManager currencyManager;
 
-  public TradePairManager(JsonNode tradePairsJson,CurrencyManager currencyManager) {
-    this.currencyManager = currencyManager;
-    tradePairs =
-        StreamSupport.stream(tradePairsJson.spliterator(), false).map(node -> new TradePair(node,currencyManager))
-            .collect(Collectors.toMap(tpair -> tpair.getId(), tpair -> tpair));
+  public TradePairManager(JsonNode tradePairsJson, CurrencyManager currencyManager) {
+    this.tradePairs = Maps.newHashMap();
+    for (JsonNode node : tradePairsJson) {
+      try {
+        TradePair tp = new TradePair(node, currencyManager);
+        tradePairs.put(tp.getId(), tp);
+      } catch (Exception e) {
+        LOGGER.error("could not get trade pair for node {} ",node, e);
+      }
+    }
   }
 
   public TradePair getTradePair(int id) {

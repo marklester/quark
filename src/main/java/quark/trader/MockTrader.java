@@ -65,9 +65,9 @@ public class MockTrader implements Trader {
         LOGGER.info("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(),
             amount, tradePair.getMinimumTrade());
       } else {
-        balanceManager.setBalance(cashOnHand.substract(portion));
+        balanceManager.putBalance(cashOnHand.substract(portion));
         Balance boughtCoin = new Balance(tradePair.getCurrency(), amount);
-        balanceManager.setBalance(boughtCoin);
+        balanceManager.putBalance(boughtCoin);
         LOGGER.info("bought {} amount:{} price:{}", tradePair.getLabel(), amount, priceOfCoin);
       }
     } catch (ExecutionException e) {
@@ -79,7 +79,7 @@ public class MockTrader implements Trader {
   @Override
   public void sell(TradePair tradePair, double percentageOfHolding) {
 
-    LOGGER.info("selling {}% of {}", percentageOfHolding*100, tradePair);
+    LOGGER.debug("selling {}% of {}", percentageOfHolding*100, tradePair);
     try {
       Order order = getOrderDao().getLastOrderFor(tradePair.getId());
       Preconditions.checkNotNull(order,"There is no history for "+tradePair);
@@ -97,13 +97,13 @@ public class MockTrader implements Trader {
       BigDecimal amountOfBase = portion.multiply(priceOfBase);
       
       if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0) {
-        balanceManager.setBalance(holdingBalance.substract(portion));
+        balanceManager.putBalance(holdingBalance.substract(portion));
         Balance boughtCoin = new Balance(tradePair.getBaseCurrency(), amountOfBase);
-        balanceManager.setBalance(boughtCoin);
-        LOGGER.info("selling {} amount:{} price:{}", tradePair.getCurrency().getSymbol(), portion,
+        balanceManager.putBalance(boughtCoin);
+        LOGGER.debug("selling {} amount:{} price:{}", tradePair.getCurrency().getSymbol(), portion,
             priceOfBase);
       } else {
-        LOGGER.info("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(),
+        LOGGER.debug("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(),
             amountOfBase, tradePair.getMinimumBaseTrade());
       }
     } catch (ExecutionException e) {
