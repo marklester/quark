@@ -20,10 +20,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 
 import quark.ParseException;
-import quark.model.CoinMarketCapMoney;
 import quark.model.Currencies;
-import quark.model.SimpleCurrency;
+import quark.model.CurrencyLookup;
 import quark.model.MonetaryAmount;
+import quark.model.SimpleCurrency;
 import quark.model.StandardMoney;
 import quark.model.WalletId;
 
@@ -50,7 +50,8 @@ public class MiningMonitor {
       return null;
     }
     JsonNode node = mapper.readTree(response.getEntity().getContent());
-    return new MiningStatus(node, wallet.getCurrency());
+    CurrencyLookup lookup = CurrencyLookup.create();
+    return new MiningStatus(node, wallet.getCurrency(),lookup);
   }
 
   public void status() throws Exception {
@@ -84,10 +85,11 @@ class MiningStatus {
   private MonetaryAmount currentPrice;
   private SimpleCurrency currency;
 
-  MiningStatus(JsonNode node, SimpleCurrency currency) throws ParseException {
+  MiningStatus(JsonNode node, SimpleCurrency currency, CurrencyLookup lookup)
+      throws ParseException {
     this.node = node;
     this.currency = currency;
-    this.currentPrice = CoinMarketCapMoney.create(currency.getName());
+    this.currentPrice = lookup.bySymbol(currency.getSymbol());
   }
 
   MonetaryAmount getNextPayment() {
@@ -101,13 +103,14 @@ class MiningStatus {
   }
 
   BigDecimal inUsd(MonetaryAmount amt) {
-    return amt.getAmount().multiply(currentPrice.getAmount());
+    return amt.getValue().multiply(currentPrice.getValue());
   }
 
   public String toString() {
     MonetaryAmount nextPayment = getNextPayment();
     MonetaryAmount balance = getUnPaid();
-    return String.format("%s-%s: nextPayment:%s($%s) balance:%s($%s)", Instant.now(),currency.getSymbol(),
-        nextPayment.getAmount(), inUsd(nextPayment), balance.getAmount(), inUsd(balance));
+    return String.format("%s-%s: nextPayment:%s($%s) balance:%s($%s)", Instant.now(),
+        currency.getSymbol(), nextPayment.getValue(), inUsd(nextPayment), balance.getValue(),
+        inUsd(balance));
   }
 }

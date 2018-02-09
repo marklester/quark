@@ -2,30 +2,40 @@ package quark;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import quark.model.CoinMarketCapMoney;
+import quark.model.CurrencyLookup;
 import quark.model.MonetaryAmount;
 
 public class MonetaryAmountTest {
   ObjectMapper mapper = new ObjectMapper();
-  @Test
-  public void testCreateMarketCapMoney() throws Exception {
-    JsonNode priceJson = mapper.readTree(new File("src/test/resources/price.json"));
-    MonetaryAmount amount = new CoinMarketCapMoney(priceJson);
-    Assert.assertEquals("GBX", amount.getUnit());
-    Assert.assertEquals(new BigDecimal("39.2322"), amount.getAmount());
+  private CurrencyLookup lookup;
+  
+  @Before
+  public void setup() throws Exception{
+    lookup = CurrencyLookup.from(new File("src/test/resources/coinmarketcap_currencies.json"));
   }
   
   @Test
-  public void testCreateMarketCapMoneyFunctional() throws ParseException{
-    MonetaryAmount goByte = CoinMarketCapMoney.create("gobyte"); 
-    System.out.println(goByte);
-    System.out.println(CoinMarketCapMoney.create("trezarcoin"));
+  public void testCreateLookupFromJSON() throws Exception {
+    MonetaryAmount amount = lookup.bySymbol("GBX");
+    Assert.assertNotNull(amount);
+    Assert.assertEquals("GBX", amount.getSymbol());
+    Assert.assertEquals(new BigDecimal("17.6661"), amount.getValue());
+  }
+  
+  @Test
+  public void testMoneyMath() throws ParseException{
+    MonetaryAmount btc = lookup.bySymbol("BTC");
+    System.out.println(btc);
+    BigDecimal startingFund =
+        new BigDecimal(100).divide(btc.getValue(), 10, RoundingMode.HALF_EVEN);
+    System.out.println(startingFund);
   }
 }

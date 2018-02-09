@@ -51,7 +51,7 @@ public class PostgresDatabaseManager implements DatabaseManager{
     config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
     ds = new HikariDataSource(config);
     createTables();
-    orderDao = new PostgresOrderDAO(getContext(),new PGRecordMapper());
+    orderDao = new PostgresOrderDAO(getContext(),new OrderRecordMapper());
   }
 
   public OrderDAO getOrderDao() {

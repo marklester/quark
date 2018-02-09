@@ -8,6 +8,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import org.jooq.DSLContext;
+import org.jooq.Record;
+import org.jooq.Table;
+
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
@@ -33,5 +37,9 @@ public interface OrderDAO {
 
   LocalDateTime getFirstOrderDate();
 
-  Map<Integer, BigDecimal> getAllAvg(Duration overTime);
+  DSLContext getContext();
+
+  Table<Record> getTable();
+
+  Map<Integer, BigDecimal> getAllAvg(LocalDateTime start, Duration overTime);
 }

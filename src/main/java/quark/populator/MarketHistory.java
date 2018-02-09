@@ -20,6 +20,7 @@ import quark.TradePairManager;
 import quark.db.DatabaseManager;
 import quark.db.OrderDAO;
 import quark.db.PostgresDatabaseManager;
+import quark.model.CurrencyLookup;
 import quark.model.Market;
 
 public class MarketHistory {
@@ -80,7 +81,8 @@ public class MarketHistory {
 
   public static void main(String args[]) throws Exception {
     DatabaseManager dbManager = new PostgresDatabaseManager();
-    CurrencyManager currencyManager = new CurrencyManager();
+    CurrencyLookup lookup = CurrencyLookup.create();
+    CurrencyManager currencyManager = new CurrencyManager(lookup);
     TradePairManager tradePairManager = TradePairManager.create(currencyManager);
     MarketManager marketManager = new MarketManager(tradePairManager);
     MarketHistory fullMarketHistory = new MarketHistory(dbManager, marketManager);

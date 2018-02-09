@@ -60,13 +60,15 @@ public class MarketManager {
       JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
 
       if (jsonNode.get("Success").asBoolean() == false) {
-        throw new ParseException("retreival failure:" + jsonNode, null);
+        throw new ParseException("retrieval failure:" + jsonNode, null);
       }
       Map<String, Market> markets = Maps.newHashMap();
       for (JsonNode node : jsonNode.get("Data")) {
         try {
           Market market = new Market(node, tpManager);
-          if (!market.getTradePair().isClosing()) {
+          if (!market.getTradePair().isClosing()
+              && market.getTradePair().getCurrency().inUSD() != null) {
+
             markets.put(market.getLabel(), market);
           }
         } catch (Exception e) {

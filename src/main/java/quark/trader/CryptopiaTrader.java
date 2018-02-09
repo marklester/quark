@@ -13,6 +13,8 @@ import quark.db.DatabaseManager;
 import quark.db.OrderDAO;
 import quark.model.OpenOrder;
 import quark.model.TradePair;
+import quark.orders.AlgoOrder;
+import quark.orders.ProcessedOrder;
 import quark.orders.Order.OrderType;
 import quark.populator.MarketHistory;
 
@@ -89,6 +91,12 @@ public class CryptopiaTrader implements Trader {
 
   @Override
   public OrderDAO getOrderDao() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public ProcessedOrder execute(AlgoOrder order) {
     // TODO Auto-generated method stub
     return null;
   }

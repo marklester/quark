@@ -23,10 +23,17 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
+import quark.model.CurrencyLookup;
+
 public class CurrencyManager {
   private static final Logger LOGGER = LoggerFactory.getLogger(CurrencyManager.class);
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static final String CACHE = "CACHE";
+  private CurrencyLookup currencyLookup;
+
+  public CurrencyManager(CurrencyLookup currencyLookup) {
+    this.currencyLookup = currencyLookup;
+  }
 
   private LoadingCache<String, Map<Integer, CryptopiaCurrency>> graphs =
       CacheBuilder.newBuilder().expireAfterWrite(10, TimeUnit.MINUTES)
@@ -45,7 +52,8 @@ public class CurrencyManager {
     HttpResponse response = client.execute(get);
     JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
     return StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
-        .map(node -> new CryptopiaCurrency(node)).collect(Collectors.toMap(k -> k.getId(), v -> v));
+        .map(node -> new CryptopiaCurrency(node, currencyLookup))
+        .collect(Collectors.toMap(k -> k.getId(), v -> v));
   }
 
   public CryptopiaCurrency getCurrency(int currencyId) {

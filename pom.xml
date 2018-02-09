@@ -12,8 +12,8 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5</version>
+      <artifactId>fluent-hc</artifactId>
+      <version>4.5.5</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -76,6 +76,16 @@
       <artifactId>java-hamcrest</artifactId>
       <version>2.0.0.0</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.cqengine</groupId>
+      <artifactId>cqengine</artifactId>
+      <version>2.12.4</version>
+    </dependency>
+    <dependency>
+      <groupId>net.jodah</groupId>
+      <artifactId>typetools</artifactId>
+      <version>0.5.0</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>

@@ -13,9 +13,7 @@ import com.google.common.base.MoreObjects.ToStringHelper;
 
 import quark.CryptopiaCurrency;
 import quark.CurrencyManager;
-import quark.ParseException;
 import quark.model.Balance;
-import quark.model.MonetaryAmount;
 
 public class MapBalanceManager implements BalanceManager {
   private static Logger LOGGER = LoggerFactory.getLogger(MapBalanceManager.class);
@@ -25,6 +23,7 @@ public class MapBalanceManager implements BalanceManager {
 
   public MapBalanceManager(CurrencyManager currencyManager, int maxBalances) {
     this.currencyManager = currencyManager;
+    this.maxBalances = maxBalances;
   }
 
   @Override
@@ -67,23 +66,40 @@ public class MapBalanceManager implements BalanceManager {
   public String summary() {
     StringBuilder builder = new StringBuilder();
     builder.append("SUMMARY\n");
+    BigDecimal sum = BigDecimal.ZERO;
     for (Balance balance : getBalances()) {
       BigDecimal value = null;
       try {
-        MonetaryAmount ma = balance.toUSD();
-        value = ma.getAmount();
-      } catch (ParseException e) {
+        value = balance.toUSD();
+        sum = sum.add(value);
+      } catch (Exception e) {
         LOGGER.error("could not get usd value for {}", balance.getSymbol(), e);
       }
       String bStr = String.format("balance: %s amount:%s  value: $%s\n", balance.getSymbol(),
           balance.getAvailable(), value);
       builder.append(bStr);
     }
+    builder.append("total: "+sum);
     return builder.toString();
   }
 
   @Override
   public int size() {
     return balances.size();
+  }
+
+  @Override
+  public BigDecimal total() {
+    BigDecimal sum = BigDecimal.ZERO;
+    for (Balance balance : getBalances()) {
+      BigDecimal value = null;
+      try {
+        value = balance.toUSD();
+        sum = sum.add(value);
+      } catch (Exception e) {
+        LOGGER.error("could not get usd value for {}", balance.getSymbol(), e);
+      }
+    }
+    return sum;
   }
 }

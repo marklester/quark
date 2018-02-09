@@ -1,5 +1,6 @@
 package quark.balance;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -66,6 +67,12 @@ public class CryptopiaBalanceManager implements BalanceListing {
 
   @Override
   public String summary() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public BigDecimal total() {
     // TODO Auto-generated method stub
     return null;
   }

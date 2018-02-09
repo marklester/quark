@@ -1,4 +1,4 @@
-package quark;
+package quark.db;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Stopwatch;
 
-import quark.db.OrderDAO;
 import quark.orders.Order;
 
 public class OrderBatch implements Iterable<Set<Order>> {

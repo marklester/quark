@@ -107,11 +107,10 @@ public class PostgresOrderDAO implements OrderDAO {
   }
 
   @Override
-  public Map<Integer, BigDecimal> getAllAvg(Duration overTime) {
-    LocalDateTime ldtNow = LocalDateTime.now();
-    LocalDateTime dtFut = ldtNow.minus(overTime);
-    Timestamp end = Timestamp.valueOf(ldtNow);
-    Timestamp start = Timestamp.valueOf(dtFut);
+  public Map<Integer, BigDecimal> getAllAvg(LocalDateTime anchor,Duration overTime) {
+    LocalDateTime past = anchor.minus(overTime);
+    Timestamp end = Timestamp.valueOf(anchor);
+    Timestamp start = Timestamp.valueOf(past);
 
     Field<Timestamp> dateField = OrderFields.ORDER_DATE;
     Field<BigDecimal> price = OrderFields.PRICE;
@@ -150,7 +149,7 @@ public class PostgresOrderDAO implements OrderDAO {
     Field<Timestamp> dateField = OrderFields.ORDER_DATE;
     List<Order> result = ctx.selectFrom(table)
         .where(dateField.between(Timestamp.valueOf(start), Timestamp.valueOf(end)))
-        .fetch(new PGRecordMapper());
+        .fetch(new OrderRecordMapper());
     return Sets.newHashSet(result);
   }
 
@@ -158,7 +157,7 @@ public class PostgresOrderDAO implements OrderDAO {
   public Order getLastOrderFor(int tpId) {
     Field<Integer> tradePairField = OrderFields.TRADE_PAIR_ID;
     Order result = ctx.selectFrom(table).where(tradePairField.eq(tpId))
-        .orderBy(OrderFields.ORDER_DATE.desc()).limit(1).fetchOne(new PGRecordMapper());
+        .orderBy(OrderFields.ORDER_DATE.desc()).limit(1).fetchOne(new OrderRecordMapper());
     return result;
   }
 
@@ -184,5 +183,15 @@ public class PostgresOrderDAO implements OrderDAO {
       query = query.and(OrderFields.ORDER_TYPE.eq(type.symbol));
     }
     return query.fetchOne().value1();
+  }
+
+  @Override
+  public DSLContext getContext() {
+    return ctx;
+  }
+
+  @Override
+  public Table<Record> getTable() {
+    return table;
   }
 }

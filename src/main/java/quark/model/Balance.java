@@ -1,6 +1,8 @@
 package quark.model;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.concurrent.ExecutionException;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -65,9 +67,9 @@ public class Balance {
     BigDecimal newAmount = available.add(amountOfChange);
     return new Balance(getCurrency(), newAmount);
   }
-  
-  public MonetaryAmount toUSD() throws ParseException {
-      return CoinMarketCapMoney.create(currency.getName().toLowerCase());
+
+  public BigDecimal toUSD() throws ParseException {
+    return available.multiply(currency.inUSD(), new MathContext(8, RoundingMode.HALF_EVEN));
   }
 
   public String toString() {

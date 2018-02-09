@@ -8,37 +8,40 @@ import java.util.Set;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
 
+import quark.db.OrderBatch;
+import quark.db.OrderCopier;
 import quark.db.OrderDAO;
 import quark.db.OrderFields;
-import quark.db.PGRecordMapper;
+import quark.db.OrderRecordMapper;
 import quark.db.PostgresOrderDAO;
 import quark.orders.Order;
 
-public class MarketSimulator implements Iterable<LocalDateTime>{
+// TODO use insert into x select x from ...
+public class MarketSimulator implements Iterable<LocalDateTime> {
   private Duration tickRate;
   private DSLContext ctx;
   private String tempTableName;
   private OrderDAO sourceDao;
   private PostgresOrderDAO destDao;
-  
-  public MarketSimulator(DSLContext ctx,Duration tickRate,OrderDAO sourceDao) {
+
+  public MarketSimulator(DSLContext ctx, Duration tickRate, OrderDAO sourceDao) {
     this.tickRate = tickRate;
     this.ctx = ctx;
     this.tempTableName = "msorders";
     this.sourceDao = sourceDao;
     prepare();
   }
-  
+
   public void prepare() {
-    String query = String.format("CREATE TEMPORARY TABLE %s (like %s including all)",
-        tempTableName, OrderFields.ORDERS.getName());
+    String query = String.format("CREATE TEMPORARY TABLE %s (like %s including all)", tempTableName,
+        OrderFields.ORDERS.getName());
     ctx.execute(query);
-    destDao = new PostgresOrderDAO(ctx, new PGRecordMapper(),DSL.table(tempTableName));
+    destDao = new PostgresOrderDAO(ctx, new OrderRecordMapper(), DSL.table(tempTableName));
   }
-  
+
   @Override
   public Iterator<LocalDateTime> iterator() {
-    return new BatchInsertIterator(new OrderBatch(sourceDao, tickRate), destDao);
+    return new OrderCopier(tempTableName, sourceDao, tickRate);
   }
 
   public OrderDAO getOrderDao() {

@@ -10,7 +10,7 @@ import quark.orders.Order;
 import quark.orders.Order.OrderType;
 import quark.orders.StandardOrder;
 
-public class PGRecordMapper implements RecordMapper<Record, Order>{
+public class OrderRecordMapper implements RecordMapper<Record, Order>{
 
   @Override
   public Order map(Record record) {

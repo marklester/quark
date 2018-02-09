@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
 
 import quark.model.Currency;
+import quark.model.CurrencyLookup;
 
 /**
  * { "Success":true, "Message":null, "Data":[ { "Id":1, "Name":"Bitcoin", "Symbol":"BTC",
@@ -16,7 +17,7 @@ import quark.model.Currency;
  */
 public class CryptopiaCurrency implements Currency {
   public static final CryptopiaCurrency UNKNOWN = new CryptopiaCurrency(-1, "UNKOWN", "", "", "",
-      "", new BigDecimal(0), new BigDecimal(0), new BigDecimal(0));
+      "", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
   private final int id;
   private final String name;
   private final String symbol;
@@ -26,8 +27,9 @@ public class CryptopiaCurrency implements Currency {
   private final BigDecimal minWithDraw;
   private final BigDecimal withdrawFee;
   private final BigDecimal minBaseTrade;
+  private final BigDecimal usdValue;
 
-  public CryptopiaCurrency(JsonNode node) {
+  public CryptopiaCurrency(JsonNode node, CurrencyLookup usdLookup) {
     this.id = node.get("Id").asInt();
     this.name = node.get("Name").asText();
     this.symbol = node.get("Symbol").asText();
@@ -37,11 +39,12 @@ public class CryptopiaCurrency implements Currency {
     this.minWithDraw = new BigDecimal(node.get("MinWithdraw").asText());
     this.minBaseTrade = new BigDecimal(node.get("MinBaseTrade").asText());
     this.withdrawFee = new BigDecimal(node.get("WithdrawFee").asText());
+    this.usdValue = usdLookup.bySymbol(symbol).getValue();
   }
 
   public CryptopiaCurrency(int id, String name, String symbol, String status, String statusMessage,
-      String listingStatus, BigDecimal minWithDraw, BigDecimal withdrawFee,
-      BigDecimal minBaseTrade) {
+      String listingStatus, BigDecimal minWithDraw, BigDecimal withdrawFee, BigDecimal minBaseTrade,
+      BigDecimal usdValue) {
     this.id = id;
     this.name = name;
     this.symbol = symbol;
@@ -51,6 +54,7 @@ public class CryptopiaCurrency implements Currency {
     this.minWithDraw = minWithDraw;
     this.withdrawFee = withdrawFee;
     this.minBaseTrade = minBaseTrade;
+    this.usdValue = usdValue;
   }
 
   public int getId() {
@@ -89,8 +93,12 @@ public class CryptopiaCurrency implements Currency {
     return minBaseTrade;
   }
 
+  public BigDecimal inUSD() {
+    return usdValue;
+  }
+
   public String toString() {
     return MoreObjects.toStringHelper(this).add("id", id).add("name", name).add("symbol", symbol)
-        .add("listingStatus", listingStatus).toString();
+        .add("listingStatus", listingStatus).add("usdValue", inUSD()).toString();
   }
 }

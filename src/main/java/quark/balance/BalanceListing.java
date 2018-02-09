@@ -1,5 +1,6 @@
 package quark.balance;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import quark.CryptopiaCurrency;
@@ -15,4 +16,6 @@ public interface BalanceListing {
   int size();
   
   String summary();
+  
+  BigDecimal total();
 }

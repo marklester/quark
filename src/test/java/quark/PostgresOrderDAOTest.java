@@ -27,7 +27,7 @@ import quark.orders.Order;
 import quark.orders.Order.OrderType;
 import quark.orders.StandardOrder;
 
-public class OrderDAOTest {
+public class PostgresOrderDAOTest {
   @Rule
   public SingleInstancePostgresRule pg = EmbeddedPostgresRules.singleInstance();
 
@@ -179,7 +179,7 @@ public class OrderDAOTest {
     LocalDateTime time = LocalDateTime.now();
 
     // should be 0 avg for now records
-    Map<Integer, BigDecimal> avgFromDb = dao.getAllAvg(Duration.ofHours(1));
+    Map<Integer, BigDecimal> avgFromDb = dao.getAllAvg(time,Duration.ofHours(1));
     Assert.assertEquals(0, avgFromDb.size());
 
     BigDecimal sum = new BigDecimal(0);
@@ -193,7 +193,7 @@ public class OrderDAOTest {
     }
     BigDecimal avg = sum.divide(new BigDecimal(10));
 
-    avgFromDb = dao.getAllAvg(Duration.ofHours(1));
+    avgFromDb = dao.getAllAvg(time,Duration.ofHours(1));
     Assert.assertEquals(1, avgFromDb.size());
     BigDecimal actual = avgFromDb.get(tpId);
     Assert.assertThat(actual, Matchers.comparesEqualTo(avg));

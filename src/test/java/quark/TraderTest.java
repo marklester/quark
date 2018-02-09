@@ -1,11 +1,6 @@
 package quark;
 
-import java.math.BigDecimal;
-
 import org.junit.Test;
-
-import quark.trader.CryptopiaTrader;
-import quark.trader.Trader;
 
 public class TraderTest {
 
