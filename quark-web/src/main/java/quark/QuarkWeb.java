@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
 import quark.algorithms.MovingAverageAlgo;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
@@ -24,16 +22,10 @@ import quark.orders.ProcessedOrder;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
 
-public class QuarkFx extends Application {
-  private static final Logger LOGGER = LoggerFactory.getLogger(QuarkFx.class);
+public class QuarkWeb{
+  private static final Logger LOGGER = LoggerFactory.getLogger(Quark.class);
 
   public static void main(String[] args) throws Exception {
-    launch(args);    
-  }
-
-  @Override
-  public void start(Stage stage) throws Exception {
-
     DatabaseManager dbManager = new PostgresDatabaseManager();
     CurrencyLookup currencyLookup = CurrencyLookup.create();
     CurrencyManager currencyManager = new CurrencyManager(currencyLookup);
@@ -68,6 +60,6 @@ public class QuarkFx extends Application {
         .forEach(o -> System.out.println(o));
     System.out.println("START" + startSummary);
     System.out.println("END" + testTrader.getBalanceManager().summary());
-    runner.plot().start(stage);
+
   }
 }
