@@ -3,19 +3,16 @@ package quark;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-import javafx.scene.chart.XYChart.Series;
 import quark.algorithms.Algorithm;
-import quark.charts.PlotAlgo;
+import quark.charts.PlotlyTrace;
 import quark.model.Balance;
 import quark.model.Market;
 import quark.orders.ProcessedOrder;
@@ -58,15 +55,14 @@ public class AlgoRunner {
     return processedOrders;
   }
 
-  public PlotAlgo plot() throws Exception {
+  public Set<PlotlyTrace> plot() throws Exception {
 
-    List<Series<LocalDateTime, ? extends Number>> vals = Lists.newArrayList();
+    Set<PlotlyTrace> vals = Sets.newHashSet();
     for (Balance b : trader.getBalanceManager().getBalances()) {
       String cName = b.getCurrency().getName();
       algo.getData().entrySet().stream().filter(e -> e.getKey().coin.equals(cName))
           .forEach(e -> vals.add(e.getValue()));;
     }
-
-    return new PlotAlgo(vals);
+    return vals;
   }
 }

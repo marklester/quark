@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
-import javafx.scene.chart.XYChart.Series;
+import quark.charts.PlotlyTrace;
 import quark.model.Market;
 import quark.orders.ProcessedOrder;
 import quark.trader.Trader;
@@ -19,7 +19,7 @@ public interface Algorithm {
 
   }
 
-  default Map<CoinKey, Series<LocalDateTime, Double>> getData() {
+  default Map<CoinKey, PlotlyTrace> getData() {
     return Collections.emptyMap();
   }
 }

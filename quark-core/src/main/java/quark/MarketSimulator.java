@@ -2,6 +2,7 @@ package quark;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ public class MarketSimulator implements Iterable<LocalDateTime> {
   public MarketSimulator(DSLContext ctx, Duration tickRate, OrderDAO sourceDao) {
     this.tickRate = tickRate;
     this.ctx = ctx;
-    this.tempTableName = "msorders";
+    this.tempTableName = "simorders"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
     this.sourceDao = sourceDao;
     prepare();
   }
@@ -61,7 +62,11 @@ class BatchInsertIterator implements Iterator<LocalDateTime> {
 
   @Override
   public boolean hasNext() {
-    return orderIterator.hasNext();
+    boolean hasNext = orderIterator.hasNext();
+    if(hasNext) {
+      destDao.getContext().dropTable(destDao.getTable());
+    }
+    return hasNext;
   }
 
   @Override

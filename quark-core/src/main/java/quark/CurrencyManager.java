@@ -29,7 +29,7 @@ public class CurrencyManager {
   private static final Logger LOGGER = LoggerFactory.getLogger(CurrencyManager.class);
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static final String CACHE = "CACHE";
-  private CurrencyLookup currencyLookup;
+  private final CurrencyLookup currencyLookup;
 
   public CurrencyManager(CurrencyLookup currencyLookup) {
     this.currencyLookup = currencyLookup;
@@ -52,7 +52,7 @@ public class CurrencyManager {
     HttpResponse response = client.execute(get);
     JsonNode jsonNode = MAPPER.readTree(response.getEntity().getContent());
     return StreamSupport.stream(jsonNode.get("Data").spliterator(), false)
-        .map(node -> new CryptopiaCurrency(node, currencyLookup))
+        .map(node -> new CryptopiaCurrency(node, getCurrencyLookup()))
         .collect(Collectors.toMap(k -> k.getId(), v -> v));
   }
 
@@ -72,5 +72,9 @@ public class CurrencyManager {
   public Optional<CryptopiaCurrency> getCurrency(String symbol) throws ExecutionException {
     return graphs.get(CACHE).values().stream().filter(c -> c.getSymbol().equals(symbol))
         .findFirst();
+  }
+
+  public CurrencyLookup getCurrencyLookup() {
+    return currencyLookup;
   }
 }

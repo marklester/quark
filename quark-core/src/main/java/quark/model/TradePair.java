@@ -117,6 +117,7 @@ public class TradePair {
   }
 
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("id", getId()).add("label", getLabel()).toString();
+    return MoreObjects.toStringHelper(this).add("id", getId()).add("label", getLabel())
+        .add("minTrade", getMinimumTrade()).add("minBaseTrade", getMinimumBaseTrade()).toString();
   }
 }

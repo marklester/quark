@@ -31,16 +31,18 @@ public class OrderCopier implements Iterator<LocalDateTime> {
   public boolean hasNext() {
     Stopwatch sw = Stopwatch.createStarted();
     LocalDateTime nextBookMark = bookMark.plus(batchSize);
-    String query =
-        String.format("INSERT INTO {0} SELECT * FROM {1} where orderdate >= {2} AND orderdate < {3}");
+    String query = String
+        .format("INSERT INTO {0} SELECT * FROM {1} where orderdate >= {2} AND orderdate < {3}");
     int result = srcDao.getContext().execute(query, DSL.table(destTable), srcDao.getTable(),
         DSL.val(bookMark), DSL.val(nextBookMark));
     LOGGER.info("next batch success: {}, took {}", result, sw);
     bookMark = nextBookMark;
     if (nextBookMark.compareTo(bookEnd) > 0) {
+      srcDao.getContext().dropTable(DSL.table(destTable)).execute();
       return false;
     }
     return true;
+
   }
 
   @Override

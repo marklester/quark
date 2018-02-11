@@ -5,48 +5,44 @@ import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
 import quark.algorithms.MovingAverageAlgo;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
+import quark.charts.PlotlyTrace;
 import quark.db.DatabaseManager;
-import quark.db.PostgresDatabaseManager;
 import quark.model.Balance;
-import quark.model.CurrencyLookup;
 import quark.model.MonetaryAmount;
 import quark.orders.ProcessedOrder;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
 
-public class QuarkFx extends Application {
-  private static final Logger LOGGER = LoggerFactory.getLogger(QuarkFx.class);
+public class RunSimulation implements Callable<Set<PlotlyTrace>> {
+  private static Logger LOGGER = LoggerFactory.getLogger(RunSimulation.class);
+  private CurrencyManager currencyManager;
+  private DatabaseManager dbManager;
+  private MarketManager marketManager;
 
-  public static void main(String[] args) throws Exception {
-    launch(args);    
+  public RunSimulation(CurrencyManager currencyManager, DatabaseManager dbManager,
+      MarketManager marketManager) {
+    this.currencyManager = currencyManager;
+    this.dbManager = dbManager;
+    this.marketManager = marketManager;
   }
 
   @Override
-  public void start(Stage stage) throws Exception {
-
-    DatabaseManager dbManager = new PostgresDatabaseManager();
-    CurrencyLookup currencyLookup = CurrencyLookup.create();
-    CurrencyManager currencyManager = new CurrencyManager(currencyLookup);
-    TradePairManager tradePairManager = TradePairManager.create(currencyManager);
-    MarketManager marketManager = new MarketManager(tradePairManager);
-    // Trader realTrader =
-    // new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
-    // MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
-
+  public Set<PlotlyTrace> call() throws Exception {
     BalanceManager balanceManager = new MapBalanceManager(currencyManager, 2);
 
-    MonetaryAmount money = currencyLookup.bySymbol("BTC");
-    BigDecimal startingFund = new BigDecimal(100).divide(money.getValue(), 8, RoundingMode.HALF_EVEN);
+    MonetaryAmount money = currencyManager.getCurrencyLookup().bySymbol("BTC");
+    BigDecimal startingFund =
+        new BigDecimal(100).divide(money.getValue(), 8, RoundingMode.HALF_EVEN);
     LOGGER.info("starting with {}", startingFund);
     CryptopiaCurrency currency = currencyManager.getCurrency("BTC").get();
     Balance balance = new Balance(currency, startingFund);
@@ -56,18 +52,19 @@ public class QuarkFx extends Application {
 
     Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 
-    AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo(Duration.ofDays(1),Duration.ofDays(3)));
+    AlgoRunner runner =
+        new AlgoRunner(testTrader, new MovingAverageAlgo(Duration.ofDays(1), Duration.ofDays(3)));
     System.out.println(testTrader.getBalanceManager());
     for (LocalDateTime time : simulator) {
       List<ProcessedOrder> porders =
           runner.run(time).stream().filter(o -> o.isSuccess()).collect(Collectors.toList());
       LOGGER.info("{} algo result: {}:trades:{}", time, testTrader.getBalanceManager().total(),
           porders.size());
-    }    
+    }
     runner.getProcessedOrders().stream().filter(o -> o.isSuccess())
-        .forEach(o -> System.out.println(o));
-    System.out.println("START" + startSummary);
-    System.out.println("END" + testTrader.getBalanceManager().summary());
-    runner.plot().start(stage);
+        .forEach(o -> LOGGER.info("order:{}", o));
+    LOGGER.info("START" + startSummary);
+    LOGGER.info("END" + testTrader.getBalanceManager().summary());
+    return runner.plot();
   }
 }

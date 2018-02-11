@@ -74,23 +74,23 @@ public class MockTrader implements Trader {
     if (holdingBalance.getAvailable().compareTo(BigDecimal.ZERO) == 0) {
       return ProcessedOrder.failed(openOrder, "" + holdingBalance + " is 0");
     }
-
+    //1.6
     BigDecimal portion =
         CoinMath.multiply(holdingBalance.getAvailable(), openOrder.getPercentage());
-
+    //.0004
     BigDecimal priceOfBase = order.getPrice();
+    //min.00000008 (1.6*.0004)=.000064
     BigDecimal amountOfBase = CoinMath.multiply(portion, priceOfBase);
 
-    if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0
-        && amountOfBase.compareTo(tradePair.getTradeFee()) > 0) {
+    if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0) {
       Balance boughtCoin = new Balance(tradePair.getBaseCurrency(), amountOfBase);
-      balanceManager.putBalance(boughtCoin);
+      balanceManager.putBalance(boughtCoin.add(balanceManager.getBalance(tradePair.getBaseCurrency()).getAvailable()));
       Balance left = holdingBalance.substract(portion);
       balanceManager.putBalance(left);
       return new ProcessedOrder(openOrder, true, new Receipt(boughtCoin, left));
     } else {
-      LOGGER.debug("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(),
-          amountOfBase, tradePair.getMinimumBaseTrade());
+      LOGGER.info("could not sell {} amount:{} is less the min of {} or {}", tradePair.getSymbol(),
+          amountOfBase, tradePair.getMinimumBaseTrade(),tradePair.getTradeFee());
       return ProcessedOrder.failed(openOrder, "less than min and/or fee");
     }
   }
