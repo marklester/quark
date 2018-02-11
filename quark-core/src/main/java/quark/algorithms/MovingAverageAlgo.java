@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-import quark.charts.PlotlyTrace;
+import quark.charts.PlotlyTrace.PlotType;
 import quark.model.Balance;
 import quark.model.Market;
 import quark.model.TradePair;
@@ -34,7 +34,7 @@ public class MovingAverageAlgo implements Algorithm {
   private LocalDateTime currentTime;
   private Duration shortDuration;
   private Duration longDuration;
-  private Map<CoinKey, PlotlyTrace> series = Maps.newHashMap();
+  private LapReport lapReport;
 
   public MovingAverageAlgo(Duration shortDuration, Duration longDuration) {
     this.shortDuration = shortDuration;
@@ -42,15 +42,16 @@ public class MovingAverageAlgo implements Algorithm {
   }
 
   @Override
-  public void init(LocalDateTime currentTime, Trader trader) throws Exception {
-    this.currentTime = currentTime;
+  public void init(LapReport lapReport, Trader trader) throws Exception {
+    this.lapReport = lapReport;
+    this.currentTime = lapReport.getDateTime();
 
     LocalDateTime firstOrder = trader.getOrderDao().getFirstOrderDate();
-    if (currentTime.minus(longDuration).compareTo(firstOrder) < 0) {
+    if (this.currentTime.minus(longDuration).compareTo(firstOrder) < 0) {
       throw new IllegalStateException("not enough history for run algo");
     }
-    shortAvgs = trader.getOrderDao().getAllAvg(currentTime, shortDuration);
-    longAvgs = trader.getOrderDao().getAllAvg(currentTime, longDuration);
+    shortAvgs = trader.getOrderDao().getAllAvg(this.currentTime, shortDuration);
+    longAvgs = trader.getOrderDao().getAllAvg(this.currentTime, longDuration);
 
     buys.clear();
     sells.clear();
@@ -84,19 +85,15 @@ public class MovingAverageAlgo implements Algorithm {
 
   private void plot(Market market, BigDecimal avg, String label) {
     CoinKey name = new CoinKey(market.getTradePair().getCurrency().getName(), label);
-    PlotlyTrace avgPlot = series.computeIfAbsent(name, k -> PlotlyTrace.line(k));
-    avgPlot.add(currentTime, avg.doubleValue());
+    lapReport.getDataPoints().add(new DataPoint(name, avg, PlotType.scatter));
   }
 
   private void plot(ProcessedOrder porder) {
     String orderType = porder.getOrder().getOrderType().toString();
     String currency = porder.getOrder().getTradePair().getCurrency().getName();
     CoinKey name = new CoinKey(currency, orderType);
-    double val = porder.getReceipt().getIn().getAvailable().doubleValue();
-
-    PlotlyTrace plot = series.computeIfAbsent(name, k -> PlotlyTrace.bar(k));
-
-    plot.add(porder.getOrder().getTime(), val);
+    BigDecimal val = porder.getReceipt().getAmount();
+    lapReport.getDataPoints().add(new DataPoint(name, val, PlotType.bar));
   }
 
   @Override
@@ -115,10 +112,18 @@ public class MovingAverageAlgo implements Algorithm {
             invested.remove(porder.getOrder().getTradePair().getLabel());
           }
         }
+        lapReport.getProcessedOrders().add(porder);
         processed.add(porder);
       } catch (Exception e) {
         LOGGER.trace("Could not complete trade {}", order, e);
       }
+      
+    }
+    
+    try {
+      lapReport.setBalanceListing(trader.getBalanceManager().snapshot());
+    } catch (Exception e) {
+      LOGGER.error("could get balance manager",e);
     }
     return processed;
   }
@@ -145,9 +150,5 @@ public class MovingAverageAlgo implements Algorithm {
       }
     }
     return false;
-  }
-
-  public Map<CoinKey, PlotlyTrace> getData() {
-    return series;
   }
 }

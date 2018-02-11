@@ -76,4 +76,10 @@ public class CryptopiaBalanceManager implements BalanceListing {
     // TODO Auto-generated method stub
     return null;
   }
+
+  @Override
+  public BalanceListing snapshot() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 }

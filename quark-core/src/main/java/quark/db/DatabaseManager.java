@@ -2,7 +2,7 @@ package quark.db;
 
 import java.time.Duration;
 
-import quark.MarketSimulator;
+import quark.simulation.MarketSimulator;
 
 public interface DatabaseManager {
   public OrderDAO getOrderDao();

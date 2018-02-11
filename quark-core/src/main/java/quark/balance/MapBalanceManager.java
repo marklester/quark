@@ -5,9 +5,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 
@@ -16,7 +13,6 @@ import quark.CurrencyManager;
 import quark.model.Balance;
 
 public class MapBalanceManager implements BalanceManager {
-  private static Logger LOGGER = LoggerFactory.getLogger(MapBalanceManager.class);
   private Map<Integer, Balance> balances = new ConcurrentHashMap<>();
   private CurrencyManager currencyManager;
   private int maxBalances = 10;
@@ -63,43 +59,13 @@ public class MapBalanceManager implements BalanceManager {
     return builder.toString();
   }
 
-  public String summary() {
-    StringBuilder builder = new StringBuilder();
-    builder.append("SUMMARY\n");
-    BigDecimal sum = BigDecimal.ZERO;
-    for (Balance balance : getBalances()) {
-      BigDecimal value = null;
-      try {
-        value = balance.toUSD();
-        sum = sum.add(value);
-      } catch (Exception e) {
-        LOGGER.error("could not get usd value for {}", balance.getSymbol(), e);
-      }
-      String bStr = String.format("balance: %s amount:%s  value: $%s\n", balance.getSymbol(),
-          balance.getAvailable(), value);
-      builder.append(bStr);
-    }
-    builder.append("total: "+sum);
-    return builder.toString();
-  }
-
   @Override
   public int size() {
     return balances.size();
   }
 
   @Override
-  public BigDecimal total() {
-    BigDecimal sum = BigDecimal.ZERO;
-    for (Balance balance : getBalances()) {
-      BigDecimal value = null;
-      try {
-        value = balance.toUSD();
-        sum = sum.add(value);
-      } catch (Exception e) {
-        LOGGER.error("could not get usd value for {}", balance.getSymbol(), e);
-      }
-    }
-    return sum;
+  public BalanceListing snapshot() {
+    return new ImmutableBalanceListing(getBalances());
   }
 }

@@ -1,4 +1,4 @@
-package quark;
+package quark.simulation;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -17,7 +17,6 @@ import quark.db.OrderRecordMapper;
 import quark.db.PostgresOrderDAO;
 import quark.orders.Order;
 
-// TODO use insert into x select x from ...
 public class MarketSimulator implements Iterable<LocalDateTime> {
   private Duration tickRate;
   private DSLContext ctx;
@@ -28,7 +27,8 @@ public class MarketSimulator implements Iterable<LocalDateTime> {
   public MarketSimulator(DSLContext ctx, Duration tickRate, OrderDAO sourceDao) {
     this.tickRate = tickRate;
     this.ctx = ctx;
-    this.tempTableName = "simorders"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+    this.tempTableName =
+        "simorders" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
     this.sourceDao = sourceDao;
     prepare();
   }
@@ -63,7 +63,7 @@ class BatchInsertIterator implements Iterator<LocalDateTime> {
   @Override
   public boolean hasNext() {
     boolean hasNext = orderIterator.hasNext();
-    if(hasNext) {
+    if (hasNext) {
       destDao.getContext().dropTable(destDao.getTable());
     }
     return hasNext;

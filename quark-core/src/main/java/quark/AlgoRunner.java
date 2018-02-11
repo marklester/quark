@@ -2,20 +2,20 @@ package quark;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Optional;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Sets;
 
 import quark.algorithms.Algorithm;
+import quark.algorithms.LapReport;
 import quark.charts.PlotlyTrace;
 import quark.model.Balance;
 import quark.model.Market;
-import quark.orders.ProcessedOrder;
 import quark.trader.Trader;
 
 public class AlgoRunner {
@@ -23,7 +23,7 @@ public class AlgoRunner {
   private Algorithm algo;
   private Trader trader;
   private Collection<Market> markets;
-  private Set<ProcessedOrder> processedOrders = Sets.newLinkedHashSet();
+  private Set<LapReport> reports = Sets.newLinkedHashSet();
 
   public AlgoRunner(Trader trader, Algorithm algo) throws Exception {
     this.trader = trader;
@@ -31,28 +31,29 @@ public class AlgoRunner {
     markets = trader.getMarketManager().getMarkets(10000);
   }
 
-  public Set<ProcessedOrder> run(LocalDateTime time) {
+  public Optional<LapReport> run(LocalDateTime time) {
     Stopwatch sw = Stopwatch.createStarted();
 
     try {
-      algo.init(time, trader);
+      LapReport report = LapReport.of(algo,time);
+      algo.init(report, trader);
       LOGGER.debug("applying algorithm to {} markets", markets.size());
       for (Market market : markets) {
         algo.apply(market, trader);
       }
-      Set<ProcessedOrder> porders = algo.executeOrders(trader);
-      getProcessedOrders().addAll(porders);
-      return porders;
+      algo.executeOrders(trader);
+      reports.add(report);
+      return Optional.of(report);
     } catch (Exception e) {
       LOGGER.error("could not run algo", e);
     }
 
     LOGGER.info("algo took {} to {}", algo, sw);
-    return Collections.emptySet();
+    return Optional.absent();
   }
 
-  public Set<ProcessedOrder> getProcessedOrders() {
-    return processedOrders;
+  public Set<LapReport> getReport() {
+    return reports;
   }
 
   public Set<PlotlyTrace> plot() throws Exception {

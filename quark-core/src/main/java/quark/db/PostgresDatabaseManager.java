@@ -15,7 +15,7 @@ import com.google.common.io.CharStreams;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import quark.MarketSimulator;
+import quark.simulation.MarketSimulator;
 
 public class PostgresDatabaseManager implements DatabaseManager {
 

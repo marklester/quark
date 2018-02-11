@@ -4,12 +4,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Optional;
+
+import quark.algorithms.LapReport;
 import quark.algorithms.MovingAverageAlgo;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
@@ -18,7 +19,7 @@ import quark.db.PostgresDatabaseManager;
 import quark.model.Balance;
 import quark.model.CurrencyLookup;
 import quark.model.MonetaryAmount;
-import quark.orders.ProcessedOrder;
+import quark.simulation.MarketSimulator;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
 
@@ -51,15 +52,11 @@ public class Quark{
     AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo(Duration.ofDays(1),Duration.ofDays(3)));
     System.out.println(testTrader.getBalanceManager());
     for (LocalDateTime time : simulator) {
-      List<ProcessedOrder> porders =
-          runner.run(time).stream().filter(o -> o.isSuccess()).collect(Collectors.toList());
-      LOGGER.info("{} algo result: {}:trades:{}", time, testTrader.getBalanceManager().total(),
-          porders.size());
-    }    
-    runner.getProcessedOrders().stream().filter(o -> o.isSuccess())
-        .forEach(o -> System.out.println(o));
-    System.out.println("START" + startSummary);
-    System.out.println("END" + testTrader.getBalanceManager().summary());
+          Optional<LapReport> result = runner.run(time);
+          LOGGER.info("algo lap report:{}",result);
+    }
+    LOGGER.info("START" + startSummary);
+    LOGGER.info("END" + testTrader.getBalanceManager().summary());
 
   }
 }

@@ -1,6 +1,6 @@
 package quark;
 
-import java.util.Collections;
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import quark.algorithms.SimulationReport;
 import quark.charts.PlotlyTrace;
 import quark.db.DatabaseManager;
+import quark.orders.ProcessedOrder;
 
 @RestController
 public class MarketSimulatorController {
@@ -31,7 +33,7 @@ public class MarketSimulatorController {
 
   private MarketManager marketManager;
 
-  private Map<String, CompletableFuture<Set<PlotlyTrace>>> runningSimulations =
+  private Map<String, SimulationReport> runningSimulations =
       new ConcurrentHashMap<>();
 
   private ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -46,25 +48,32 @@ public class MarketSimulatorController {
 
   @RequestMapping(path="/api/simulate", method = RequestMethod.GET)
   public String simulate() throws Exception {
-    RunSimulation simulation = new RunSimulation(currencyManager, dbManager, marketManager);
-    CompletableFuture<Set<PlotlyTrace>> task = asFuture(simulation, executor);
     String id = UUID.randomUUID().toString();
-    runningSimulations.put(id, task);
+    SimulationReport report = new SimulationReport(id);
+    RunSimulation simulation = new RunSimulation(report,currencyManager, dbManager, marketManager);
+    runningSimulations.put(id, report);
+    executor.execute(simulation);
     return id;
   }
   
   @RequestMapping(path="/api/simulations", method = RequestMethod.GET)
-  public Set<String> getResults(){
+  public Set<String> getSimulations(){
     return runningSimulations.keySet();
   }
   
   @RequestMapping(path="/api/simulation/{id}", method = RequestMethod.GET)
-  public Set<PlotlyTrace> getResults(@PathVariable String id){
-    CompletableFuture<Set<PlotlyTrace>> ft = runningSimulations.get(id);
-    if(ft!=null) {
-      return ft.getNow(Collections.emptySet());      
-    }
-    return Collections.emptySet();
+  public SimulationReport getSimulationReport(@PathVariable String id){
+    return runningSimulations.get(id);
+  }
+  
+  @RequestMapping(path="/api/simulation/{id}/plots", method = RequestMethod.GET)
+  public Collection<PlotlyTrace> getPlots(@PathVariable String id){
+    return getSimulationReport(id).getPlots();
+  }
+  
+  @RequestMapping(path="/api/simulation/{id}/orders", method = RequestMethod.GET)
+  public Set<ProcessedOrder> getProcessedOrders(@PathVariable String id){
+    return getSimulationReport(id).getProcessedOrders();
   }
 
   public static <T> CompletableFuture<T> asFuture(Callable<? extends T> callable,

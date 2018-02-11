@@ -14,6 +14,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
+import quark.algorithms.LapReport;
 import quark.algorithms.MovingAverageAlgo;
 import quark.balance.MapBalanceManager;
 import quark.db.CollectionOrderDao;
@@ -67,7 +68,7 @@ public class MovingAverageAlgorithmTest {
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
     MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
-    algo.init(now, trader);
+    algo.init(LapReport.of(algo, now), trader);
     algo.apply(market, trader);
     Set<ProcessedOrder> porders = algo.executeOrders(trader);
     Assert.assertEquals(1, porders.size());
@@ -130,7 +131,7 @@ public class MovingAverageAlgorithmTest {
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
     MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
-    algo.init(now, trader);
+    algo.init(LapReport.of(algo, now), trader);
     algo.apply(market, trader);
     Set<ProcessedOrder> porders = algo.executeOrders(trader);
     Assert.assertEquals(1, porders.size());

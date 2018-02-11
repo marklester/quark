@@ -1,6 +1,5 @@
 package quark.algorithms;
 
-import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -15,7 +14,7 @@ public interface Algorithm {
 
   Set<ProcessedOrder> executeOrders(Trader trader);
 
-  default void init(LocalDateTime currentTime, Trader trader) throws Exception {
+  default void init(LapReport lapReport, Trader trader) throws Exception {
 
   }
 

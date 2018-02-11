@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import quark.algorithms.CoinKey;
+import quark.algorithms.DataPoint;
 
 public class PlotlyTrace {
   public static PlotlyTrace bar(CoinKey name) {
@@ -14,6 +15,10 @@ public class PlotlyTrace {
   
   public static PlotlyTrace line(CoinKey name) {
     return new PlotlyTrace(name.toString(), PlotType.scatter);
+  }
+  
+  public static PlotlyTrace of(DataPoint pt) {
+    return new PlotlyTrace(pt.getLabel().toString(), pt.getType());
   }
   
   public enum PlotType{

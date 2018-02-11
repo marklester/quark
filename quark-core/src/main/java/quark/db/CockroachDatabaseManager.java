@@ -16,7 +16,7 @@ import com.google.common.io.Files;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import quark.MarketSimulator;
+import quark.simulation.MarketSimulator;
 
 /**
  * Represent how to interact with the datastore 
