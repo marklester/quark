@@ -1,7 +1,6 @@
 package quark;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -12,6 +11,7 @@ import com.google.common.base.Optional;
 
 import quark.algorithms.LapReport;
 import quark.algorithms.MovingAverageAlgo;
+import quark.algorithms.Parameter;
 import quark.algorithms.SimulationReport;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
@@ -29,8 +29,8 @@ public class RunSimulation implements Runnable {
   private MarketManager marketManager;
   private SimulationReport report;
 
-  public RunSimulation(SimulationReport report, CurrencyManager currencyManager, DatabaseManager dbManager,
-      MarketManager marketManager) {
+  public RunSimulation(SimulationReport report, CurrencyManager currencyManager,
+      DatabaseManager dbManager, MarketManager marketManager) {
     this.currencyManager = currencyManager;
     this.dbManager = dbManager;
     this.marketManager = marketManager;
@@ -41,36 +41,35 @@ public class RunSimulation implements Runnable {
   public void run() {
     try {
       BalanceManager balanceManager = new MapBalanceManager(currencyManager, 2);
-
       MonetaryAmount money = currencyManager.getCurrencyLookup().bySymbol("BTC");
-      BigDecimal startingFund =
-          new BigDecimal(100).divide(money.getValue(), 8, RoundingMode.HALF_EVEN);
+      String startFund = report.getParams().get(Parameter.STARTING_FUND);
+      BigDecimal startingFund = CoinMath.divide(new BigDecimal(startFund), money.getValue());
       LOGGER.info("starting with {}", startingFund);
       CryptopiaCurrency currency = currencyManager.getCurrency("BTC").get();
       Balance balance = new Balance(currency, startingFund);
       balanceManager.putBalance(balance);
-      
+
       String startSummary = balanceManager.summary();
-      MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofDays(1));
+      Duration tickRate = Duration.parse(report.getParams().get(Parameter.TICK_RATE));
+      Duration shortAvg = Duration.parse(report.getParams().get(Parameter.SHORT_AVG));
+      Duration longAvg = Duration.parse(report.getParams().get(Parameter.LONG_AVG));
+      MarketSimulator simulator = dbManager.getMarketSimulator(tickRate);
       Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 
-
-      AlgoRunner runner =
-          new AlgoRunner(testTrader, new MovingAverageAlgo(Duration.ofDays(1), Duration.ofDays(3)));
-      System.out.println(testTrader.getBalanceManager());
+      AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo(shortAvg, longAvg));
       for (LocalDateTime time : simulator) {
         Optional<LapReport> lapReport = runner.run(time);
         LOGGER.info("algo lap report:{}", lapReport);
-        if(lapReport.isPresent()) {
-          report.addLapReport(lapReport.get());          
+        if (lapReport.isPresent()) {
+          report.addLapReport(lapReport.get());
         }
 
       }
       report.complete();
       LOGGER.info("START" + startSummary);
-      LOGGER.info("END" + testTrader.getBalanceManager().summary());      
-    }catch(Exception e) {
-      LOGGER.error("error with simulation",e);
+      LOGGER.info("END" + testTrader.getBalanceManager().summary());
+    } catch (Exception e) {
+      LOGGER.error("error with simulation", e);
     }
   }
 }

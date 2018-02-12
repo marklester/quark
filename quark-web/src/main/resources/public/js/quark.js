@@ -74,9 +74,9 @@ $(document).ready(
 						e.preventDefault();
 						console.log("run simulation");
 						$.get("/api/simulate", {
-							tickRate : 1,
-							shortAvg : 1,
-							longAvg : 3
+							tickRate : $("#tick").val(),
+							shortAvg : $("#short").val(),
+							longAvg : $("#long").val()
 						}, function(data, status) {
 							console.log("received data:" + data);
 							var ctx = $('#avg-chart').html(

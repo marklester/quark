@@ -3,6 +3,7 @@ package quark.algorithms;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.Sets;
 
@@ -62,5 +63,10 @@ public class LapReport implements Comparable<LapReport> {
       return false;
     final LapReport other = (LapReport) obj;
     return Objects.equal(this.dateTime, other.dateTime);
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this).add("time", getDateTime()).toString();
   }
 }

@@ -78,4 +78,10 @@ public class SimulationReport {
     return lapReports.stream().map(r -> r.getProcessedOrders()).flatMap(Set::stream)
         .collect(Collectors.toSet());
   }
+  
+  private Map<String,String> params = Maps.newHashMap();
+  
+  public Map<String,String> getParams() {
+    return params;
+  }
 }
