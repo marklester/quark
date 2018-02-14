@@ -112,18 +112,19 @@ public class MovingAverageAlgo implements Algorithm {
             invested.remove(porder.getOrder().getTradePair().getLabel());
           }
         }
-        lapReport.getProcessedOrders().add(porder);
         processed.add(porder);
       } catch (Exception e) {
         LOGGER.trace("Could not complete trade {}", order, e);
+        ProcessedOrder forder = ProcessedOrder.failed(order, e.getMessage());
+        processed.add(forder);
       }
-      
     }
     
+    lapReport.getProcessedOrders().addAll(processed);
     try {
       lapReport.setBalanceListing(trader.getBalanceManager().snapshot());
     } catch (Exception e) {
-      LOGGER.error("could get balance manager",e);
+      LOGGER.error("could get balance manager", e);
     }
     return processed;
   }

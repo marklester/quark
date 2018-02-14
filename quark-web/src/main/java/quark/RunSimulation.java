@@ -40,7 +40,8 @@ public class RunSimulation implements Runnable {
   @Override
   public void run() {
     try {
-      BalanceManager balanceManager = new MapBalanceManager(currencyManager, 2);
+      Integer pSize = Integer.parseInt(report.getParams().get(Parameter.PORTFOLIO_SIZE));
+      BalanceManager balanceManager = new MapBalanceManager(currencyManager, pSize);
       MonetaryAmount money = currencyManager.getCurrencyLookup().bySymbol("BTC");
       String startFund = report.getParams().get(Parameter.STARTING_FUND);
       BigDecimal startingFund = CoinMath.divide(new BigDecimal(startFund), money.getValue());
@@ -53,6 +54,7 @@ public class RunSimulation implements Runnable {
       Duration tickRate = Duration.parse(report.getParams().get(Parameter.TICK_RATE));
       Duration shortAvg = Duration.parse(report.getParams().get(Parameter.SHORT_AVG));
       Duration longAvg = Duration.parse(report.getParams().get(Parameter.LONG_AVG));
+      
       MarketSimulator simulator = dbManager.getMarketSimulator(tickRate);
       Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 

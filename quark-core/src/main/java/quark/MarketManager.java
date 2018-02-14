@@ -27,10 +27,9 @@ import com.google.common.collect.Maps;
 import quark.db.OrderDAO;
 import quark.model.Market;
 import quark.orders.Order.OrderType;
-import quark.populator.MarketHistory;
 
 public class MarketManager {
-  private static Logger LOGGER = LoggerFactory.getLogger(MarketHistory.class);
+  private static Logger LOGGER = LoggerFactory.getLogger(MarketManager.class);
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
 

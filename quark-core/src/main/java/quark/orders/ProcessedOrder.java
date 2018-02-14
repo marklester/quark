@@ -4,17 +4,23 @@ import com.google.common.base.MoreObjects;
 
 public class ProcessedOrder implements Comparable<ProcessedOrder> {
   public static ProcessedOrder failed(AlgoOrder order,String message) {
-    return new ProcessedOrder(order, false, null);
+    return new ProcessedOrder(order, false, null,message);
   }
   
   private final AlgoOrder order;
   private final boolean success;
+  private final String message;
   private final Receipt receipt;
 
   public ProcessedOrder(AlgoOrder order, boolean success, Receipt receipt) {
+    this(order,success,receipt,null);
+  }
+  
+  public ProcessedOrder(AlgoOrder order, boolean success, Receipt receipt,String message) {
     this.order = order;
     this.success = success;
     this.receipt = receipt;
+    this.message = message;
   }
 
   public AlgoOrder getOrder() {
@@ -71,6 +77,10 @@ public class ProcessedOrder implements Comparable<ProcessedOrder> {
     if (success != other.success)
       return false;
     return true;
+  }
+
+  public String getMessage() {
+    return message;
   }
 }
 

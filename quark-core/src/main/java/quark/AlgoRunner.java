@@ -13,8 +13,6 @@ import com.google.common.collect.Sets;
 
 import quark.algorithms.Algorithm;
 import quark.algorithms.LapReport;
-import quark.charts.PlotlyTrace;
-import quark.model.Balance;
 import quark.model.Market;
 import quark.trader.Trader;
 
@@ -35,7 +33,7 @@ public class AlgoRunner {
     Stopwatch sw = Stopwatch.createStarted();
 
     try {
-      LapReport report = LapReport.of(algo,time);
+      LapReport report = LapReport.of(algo, time);
       algo.init(report, trader);
       LOGGER.debug("applying algorithm to {} markets", markets.size());
       for (Market market : markets) {
@@ -54,16 +52,5 @@ public class AlgoRunner {
 
   public Set<LapReport> getReport() {
     return reports;
-  }
-
-  public Set<PlotlyTrace> plot() throws Exception {
-
-    Set<PlotlyTrace> vals = Sets.newHashSet();
-    for (Balance b : trader.getBalanceManager().getBalances()) {
-      String cName = b.getCurrency().getName();
-      algo.getData().entrySet().stream().filter(e -> e.getKey().coin.equals(cName))
-          .forEach(e -> vals.add(e.getValue()));;
-    }
-    return vals;
   }
 }

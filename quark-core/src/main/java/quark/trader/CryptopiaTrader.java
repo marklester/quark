@@ -14,12 +14,10 @@ import quark.db.OrderDAO;
 import quark.model.OpenOrder;
 import quark.model.TradePair;
 import quark.orders.AlgoOrder;
-import quark.orders.ProcessedOrder;
 import quark.orders.Order.OrderType;
-import quark.populator.MarketHistory;
+import quark.orders.ProcessedOrder;
 
 public class CryptopiaTrader implements Trader {
-  private MarketHistory marketHistory;
   private MarketManager marketManager;
   private CurrencyManager currencyManager;
   private BalanceListing balanceManager;
@@ -47,10 +45,6 @@ public class CryptopiaTrader implements Trader {
 
   public TradePairManager getTradePairManager() throws Exception {
     return marketManager.getTradePairManager();
-  }
-
-  public MarketHistory getMarketHistory() {
-    return marketHistory;
   }
 
   public Set<OpenOrder> getOpenOrders() {

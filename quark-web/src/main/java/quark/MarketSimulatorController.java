@@ -3,13 +3,13 @@ package quark;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
-import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,13 +46,16 @@ public class MarketSimulatorController {
   @RequestMapping(path = "/api/simulate", method = RequestMethod.GET)
   public String simulate(@RequestParam(name = "tickRate", defaultValue = "P1D") String tickRate,
       @RequestParam(name = "shortAvg", defaultValue = "P1D") String shortAvg,
-      @RequestParam(name = "longAvg", defaultValue = "P3D") String longAvg) throws Exception {
-    String id = UUID.randomUUID().toString();
+      @RequestParam(name = "longAvg", defaultValue = "P3D") String longAvg,
+      @RequestParam(name = "portfolioSize", defaultValue = "2") String portfolioSize,
+      @RequestParam(name = "startFund", defaultValue = "100") String startFund) throws Exception {
+    String id = "" + (runningSimulations.size() + 1);
     SimulationReport report = new SimulationReport(id);
-    report.getParams().put(Parameter.STARTING_FUND,"100");
-    report.getParams().put(Parameter.TICK_RATE,tickRate);
-    report.getParams().put(Parameter.SHORT_AVG,shortAvg);
-    report.getParams().put(Parameter.LONG_AVG,longAvg);
+    report.getParams().put(Parameter.STARTING_FUND, startFund);
+    report.getParams().put(Parameter.PORTFOLIO_SIZE, portfolioSize);
+    report.getParams().put(Parameter.TICK_RATE, tickRate);
+    report.getParams().put(Parameter.SHORT_AVG, shortAvg);
+    report.getParams().put(Parameter.LONG_AVG, longAvg);
     RunSimulation simulation = new RunSimulation(report, currencyManager, dbManager, marketManager);
     runningSimulations.put(id, report);
     executor.execute(simulation);
@@ -75,20 +78,17 @@ public class MarketSimulatorController {
   }
 
   @RequestMapping(path = "/api/simulation/{id}/orders", method = RequestMethod.GET)
-  public Set<ProcessedOrder> getProcessedOrders(@PathVariable String id) {
+  public Set<ProcessedOrder> getProcessedOrders(@PathVariable String id,
+      @RequestParam(name = "success", defaultValue = "true", required = false) Boolean success) {
+    if (success != null) {
+      return getSimulationReport(id).getProcessedOrders().stream()
+          .filter(order -> order.isSuccess() == success).collect(Collectors.toSet());
+    }
     return getSimulationReport(id).getProcessedOrders();
   }
 
-  public static <T> CompletableFuture<T> asFuture(Callable<? extends T> callable,
-      Executor executor) {
-    CompletableFuture<T> future = new CompletableFuture<>();
-    executor.execute(() -> {
-      try {
-        future.complete(callable.call());
-      } catch (Throwable t) {
-        future.completeExceptionally(t);
-      }
-    });
-    return future;
+  @RequestMapping(path = "/api/simulation/{id}/parameters", method = RequestMethod.GET)
+  public Map<String, String> getParameters(@PathVariable String id) {
+    return getSimulationReport(id).getParams();
   }
 }

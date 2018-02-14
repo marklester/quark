@@ -13,6 +13,7 @@
   <modules>
     <module>quark-core</module>
     <module>quark-web</module>
+    <module>quark-populator</module>
   </modules>
   <dependencyManagement>
     <dependencies>
