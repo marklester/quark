@@ -35,39 +35,50 @@
     <div class="row">
       <div class="col-sm-2 bg-light">
         <div class="card">
-          <ul class="list-group" id="menu">
-            <li class="list-group-item"><span
-              class="fas fa-stopwatch"></span> Simulations</li>
-          </ul>
+          <div class="card-header">
+            <span class="fas fa-stopwatch"></span> Simulations
+          </div>
+          <div class="list-group" id="menu"></div>
         </div>
       </div>
 
       <div class="col-sm-10">
         <div class="row">
-          <h2 class="h3">
+          <h2 class="h2">
             Simulation: <span id="simId"></span>
+            <span id="loading"></span>
           </h2>
         </div>
         <div class="row">
-          <h4>Parameters</h4>
-          <table id="params" class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Value</th>
-              </tr>
-            <thead>
-          </table>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-header">Parameters</div>
+              <table id="params" class="table table-sm">
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div id="start" class="card">
+              <div class="card-header">Start <span class="time"></span></div>
+              <table class="table table-sm">
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div id="end" class="card">
+              <div class="card-header">Result <span class="time"></span></div>
+              <table class="table table-sm">
+              </table>
+            </div>
+          </div>
         </div>
 
         <div id="avg-chart"></div>
-        <div id="buy-sell-chart"></div>
         <div id="orders"></div>
       </div>
 
     </div>
 
-  </div>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="simconfig" tabindex="-1" role="dialog"

@@ -2,6 +2,7 @@ package quark;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
 
@@ -92,7 +93,8 @@ public class CryptopiaCurrency implements Currency {
   public BigDecimal getMinBaseTrade() {
     return minBaseTrade;
   }
-
+  
+  @JsonGetter("usd")
   public BigDecimal inUSD() {
     return usdValue;
   }

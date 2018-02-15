@@ -3,6 +3,7 @@ package quark.model;
 import java.math.BigDecimal;
 import java.util.concurrent.ExecutionException;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -67,6 +68,7 @@ public class Balance {
     return new Balance(getCurrency(), newAmount);
   }
 
+  @JsonGetter(value="usd")
   public BigDecimal toUSD() throws ParseException {
     return CoinMath.multiply(available,currency.inUSD());
   }
