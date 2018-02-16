@@ -6,6 +6,8 @@ import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+
 import quark.CryptopiaCurrency;
 import quark.model.Balance;
 
@@ -39,7 +41,8 @@ public interface BalanceListing {
     builder.append("total: " + sum);
     return builder.toString();
   }
-
+  
+  @JsonGetter
   default BigDecimal total() {
     BigDecimal sum = BigDecimal.ZERO;
     for (Balance balance : getBalances()) {

@@ -42,11 +42,13 @@ $(document).ready(function() {
     var fromLapReport = function(id,lapReport){
         var table = $(id).find("table");
         var time = $(id).find(".time");
+        var total = $(id).find(".total");
         table.empty();
         time.empty();
+        total.empty();
         if(lapReport!=null){
             time.text(lapReport.dateTime);
-            
+            total.text(lapReport.balanceListing.total);
             var balances =Object.values(lapReport.balanceListing.balances);
             var values = balances.map(el=>[el.symbol,el.available,el.available*el.currency.usd]);        
             createTable(table,["Symbol","Value","USD"],values);            
