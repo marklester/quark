@@ -1,20 +1,15 @@
-package quark.db;
+package quark.db.cqegine;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.BiConsumer;
-import java.util.function.BinaryOperator;
 import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -37,7 +32,7 @@ import com.googlecode.cqengine.query.simple.Between;
 import com.googlecode.cqengine.query.simple.Equal;
 import com.googlecode.cqengine.stream.StreamFactory;
 
-import quark.db.BigDecimalAverageCollector.BigDecimalAccumulator;
+import quark.db.OrderDAO;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
@@ -154,72 +149,16 @@ public class CollectionOrderDao implements OrderDAO {
     return grouped;
   }
 
-}
-
-
-class BigDecimalAverageCollector implements Collector<Order, BigDecimalAccumulator, BigDecimal> {
-
   @Override
-  public Supplier<BigDecimalAccumulator> supplier() {
-    return BigDecimalAccumulator::new;
+  public Map<String, Integer> countOrdersBy(String dtpattern) {
+    DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern(dtpattern);
+    return backingOrders.stream().map(o -> dtFormatter.format(o.getTimestamp()))
+        .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e -> 1)));
   }
 
   @Override
-  public BiConsumer<BigDecimalAccumulator, Order> accumulator() {
-    return BigDecimalAccumulator::add;
-  }
-
-  @Override
-  public BinaryOperator<BigDecimalAccumulator> combiner() {
-    return BigDecimalAccumulator::combine;
-  }
-
-  @Override
-  public Function<BigDecimalAccumulator, BigDecimal> finisher() {
-    return BigDecimalAccumulator::getAverage;
-  }
-
-  @Override
-  public Set<Characteristics> characteristics() {
-    return Collections.emptySet();
-  }
-
-  static class BigDecimalAccumulator {
-    private BigDecimal sum = BigDecimal.ZERO;
-
-    private BigDecimal count = BigDecimal.ZERO;
-
-    public BigDecimalAccumulator() {
-
-    }
-
-    public BigDecimalAccumulator(BigDecimal sum, BigDecimal count) {
-      this.sum = sum;
-      this.count = count;
-    }
-
-    BigDecimal getAverage() {
-      return BigDecimal.ZERO.compareTo(count) == 0 ? BigDecimal.ZERO
-          : sum.divide(count, 2, RoundingMode.HALF_EVEN);
-    }
-
-    BigDecimalAccumulator combine(BigDecimalAccumulator another) {
-      return new BigDecimalAccumulator(sum.add(another.getSum()), count.add(another.getCount()));
-    }
-
-    void add(Order other) {
-      count = count.add(BigDecimal.ONE);
-      sum = sum.add(other.getPrice());
-    }
-
-    public BigDecimal getSum() {
-      return sum;
-    }
-
-    public BigDecimal getCount() {
-      return count;
-    }
-
+  public Integer getOrderCount() {
+    return backingOrders.size();
   }
 
 }

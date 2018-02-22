@@ -1,22 +1,20 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
 
-<title>Quark</title>
+  <title>Quark</title>
 
-<!-- Bootstrap core CSS -->
-<link rel='stylesheet'
-  href='/webjars/bootstrap/4.0.0/css/bootstrap.min.css'>
+  <!-- Bootstrap core CSS -->
+  <link rel='stylesheet' href='/webjars/bootstrap/4.0.0/css/bootstrap.min.css'>
 
-<!-- Custom styles for this template -->
-<link href="css/dashboard.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,9 +22,8 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Quark</a>
     <ul class="navbar-nav px-3">
       <li>
-        <button type="button" class="btn btn-primary"
-          data-toggle="modal" data-target="#simconfig">Run
-          Simulation</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#simconfig">Run Simulation
+        </button>
       </li>
     </ul>
   </nav>
@@ -43,9 +40,11 @@
       </div>
 
       <div class="col-sm-10">
-        <div class="row">
+        <div class="row px-2">
           <h2 class="h2">
-            Simulation: <span id="simId"></span> <span id="loading"></span>
+            <span id="loading"></span>
+            Simulation:
+            <span id="simId"></span>
           </h2>
         </div>
         <div class="row">
@@ -59,7 +58,8 @@
           <div class="col-sm-5">
             <div id="start" class="card">
               <div class="card-header">
-                Start <span class="time"></span>
+                Starting Balances
+                <span class="total"></span>
               </div>
               <table class="table table-sm">
               </table>
@@ -68,7 +68,7 @@
           <div class="col-sm-5">
             <div id="end" class="card">
               <div class="card-header">
-                Result 
+                Result
                 <span class="time"></span>
                 <b>Total:</b>
                 <span class="total"></span>
@@ -87,15 +87,13 @@
 
   </div>
   <!-- Modal -->
-  <div class="modal fade" id="simconfig" tabindex="-1" role="dialog"
-    aria-labelledby="simconfigTitle" aria-hidden="true">
+  <div class="modal fade" id="simconfig" tabindex="-1" role="dialog" aria-labelledby="simconfigTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Run
-            Simulation</h5>
-          <button type="button" class="close" data-dismiss="modal"
-            aria-label="Close">
+          <h5 class="modal-title" id="exampleModalLongTitle">Run Simulation
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -103,57 +101,51 @@
           <form>
             <div class="form-row">
               <div class="form-group col-md6">
-                <label for="startfund" class="col-form-label">Starting
-                  Funds:</label> <input type="text" class="form-control"
-                  id="startFund" value="100">
+                <label for="tickrate" class="col-form-label">Tick Rate:</label>
+                <input type="text" class="form-control" id="tick" value="P1D">
               </div>
               <div class="form-group col-md6">
-                <label for="portfolioSize" class="col-form-label">Portfolio
-                  Size:</label> <input type="text" class="form-control"
-                  id="portfolioSize" value="2">
+                <label for="short" class="col-form-label">Short Average:</label>
+                <input type="text" class="form-control" id="short" value="P1D" />
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-sm4">
-                <label for="tickrate" class="col-form-label">Tick
-                  Rate:</label> <input type="text" class="form-control"
-                  id="tick" value="P1D">
+              <div class="form-group col-md6">
+                <label for="long" class="col-form-label">Long Average:</label>
+                <input type="text" class="form-control" id="long" value="P3D" />
               </div>
-              <div class="form-group col-sm4">
-                <label for="short" class="col-form-label">Short
-                  Average:</label> <input type="text" class="form-control"
-                  id="short" value="P1D" />
-              </div>
-              <div class="form-group col-sm4">
-                <label for="long" class="col-form-label">Long
-                  Average:</label> <input type="text" class="form-control"
-                  id="long" value="P3D" />
+              <div class="form-group col-md6">
+                <label for="portfolioSize" class="col-form-label">Portfolio Size:</label>
+                <input type="text" class="form-control" id="portfolioSize" value="2">
               </div>
             </div>
+            <h4>
+              Starting Balances
+              <button type="button" class="btn btn-dark" id="addbalance">
+                <i class="fa fa-plus"></i>
+              </button>
+            </h4>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary"
-            data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="run">Run
-            Simulation</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="run">Run Simulation
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="/webjars/jquery/jquery.min.js"></script>
   <script src="/webjars/popper.js/dist/umd/popper.min.js"></script>
   <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
   <!-- Icons -->
-  <script
-    src="/webjars/font-awesome/on-server/js/fontawesome-all.min.js"></script>
+  <script src="/webjars/font-awesome/on-server/js/fontawesome-all.min.js"></script>
 
   <!-- Graphs -->
   <script src="/webjars/plotly.js/dist/plotly.min.js"></script>
   <script src="js/quark.js"></script>
 </body>
+
 </html>

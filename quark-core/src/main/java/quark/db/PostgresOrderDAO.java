@@ -107,7 +107,7 @@ public class PostgresOrderDAO implements OrderDAO {
   }
 
   @Override
-  public Map<Integer, BigDecimal> getAllAvg(LocalDateTime anchor,Duration overTime) {
+  public Map<Integer, BigDecimal> getAllAvg(LocalDateTime anchor, Duration overTime) {
     LocalDateTime past = anchor.minus(overTime);
     Timestamp end = Timestamp.valueOf(anchor);
     Timestamp start = Timestamp.valueOf(past);
@@ -193,5 +193,20 @@ public class PostgresOrderDAO implements OrderDAO {
   @Override
   public Table<Record> getTable() {
     return table;
+  }
+
+  @Override
+  public Map<String, Integer> countOrdersBy(String pattern) {
+    String fieldStr = String.format("TO_CHAR(%s,'%s')", OrderFields.ORDER_DATE.getName(), pattern);
+    Field<String> timeGrouping = DSL.field(fieldStr, String.class).as("timegroup");
+    Map<String, Integer> map =
+        ctx.select(timeGrouping, DSL.count()).from(OrderFields.ORDERS).groupBy(timeGrouping).fetch()
+            .stream().collect(Collectors.toMap(r -> r.value1(), r -> r.value2()));
+    return map;
+  }
+
+  @Override
+  public Integer getOrderCount() {
+    return ctx.selectCount().from(OrderFields.ORDERS).fetchOne().value1();
   }
 }

@@ -69,9 +69,14 @@ public class CurrencyManager {
     return graphs.get(CACHE).values();
   }
 
-  public Optional<CryptopiaCurrency> getCurrency(String symbol) throws ExecutionException {
-    return graphs.get(CACHE).values().stream().filter(c -> c.getSymbol().equals(symbol))
-        .findFirst();
+  public Optional<CryptopiaCurrency> getCurrency(String symbol) {
+    try {
+      return graphs.get(CACHE).values().stream().filter(c -> c.getSymbol().equalsIgnoreCase(symbol))
+          .findFirst();
+    } catch (ExecutionException e) {
+      LOGGER.error("could not retrieve cached currencies for symbol " + symbol, e);
+      return Optional.empty();
+    }
   }
 
   public CurrencyLookup getCurrencyLookup() {

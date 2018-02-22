@@ -51,8 +51,7 @@ public class MarketManager {
   private Map<String, Market> retrieveMarkets() throws Exception {
     String getMarketsUrl = CryptopiaGetter.BASE_CRYPTOPIA_API_URL + "GetMarkets";
     HttpClient client = HttpClientBuilder.create()
-        .setDefaultRequestConfig(RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build())
-        .build();
+        .setDefaultRequestConfig(RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build()).build();
     HttpGet get = new HttpGet(getMarketsUrl);
     HttpResponse response = client.execute(get);
     if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
@@ -65,8 +64,7 @@ public class MarketManager {
       for (JsonNode node : jsonNode.get("Data")) {
         try {
           Market market = new Market(node, tpManager);
-          if (!market.getTradePair().isClosing()
-              && market.getTradePair().getCurrency().inUSD() != null) {
+          if (!market.getTradePair().isClosing() && market.getTradePair().getCurrency().inUSD() != null) {
 
             markets.put(market.getLabel(), market);
           }
@@ -88,12 +86,10 @@ public class MarketManager {
   }
 
   public Collection<Market> getMarkets(double minVolume) throws ExecutionException {
-    return cache.get(CACHE).values().stream().filter(m -> m.getVolume() > minVolume)
-        .collect(Collectors.toSet());
+    return cache.get(CACHE).values().stream().filter(m -> m.getVolume() > minVolume).collect(Collectors.toSet());
   }
 
-  public Collection<Market> getMarketsWithMinOrders(OrderDAO orderDao, double orders)
-      throws ExecutionException {
+  public Collection<Market> getMarketsWithMinOrders(OrderDAO orderDao, double orders) throws ExecutionException {
     return cache.get(CACHE).values().stream()
         .filter(m -> orderDao.getOrderCount(m.getTradePair().getId(), OrderType.ALL) >= orders)
         .collect(Collectors.toSet());

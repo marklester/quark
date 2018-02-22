@@ -66,18 +66,6 @@ public class CryptopiaTrader implements Trader {
   }
 
   @Override
-  public void buy(TradePair tpId, double d) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public void sell(TradePair tpId, double d) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
   public void order(TradePair tradePair, OrderType type, BigDecimal price, BigDecimal amount) {
     // TODO Auto-generated method stub
     

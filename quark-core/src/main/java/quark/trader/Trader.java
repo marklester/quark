@@ -14,10 +14,6 @@ public interface Trader {
   BalanceManager getBalanceManager() throws Exception;
   
   MarketManager getMarketManager() throws Exception; 
-  
-  void buy(TradePair tpId, double d);
-  
-  void sell(TradePair tpId, double d);
 
   void order(TradePair tradePair, OrderType type, BigDecimal price, BigDecimal amount);
 

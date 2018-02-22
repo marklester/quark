@@ -11,11 +11,13 @@ public class Receipt {
   private final CryptopiaCurrency product;
   private final BigDecimal amount;
   private final Balance price;
+  private final BigDecimal fee;
 
-  public Receipt(CryptopiaCurrency product,BigDecimal amount, Balance price) {
+  public Receipt(CryptopiaCurrency product, BigDecimal amount, Balance price, BigDecimal fee) {
     this.amount = amount;
     this.product = product;
     this.price = price;
+    this.fee = fee;
   }
 
   public BigDecimal getAmount() {
@@ -30,7 +32,11 @@ public class Receipt {
   public CryptopiaCurrency getProduct() {
     return product;
   }
-  
+
+  public BigDecimal getFee() {
+    return fee;
+  }
+
   public String toString() {
     return MoreObjects.toStringHelper(this).add("product", product).add("amount", amount)
         .add("price", price).toString();

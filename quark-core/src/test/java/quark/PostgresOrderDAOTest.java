@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
@@ -215,5 +216,38 @@ public class PostgresOrderDAOTest {
     Assert.assertEquals(1, dao.getOrderCount(tpId, OrderType.BUY));
     Assert.assertEquals(1, dao.getOrderCount(tpId, OrderType.SELL));
     Assert.assertEquals(2, dao.getOrderCount(tpId, OrderType.ALL));
+  }
+  
+  @Test
+  public void testOrderGrouping() {
+    String yearPattern = "YYYY";
+    int tpId = 1;
+    LocalDateTime time = LocalDateTime.now();
+
+    // should be 0 avg for now records
+    Map<String, Integer> groupedByYear = dao.countOrdersBy(yearPattern);
+    Assert.assertEquals(0, groupedByYear.size());
+
+    int range = 10;
+    BigDecimal zero = BigDecimal.ZERO;
+    for (int i = 0; i < range; i++) {
+      StandardOrder order = new StandardOrder("hash" + i, tpId, OrderType.BUY, "", zero, zero, zero,
+          time.minusYears(i));
+      dao.insert(order);
+    }
+
+    groupedByYear = dao.countOrdersBy(yearPattern);
+    Assert.assertEquals(range, groupedByYear.size());
+    for (Entry<String, Integer> entry : groupedByYear.entrySet()) {
+      Integer expected = 1;
+      Assert.assertEquals(expected, entry.getValue());
+    }
+    
+    Map<String, Integer> groupedByMonth = dao.countOrdersBy("MM");
+    Assert.assertEquals(1, groupedByMonth.size());
+    for (Entry<String, Integer> entry : groupedByMonth.entrySet()) {
+      Integer expected = 10;
+      Assert.assertEquals(expected, entry.getValue());
+    }
   }
 }

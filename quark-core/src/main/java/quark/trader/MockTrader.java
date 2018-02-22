@@ -1,7 +1,6 @@
 package quark.trader;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,15 +82,15 @@ public class MockTrader implements Trader {
     BigDecimal priceOfBase = order.getPrice();
     // min.00000008 (1.6*.0004)=.000064
     BigDecimal amountOfBase = CoinMath.multiply(share, priceOfBase);
-
+    BigDecimal fee = CoinMath.multiply(amountOfBase, tradePair.getTradeFee());
     if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0) {
       Balance currentBaseBalance = balanceManager.getBalance(tradePair.getBaseCurrency());
-      Balance updatedBaseBalance = currentBaseBalance.add(amountOfBase);
+      Balance updatedBaseBalance = currentBaseBalance.add(amountOfBase).substract(fee);
       balanceManager.putBalance(updatedBaseBalance);
       Balance left = holdingBalance.substract(share);
       balanceManager.putBalance(left);
       return new ProcessedOrder(openOrder, true,
-          new Receipt(baseCurrency, amountOfBase, new Balance(holdCurrency, share)));
+          new Receipt(baseCurrency, amountOfBase, new Balance(holdCurrency, share),fee));
     } else {
       LOGGER.info("could not sell {} amount:{} is less the min of {} or {}", tradePair.getSymbol(),
           amountOfBase, tradePair.getMinimumBaseTrade(), tradePair.getTradeFee());
@@ -104,7 +103,7 @@ public class MockTrader implements Trader {
 
     Balance baseBalance = balanceManager.getBalance(tradePair.getBaseCurrency());
     BigDecimal baseShare = CoinMath.multiply(baseBalance.getAvailable(), openOrder.getPercentage());
-
+    BigDecimal fee = CoinMath.multiply(baseShare, tradePair.getTradeFee());
     Order lastOrder = getOrderDao().getLastOrderFor(tradePair.getId());
     BigDecimal priceOfCoin = lastOrder.getPrice();
 
@@ -117,62 +116,11 @@ public class MockTrader implements Trader {
       Balance curBalance = balanceManager.getBalance(tradePair.getCurrency());
       Balance updatedCoinBalance = curBalance.add(boughtAmount);
       balanceManager.putBalance(updatedCoinBalance);
-      Balance updatedBaseBalance = baseBalance.substract(baseShare);
+      Balance updatedBaseBalance = baseBalance.substract(baseShare).substract(fee);
       balanceManager.putBalance(updatedBaseBalance);
       Receipt receipt = new Receipt(curBalance.getCurrency(), boughtAmount,
-          new Balance(baseBalance.getCurrency(), baseShare));
+          new Balance(baseBalance.getCurrency(), baseShare),fee);
       return new ProcessedOrder(openOrder, true, receipt);
-    }
-  }
-
-  @Override
-  public void buy(TradePair tradePair, double percentage) {
-    LOGGER.debug("trading for {} with {}% of balance", tradePair.getLabel(), percentage * 100);
-    Order order = getOrderDao().getLastOrderFor(tradePair.getId());
-    Balance cashOnHand = balanceManager.getBalance(tradePair.getBaseCurrency());
-    BigDecimal portion = cashOnHand.getAvailable().multiply(new BigDecimal(percentage));
-    BigDecimal priceOfCoin = order.getPrice();
-
-    BigDecimal amount = portion.divide(priceOfCoin, 4, RoundingMode.HALF_EVEN);
-    if (amount.compareTo(tradePair.getMinimumTrade()) < 0) {
-      LOGGER.info("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(), amount,
-          tradePair.getMinimumTrade());
-    } else {
-      Balance boughtCoin = balanceManager.getBalance(tradePair.getCurrency()).add(amount);
-      balanceManager.putBalance(boughtCoin);
-      balanceManager.putBalance(cashOnHand.substract(portion));
-      LOGGER.info("bought {} amount:{} price:{}", tradePair.getLabel(), amount, priceOfCoin);
-    }
-  }
-
-  @Override
-  public void sell(TradePair tradePair, double percentageOfHolding) {
-
-    LOGGER.debug("selling {}% of {}", percentageOfHolding * 100, tradePair);
-    Order order = getOrderDao().getLastOrderFor(tradePair.getId());
-    Preconditions.checkNotNull(order, "There is no history for " + tradePair);
-    Balance holdingBalance = balanceManager.getBalance(tradePair.getCurrency());
-
-    if (holdingBalance.getAvailable().compareTo(BigDecimal.ZERO) == 0) {
-      LOGGER.warn("nothing to sell in {}", tradePair);
-      return;
-    }
-
-    BigDecimal portion =
-        holdingBalance.getAvailable().multiply(new BigDecimal(percentageOfHolding));
-
-    BigDecimal priceOfBase = order.getPrice();
-    BigDecimal amountOfBase = portion.multiply(priceOfBase);
-
-    if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0) {
-      Balance boughtCoin = new Balance(tradePair.getBaseCurrency(), amountOfBase);
-      balanceManager.putBalance(boughtCoin);
-      balanceManager.putBalance(holdingBalance.substract(portion));
-      LOGGER.debug("selling {} amount:{} price:{}", tradePair.getCurrency().getSymbol(), portion,
-          priceOfBase);
-    } else {
-      LOGGER.debug("could not buy {} amount:{} is less the min of {}", tradePair.getSymbol(),
-          amountOfBase, tradePair.getMinimumBaseTrade());
     }
   }
 

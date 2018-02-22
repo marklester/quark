@@ -18,11 +18,13 @@ import quark.orders.ProcessedOrder;
 
 public class SimulationReport {
   private final String id;
+  private final SimParams params;
   private NavigableSet<LapReport> lapReports = new ConcurrentSkipListSet<>();
   private final AtomicBoolean complete = new AtomicBoolean(false);
 
-  public SimulationReport(String id) {
+  public SimulationReport(String id, SimParams params) {
     this.id = id;
+    this.params = params;
   }
 
   public Set<LapReport> getLapReports() {
@@ -44,17 +46,17 @@ public class SimulationReport {
   public AtomicBoolean getComplete() {
     return complete;
   }
- 
+
   @JsonIgnore
   public Collection<PlotlyTrace> getPlots() {
-    
-    if(lapReports.isEmpty()) {
+
+    if (lapReports.isEmpty()) {
       return Collections.emptyList();
     }
-    
+
     LapReport lastReport = lapReports.last();
     BalanceListing listing = lastReport.getBalanceListing();
-    
+
     if (listing == null) {
       return Collections.emptyList();
     }
@@ -72,16 +74,16 @@ public class SimulationReport {
     }
     return traces.values();
   }
-  
+
   @JsonIgnore
   public Set<ProcessedOrder> getProcessedOrders() {
     return lapReports.stream().map(r -> r.getProcessedOrders()).flatMap(Set::stream)
         .collect(Collectors.toSet());
   }
-  
-  private Map<String,String> params = Maps.newHashMap();
-  
-  public Map<String,String> getParams() {
+
+
+
+  public SimParams getParams() {
     return params;
   }
 }

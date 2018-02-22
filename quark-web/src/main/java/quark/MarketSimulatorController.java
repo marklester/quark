@@ -1,5 +1,6 @@
 package quark;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
@@ -10,15 +11,17 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import quark.algorithms.Parameter;
+import quark.algorithms.SimParams;
 import quark.algorithms.SimulationReport;
 import quark.charts.PlotlyTrace;
 import quark.db.DatabaseManager;
+import quark.model.Balance;
 import quark.orders.ProcessedOrder;
 
 @RestController
@@ -40,19 +43,10 @@ public class MarketSimulatorController {
     this.marketManager = marketManager;
   }
 
-  @RequestMapping(path = "/api/simulate", method = RequestMethod.GET)
-  public String simulate(@RequestParam(name = "tickRate", defaultValue = "P1D") String tickRate,
-      @RequestParam(name = "shortAvg", defaultValue = "P1D") String shortAvg,
-      @RequestParam(name = "longAvg", defaultValue = "P3D") String longAvg,
-      @RequestParam(name = "portfolioSize", defaultValue = "2") String portfolioSize,
-      @RequestParam(name = "startFund", defaultValue = "100") String startFund) throws Exception {
+  @RequestMapping(path = "/api/simulate", method = RequestMethod.POST)
+  public String simulate(@RequestBody SimParams params) throws Exception {
     String id = "" + (runningSimulations.size() + 1);
-    SimulationReport report = new SimulationReport(id);
-    report.getParams().put(Parameter.STARTING_FUND, startFund);
-    report.getParams().put(Parameter.PORTFOLIO_SIZE, portfolioSize);
-    report.getParams().put(Parameter.TICK_RATE, tickRate);
-    report.getParams().put(Parameter.SHORT_AVG, shortAvg);
-    report.getParams().put(Parameter.LONG_AVG, longAvg);
+    SimulationReport report = new SimulationReport(id, params);
     RunSimulation simulation = new RunSimulation(report, currencyManager, dbManager, marketManager);
     runningSimulations.put(id, report);
     executor.execute(simulation);
@@ -85,7 +79,15 @@ public class MarketSimulatorController {
   }
 
   @RequestMapping(path = "/api/simulation/{id}/parameters", method = RequestMethod.GET)
-  public Map<String, String> getParameters(@PathVariable String id) {
+  public SimParams getParameters(@PathVariable String id) {
     return getSimulationReport(id).getParams();
+  }
+
+  @RequestMapping(path = "/api/simulation/{id}/start-balances", method = RequestMethod.GET)
+  public Set<Balance> getStartingBalances(@PathVariable String id) {
+    return getSimulationReport(id).getParams().getStartingBalances().entrySet().stream()
+        .map(entry -> new Balance(currencyManager.getCurrency(entry.getKey()).get(),
+            new BigDecimal(entry.getValue())))
+        .collect(Collectors.toSet());
   }
 }

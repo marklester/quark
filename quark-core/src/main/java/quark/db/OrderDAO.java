@@ -42,4 +42,8 @@ public interface OrderDAO {
   Table<Record> getTable();
 
   Map<Integer, BigDecimal> getAllAvg(LocalDateTime start, Duration overTime);
+
+  Map<String, Integer> countOrdersBy(String dateTimePattern);
+
+  Integer getOrderCount();
 }
