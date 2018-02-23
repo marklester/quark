@@ -80,8 +80,12 @@ public class TradePair {
     return baseCurrency;
   }
 
-  public BigDecimal getTradeFee() {
+  public BigDecimal getTradeFeeInPercent() {
     return tradeFee;
+  }
+  
+  public BigDecimal getTradeFee() {
+    return tradeFee.multiply(new BigDecimal(.01));
   }
 
   /**

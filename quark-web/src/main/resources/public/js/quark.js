@@ -2,7 +2,6 @@ var timerId = null;
 
 var updateMenu = function (sid) {
     $.get("/api/simulations", function (data, status) {
-        console.log("simulations");
         var menu = $("#menu");
         menu.empty();
         $(data).each(function (i, item) {
@@ -40,7 +39,8 @@ var createTable = function (id, header, data) {
 let updateBalanceCard = function (sid) {
     $.get(`/api/simulation/${sid}/start-balances`, function (data, status) {
         if (!$.isEmptyObject(data)) {
-            let bals = data.map(el => [el.symbol, el.available, el.usd]);
+            let bals = data.map(el => [el.symbol, el.available, el.usd])
+                .sort((a, b) => a[0].localeCompare(b[0]));
             let total = bals.map(el => el[2]).reduce((acc, cur) => acc + cur);
             createTable("#start > table", ["Symbol", "Value", "USD"], bals);
             let totalEl = $("#start").find(".total");
@@ -129,7 +129,6 @@ var updateOrders = function (sid) {
     });
 }
 var updateData = function (sid) {
-    console.log("waiting for data");
     $("#simId").text(sid);
     $("#loading").html('<i class="fas fa-spinner fa-pulse"></i>');
     updateMenu(sid);
@@ -151,6 +150,7 @@ var updateData = function (sid) {
 
             var params = Object.entries(data.params);
             createTable("#params", ["Name", "Value"], params);
+            updateReports(data.lapReports);
             fromLapReport("#end", data.lapReports.slice(-1)[0]);
         }
     });
@@ -158,6 +158,69 @@ var updateData = function (sid) {
     updatePlots(sid);
     updateOrders(sid);
 };
+
+let updateReports = function (reports) {
+    let reportsDiv = $("#lap-reports");
+    for (const [index, report] of reports.entries()) {
+        let id = `report-${index}`
+        let reportEl = `<div class="card">
+        <div class="card-header" id="heading-${id}">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#${id}" aria-expanded="true" aria-controls="${id}">
+                ${report.dateTime} 
+            </button>
+            ${report.balanceListing.total}
+          </h5>
+        </div>
+        <div id="${id}" class="collapse" aria-labelledby="heading-${id}" data-parent="#accordion">
+          <div class="card-body row">
+            <div class="orders col"></div>
+            <div class="details col"></div>
+          </div>
+        </div>
+      </div>
+        `;
+        reportsDiv.append(reportEl);
+        $("#" + id).on('shown.bs.collapse', function () {
+            let orders = report.processedOrders;
+            $("#" + id).find(".orders").append(createOrderTable(orders));
+
+        });
+    }
+};
+
+let createOrderTable = function (porders) {
+    let table = $("<table/>").addClass("table table-sm table-hover");
+    let header = `<thead class="thead-dark">
+        <tr>
+        <th>TradePair</th>
+        <th>Order Type</th>
+        <th>Percent</th>
+        <th>Success</th>
+        <th>Message</th>
+        </tr>
+    </thead>
+    <tbody></tbody>`;
+    table.append(header);
+    for (const porder of porders.sort((a, b) => b.success - a.success)) {
+        let order = porder.order;
+        let tr = `<tr>
+                <td>${order.tradePair.label}</td>
+                <td>${order.orderType}</td>
+                <td>${order.percentage * 100}% </td>
+                <td>${porder.success}</td>
+                <td>${porder.message || ""}</td>
+            </tr>`;
+
+        table.append(tr);
+    }
+    $(table).find("tr").click(function (el) {
+        console.log(el);
+        $(table).find("tr").removeClass("table-active");
+        $(this).addClass("table-active");
+    });
+    return table;
+}
 
 $("#run").click(
     function (e) {
