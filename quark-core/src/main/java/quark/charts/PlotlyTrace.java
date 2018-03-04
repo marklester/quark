@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
-import quark.algorithms.CoinKey;
-import quark.algorithms.DataPoint;
+import quark.report.CoinKey;
+import quark.report.DataPoint;
 
 public class PlotlyTrace {
   public static PlotlyTrace bar(CoinKey name) {

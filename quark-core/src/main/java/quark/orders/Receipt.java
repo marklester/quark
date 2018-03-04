@@ -4,24 +4,19 @@ import java.math.BigDecimal;
 
 import com.google.common.base.MoreObjects;
 
-import quark.CryptopiaCurrency;
 import quark.model.Balance;
 
 public class Receipt {
-  private final CryptopiaCurrency product;
-  private final BigDecimal amount;
+  private final Balance product;
   private final Balance price;
+  private final BigDecimal unitPrice;
   private final BigDecimal fee;
 
-  public Receipt(CryptopiaCurrency product, BigDecimal amount, Balance price, BigDecimal fee) {
-    this.amount = amount;
+  public Receipt(Balance product, Balance price, BigDecimal unitPrice, BigDecimal fee) {
+    this.unitPrice = unitPrice;
     this.product = product;
     this.price = price;
     this.fee = fee;
-  }
-
-  public BigDecimal getAmount() {
-    return amount;
   }
 
   public Balance getPrice() {
@@ -29,7 +24,7 @@ public class Receipt {
   }
 
 
-  public CryptopiaCurrency getProduct() {
+  public Balance getProduct() {
     return product;
   }
 
@@ -38,8 +33,11 @@ public class Receipt {
   }
 
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("product", product).add("amount", amount)
-        .add("price", price).toString();
+    return MoreObjects.toStringHelper(this).add("product", product).add("price", price).toString();
+  }
+
+  public BigDecimal getUnitPrice() {
+    return unitPrice;
   }
 
 }

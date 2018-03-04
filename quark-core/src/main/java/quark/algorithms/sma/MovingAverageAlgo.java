@@ -1,4 +1,4 @@
-package quark.algorithms;
+package quark.algorithms.sma;
 
 import java.math.BigDecimal;
 import java.time.Duration;
@@ -14,13 +14,18 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
+import quark.algorithms.Algorithm;
+import quark.algorithms.Algos;
 import quark.charts.PlotlyTrace.PlotType;
-import quark.model.Balance;
 import quark.model.Market;
 import quark.model.TradePair;
 import quark.orders.AlgoOrder;
 import quark.orders.Order.OrderType;
 import quark.orders.ProcessedOrder;
+import quark.report.CoinKey;
+import quark.report.DataPoint;
+import quark.report.LapReport;
+import quark.report.SimulationReport;
 import quark.trader.Trader;
 
 public class MovingAverageAlgo implements Algorithm {
@@ -42,7 +47,7 @@ public class MovingAverageAlgo implements Algorithm {
   }
 
   @Override
-  public void init(LapReport lapReport, Trader trader) throws Exception {
+  public void init(SimulationReport simReport,LapReport lapReport, Trader trader) throws Exception {
     this.lapReport = lapReport;
     this.currentTime = lapReport.getDateTime();
 
@@ -67,7 +72,7 @@ public class MovingAverageAlgo implements Algorithm {
     plot(market, longAvg, longDuration.toString() + " avg");
     SMA sma = new SMA(shortAvg, longAvg);
 
-    if (canBuy(trader, market) && sma.isValid()
+    if (Algos.canBuy(trader, market) && sma.isValid()
         && sma.getShortAvg().compareTo(sma.getLongAvg()) > 0) {
       // if trending up buy
       if (!invested.contains(market.getLabel())) {
@@ -75,7 +80,7 @@ public class MovingAverageAlgo implements Algorithm {
       }
 
 
-    } else if (canSell(trader, market) && sma.isValid()
+    } else if (Algos.canSell(trader, market) && sma.isValid()
         && sma.getShortAvg().compareTo(sma.getLongAvg()) < 0) {
       // if trending down sell
       // TODO add open orders logic
@@ -92,7 +97,7 @@ public class MovingAverageAlgo implements Algorithm {
     String orderType = porder.getOrder().getOrderType().toString();
     String currency = porder.getOrder().getTradePair().getCurrency().getName();
     CoinKey name = new CoinKey(currency, orderType);
-    BigDecimal val = porder.getReceipt().getAmount();
+    BigDecimal val = porder.getReceipt().getProduct().getAvailable();
     lapReport.getDataPoints().add(new DataPoint(name, val, PlotType.bar));
   }
 
@@ -129,27 +134,5 @@ public class MovingAverageAlgo implements Algorithm {
     return processed;
   }
 
-  private boolean canBuy(Trader trader, Market market) throws Exception {
-    Balance baseBalance =
-        trader.getBalanceManager().getBalance(market.getTradePair().getBaseCurrency());
-    BigDecimal minBase = market.getTradePair().getMinimumBaseTrade();
-    BigDecimal baseBalanceAvailable = baseBalance.getAvailable();
-    return baseBalanceAvailable.compareTo(BigDecimal.ZERO) > 0
-        && baseBalanceAvailable.compareTo(minBase) > 0;
-  }
-
-  boolean canSell(Trader trader, Market market) throws Exception {
-    Balance holdingBalance =
-        trader.getBalanceManager().getBalance(market.getTradePair().getCurrency());
-
-    BigDecimal minCoin = market.getTradePair().getMinimumTrade();
-    BigDecimal myCoin = holdingBalance.getAvailable();
-    if (myCoin.compareTo(BigDecimal.ZERO) > 0) {
-      LOGGER.info("my coin:{} min: {}", holdingBalance, market);
-      if (myCoin.compareTo(minCoin) > 0) {
-        return true;
-      }
-    }
-    return false;
-  }
+ 
 }

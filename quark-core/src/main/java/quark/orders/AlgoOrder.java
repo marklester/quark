@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 
 import com.google.common.base.MoreObjects;
 
-import quark.algorithms.SMA;
 import quark.model.TradePair;
 import quark.orders.Order.OrderType;
 
@@ -18,7 +17,7 @@ public class AlgoOrder implements Comparable<AlgoOrder> {
   private final LocalDateTime time;
 
   public AlgoOrder(LocalDateTime time, double percentage, TradePair tradePair, OrderType orderType,
-      SMA sma) {
+      Decision sma) {
     this.time = time;
     this.percentage = new BigDecimal(percentage);
     this.tradePair = tradePair;

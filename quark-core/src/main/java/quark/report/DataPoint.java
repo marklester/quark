@@ -1,4 +1,4 @@
-package quark.algorithms;
+package quark.report;
 
 import java.math.BigDecimal;
 

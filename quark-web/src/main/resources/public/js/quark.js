@@ -24,7 +24,7 @@ var createTable = function (id, header, data) {
         return `<td>${h}</td>`
     });
 
-    var header = $(`<thead></thead>`);
+    var header = $(`<thead></thead>`).addClass("thead-light");
     header.append(hcells);
     table.append(header);
 
@@ -94,40 +94,6 @@ var updatePlots = function (sid) {
         }
     });
 };
-var updateOrders = function (sid) {
-    $.get(`/api/simulation/${sid}/orders`, { success: true }, function (data, status) {
-        if (!$.isEmptyObject(data)) {
-            var table = $("<table></table>").addClass("table table-sm table-striped")
-            var trow = $(`<tr>
-                <th>TIME</th>
-                <th>SYMBOL</th>
-                <th>TYPE</th>
-                <th>PRICE</th>
-                <th>AMOUNT</th>
-                </tr>
-                `);
-            table.append(trow);
-            var sorted = data.sort(function (a, b) {
-                var da = Date.parse(a.order.time);
-                var db = Date.parse(b.order.time);
-                return da - db;
-            })
-            for (let item of sorted) {
-                var ktype = item.order.orderType === "BUY" ? 'table-success' : 'table-danger';
-                var receipt = item.receipt;
-                var trow = $(`<tr>
-                             <td>${item.order.time}</td>
-                            <td>${item.order.tradePair.symbol}</td>
-                            <td class=${ktype}>${item.order.orderType}</td>
-                            <td>${item.receipt.price.available} ${item.receipt.price.currency.symbol}</td>
-                            <td>${item.receipt.amount}</td>
-                            </tr>`);
-                table.append(trow);
-            }
-            $("#orders").html(table);
-        }
-    });
-}
 var updateData = function (sid) {
     $("#simId").text(sid);
     $("#loading").html('<i class="fas fa-spinner fa-pulse"></i>');
@@ -156,69 +122,87 @@ var updateData = function (sid) {
     });
     updateBalanceCard(sid);
     updatePlots(sid);
-    updateOrders(sid);
 };
 
 let updateReports = function (reports) {
     let reportsDiv = $("#lap-reports");
     for (const [index, report] of reports.entries()) {
         let id = `report-${index}`
-        let reportEl = `<div class="card">
-        <div class="card-header" id="heading-${id}">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#${id}" aria-expanded="true" aria-controls="${id}">
+        let reportEl = $(`
+        <div class="card">
+            <div class="card-header" id="heading-${id}">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#${id}" aria-expanded="true" aria-controls="${id}">
                 ${report.dateTime} 
-            </button>
-            ${report.balanceListing.total}
-          </h5>
-        </div>
-        <div id="${id}" class="collapse" aria-labelledby="heading-${id}" data-parent="#accordion">
-          <div class="card-body row">
-            <div class="orders col"></div>
-            <div class="details col"></div>
-          </div>
-        </div>
-      </div>
-        `;
+                </button>
+                ${report.balanceListing.total}
+            </h5>
+            </div>
+            <div id="${id}" class="collapse" aria-labelledby="heading-${id}" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="balances"><h4>Balances</h4><table></table></div>
+                    <div class="row">
+                        <div class="orders col"></div>
+                        <div class="details col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+        var btable = reportEl.find(".balances > table").addClass("table table-small table-bordered");
+        var balances = Object.values(report.balanceListing.balances);
+        var values = balances.map(el => [el.symbol, el.available, el.available * el.currency.usd]);
+        createTable(btable, ["Symbol", "Value", "USD"], values);
+
         reportsDiv.append(reportEl);
         $("#" + id).on('shown.bs.collapse', function () {
             let orders = report.processedOrders;
-            $("#" + id).find(".orders").append(createOrderTable(orders));
+            $("#" + id).find(".orders").empty().append(createOrderTable(orders, reportEl));
 
         });
     }
 };
 
-let createOrderTable = function (porders) {
+let createOrderTable = function (porders, reportEl) {
     let table = $("<table/>").addClass("table table-sm table-hover");
     let header = `<thead class="thead-dark">
         <tr>
         <th>TradePair</th>
         <th>Order Type</th>
-        <th>Percent</th>
+        <th>Percent Allocated</th>
         <th>Success</th>
         <th>Message</th>
+        <th>Decision</th>
         </tr>
     </thead>
     <tbody></tbody>`;
     table.append(header);
     for (const porder of porders.sort((a, b) => b.success - a.success)) {
         let order = porder.order;
-        let tr = `<tr>
+        let decision = order.decision;
+        let tr = $(`<tr>
                 <td>${order.tradePair.label}</td>
                 <td>${order.orderType}</td>
                 <td>${order.percentage * 100}% </td>
                 <td>${porder.success}</td>
                 <td>${porder.message || ""}</td>
-            </tr>`;
-
+                <td>${((decision.shortAvg - decision.longAvg) / decision.longAvg) * 100}</td>
+            </tr>`);
+        tr.click(function (el) {
+            $(table).find("tr").removeClass("table-active");
+            $(tr).addClass("table-active");
+            let receipt = porder.receipt;
+            let details = reportEl.find(".details");
+            console.log(details);
+            let unit = receipt.unitPrice;
+            details.html(`<h3>Receipt</h3>
+                <div>To: ${receipt.product.symbol} ${receipt.product.available}($${receipt.product.usd})</div>
+                <div> From: ${receipt.price.symbol} ${receipt.price.available}(${receipt.price.usd})</div>
+                <div> Fee: ${receipt.fee}</div>
+                <div> Unit: ${unit} ($${unit * receipt.product.currency.usd})</div>
+            `);
+        });
         table.append(tr);
     }
-    $(table).find("tr").click(function (el) {
-        console.log(el);
-        $(table).find("tr").removeClass("table-active");
-        $(this).addClass("table-active");
-    });
     return table;
 }
 

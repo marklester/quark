@@ -6,9 +6,11 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -19,6 +21,7 @@ import org.jooq.Record;
 import org.jooq.Table;
 
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.googlecode.cqengine.ConcurrentIndexedCollection;
 import com.googlecode.cqengine.IndexedCollection;
@@ -30,9 +33,12 @@ import com.googlecode.cqengine.query.logical.And;
 import com.googlecode.cqengine.query.option.QueryOptions;
 import com.googlecode.cqengine.query.simple.Between;
 import com.googlecode.cqengine.query.simple.Equal;
+import com.googlecode.cqengine.resultset.ResultSet;
 import com.googlecode.cqengine.stream.StreamFactory;
 
 import quark.db.OrderDAO;
+import quark.model.IPriceRange;
+import quark.model.MutablePriceRange;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
@@ -44,12 +50,14 @@ public class CollectionOrderDao implements OrderDAO {
       QueryFactory.attribute(o -> o.getTimestamp().toEpochSecond(ZoneOffset.UTC));
   private static final Attribute<Order, OrderType> ORDER_TYPE =
       QueryFactory.attribute(Order::getType);
+  private static final Attribute<Order, BigDecimal> PRICE = QueryFactory.attribute(Order::getPrice);
 
   public CollectionOrderDao() {
     this.backingOrders = new ConcurrentIndexedCollection<>();
     backingOrders.addIndex(NavigableIndex.onAttribute(TRADE_PAIR_ID));
     backingOrders.addIndex(NavigableIndex.onAttribute(ORDER_TYPE));
     backingOrders.addIndex(NavigableIndex.onAttribute(ORDER_DATE));
+    backingOrders.addIndex(NavigableIndex.onAttribute(PRICE));
   }
 
   @Override
@@ -161,4 +169,56 @@ public class CollectionOrderDao implements OrderDAO {
     return backingOrders.size();
   }
 
+  @Override
+  public Map<Integer, ? extends IPriceRange> getPriceRanges(LocalDateTime anchor,
+      Duration overTime) {
+    LocalDateTime past = anchor.minus(overTime);
+    long end = anchor.toEpochSecond(ZoneOffset.UTC);
+    long start = past.toEpochSecond(ZoneOffset.UTC);
+    Between<Order, Long> query = QueryFactory.between(ORDER_DATE, start, end);
+    ResultSet<Order> results = backingOrders.retrieve(query);
+    Map<Integer, MutablePriceRange> ranges = new HashMap<>();
+    for (Order order : results) {
+      ranges.compute(order.getTradePairId(),
+          new BiFunction<Integer, MutablePriceRange, MutablePriceRange>() {
+
+            @Override
+            public MutablePriceRange apply(Integer key, MutablePriceRange current) {
+              BigDecimal price = order.getPrice();
+              if (current == null) {
+                return new MutablePriceRange(key, price, price);
+              }
+              current.computeHigh(price);
+              current.computeLow(price);
+              return current;
+            }
+          });
+    }
+    return ranges;
+  }
+
+  @Override
+  public Map<Integer, Order> getLastOrders() {
+    Map<Integer, Order> lastOrders = Maps.newHashMap();
+    try (ResultSet<Order> orders = backingOrders.retrieve(QueryFactory.all(Order.class),
+
+        QueryFactory.queryOptions(QueryFactory.orderBy(QueryFactory.descending(ORDER_DATE))))) {
+      for (Order o : orders) {
+        lastOrders.compute(o.getTradePairId(), new BiFunction<Integer, Order, Order>() {
+
+          @Override
+          public Order apply(Integer key, Order current) {
+            if (current == null) {
+              return o;
+            }
+            if (o.getTimestamp().isAfter(current.getTimestamp())) {
+              return o;
+            }
+            return current;
+          }
+        });
+      }
+    }
+    return lastOrders;
+  }
 }

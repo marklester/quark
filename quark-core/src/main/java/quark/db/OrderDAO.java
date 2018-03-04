@@ -12,6 +12,7 @@ import org.jooq.DSLContext;
 import org.jooq.Record;
 import org.jooq.Table;
 
+import quark.model.IPriceRange;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
@@ -26,6 +27,8 @@ public interface OrderDAO {
   LocalDateTime getLastOrderDate();
   
   Set<Order> getOrdersFrom(LocalDateTime start, LocalDateTime end);
+  
+  Map<Integer, Order> getLastOrders();  
 
   Order getLastOrderFor(int tpId);
   
@@ -46,4 +49,8 @@ public interface OrderDAO {
   Map<String, Integer> countOrdersBy(String dateTimePattern);
 
   Integer getOrderCount();
+  
+  Map<Integer, ? extends IPriceRange> getPriceRanges(LocalDateTime anchor, Duration overTime);
+
+
 }

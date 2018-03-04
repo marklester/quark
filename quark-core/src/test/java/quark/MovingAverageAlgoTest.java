@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Set;
 
+import org.jooq.tools.jdbc.Mock;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -14,8 +15,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-import quark.algorithms.LapReport;
-import quark.algorithms.MovingAverageAlgo;
+import quark.algorithms.sma.MovingAverageAlgo;
 import quark.balance.MapBalanceManager;
 import quark.db.OrderDAO;
 import quark.db.cqegine.CollectionOrderDao;
@@ -27,12 +27,14 @@ import quark.model.StandardMoney;
 import quark.model.TradePair;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
+import quark.report.LapReport;
+import quark.report.SimulationReport;
 import quark.orders.OrderBuilder;
 import quark.orders.ProcessedOrder;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
 
-public class MovingAverageAlgorithmTest {
+public class MovingAverageAlgoTest {
   private static final String MARKET_LABEL = "TZC/BTC";
 
   @Test
@@ -68,7 +70,8 @@ public class MovingAverageAlgorithmTest {
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
     MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
-    algo.init(LapReport.of(algo, now), trader);
+    SimulationReport report = Mockito.mock(SimulationReport.class);
+    algo.init(report,LapReport.of(algo, now), trader);
     algo.apply(market, trader);
     Set<ProcessedOrder> porders = algo.executeOrders(trader);
     Assert.assertEquals(1, porders.size());
@@ -131,7 +134,8 @@ public class MovingAverageAlgorithmTest {
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
     MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
-    algo.init(LapReport.of(algo, now), trader);
+    SimulationReport report = Mockito.mock(SimulationReport.class);
+    algo.init(report,LapReport.of(algo, now), trader);
     algo.apply(market, trader);
     Set<ProcessedOrder> porders = algo.executeOrders(trader);
     Assert.assertEquals(1, porders.size());

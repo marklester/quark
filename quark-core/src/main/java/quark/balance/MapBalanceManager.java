@@ -39,7 +39,7 @@ public class MapBalanceManager implements BalanceManager {
 
   @Override
   public void putBalance(Balance balance) {
-    if (balances.containsKey(balance.getCurrencyId()) || balances.size() < maxBalances) {
+    if (balances.containsKey(balance.getCurrencyId()) || size(.01) < maxBalances) {
       balances.put(balance.getCurrencyId(), balance);
     } else {
       throw new IllegalArgumentException("There is too many balances");
@@ -58,7 +58,12 @@ public class MapBalanceManager implements BalanceManager {
     }
     return builder.toString();
   }
-
+  
+  public long size(double minAmount) {
+    BigDecimal min = new BigDecimal(minAmount);
+    return balances.values().stream()
+        .filter(b -> b.getCurrency().inUSD().multiply(b.getAvailable()).compareTo(min) > 0).count();
+  }
   @Override
   public int size() {
     return balances.size();

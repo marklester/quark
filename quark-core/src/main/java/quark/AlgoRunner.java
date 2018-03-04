@@ -2,18 +2,16 @@ package quark;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Optional;
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Sets;
 
 import quark.algorithms.Algorithm;
-import quark.algorithms.LapReport;
 import quark.model.Market;
+import quark.report.LapReport;
+import quark.report.SimulationReport;
 import quark.trader.Trader;
 
 public class AlgoRunner {
@@ -21,36 +19,34 @@ public class AlgoRunner {
   private Algorithm algo;
   private Trader trader;
   private Collection<Market> markets;
-  private Set<LapReport> reports = Sets.newLinkedHashSet();
+  private final SimulationReport report;
 
-  public AlgoRunner(Trader trader, Algorithm algo) throws Exception {
+  public AlgoRunner(SimulationReport report, Trader trader, Algorithm algo) throws Exception {
     this.trader = trader;
     this.algo = algo;
+    this.report = report;
     markets = trader.getMarketManager().getMarkets(10000);
   }
 
-  public Optional<LapReport> run(LocalDateTime time) {
+  public LapReport run(LocalDateTime time) {
     Stopwatch sw = Stopwatch.createStarted();
-
+    LapReport lapReport = LapReport.of(algo, time);
     try {
-      LapReport report = LapReport.of(algo, time);
-      algo.init(report, trader);
+      report.addLapReport(lapReport);
+      algo.init(report,lapReport, trader);
       LOGGER.debug("applying algorithm to {} markets", markets.size());
       for (Market market : markets) {
-        algo.apply(market, trader);
+        try {
+          algo.apply(market, trader); 
+        }catch(Exception e) {
+          LOGGER.error("Could not apply algo to {} ",market.getLabel());
+        }
       }
       algo.executeOrders(trader);
-      reports.add(report);
-      return Optional.of(report);
     } catch (Exception e) {
       LOGGER.error("could not run algo", e);
     }
-
-    LOGGER.info("algo took {} to {}", algo, sw);
-    return Optional.absent();
-  }
-
-  public Set<LapReport> getReport() {
-    return reports;
+    LOGGER.info("algo lap took {} to {}", algo, sw);
+    return lapReport;
   }
 }

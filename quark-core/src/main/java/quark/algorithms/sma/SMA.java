@@ -1,4 +1,4 @@
-package quark.algorithms;
+package quark.algorithms.sma;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

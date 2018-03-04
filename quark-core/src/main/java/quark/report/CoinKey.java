@@ -1,4 +1,4 @@
-package quark.algorithms;
+package quark.report;
 
 public class CoinKey {
   public final String coin;

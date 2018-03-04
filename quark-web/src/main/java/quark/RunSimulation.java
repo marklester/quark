@@ -8,15 +8,13 @@ import java.util.Map.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Optional;
-
-import quark.algorithms.LapReport;
-import quark.algorithms.MovingAverageAlgo;
-import quark.algorithms.SimulationReport;
+import quark.algorithms.sma.MovingAverageAlgo;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
 import quark.db.DatabaseManager;
 import quark.model.Balance;
+import quark.report.LapReport;
+import quark.report.SimulationReport;
 import quark.simulation.MarketSimulator;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
@@ -58,14 +56,10 @@ public class RunSimulation implements Runnable {
       MarketSimulator simulator = dbManager.getMarketSimulator(tickRate);
       Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
 
-      AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo(shortAvg, longAvg));
+      AlgoRunner runner = new AlgoRunner(report,testTrader, new MovingAverageAlgo(shortAvg, longAvg));
       for (LocalDateTime time : simulator) {
-        Optional<LapReport> lapReport = runner.run(time);
+        LapReport lapReport = runner.run(time);
         LOGGER.info("algo lap report:{}", lapReport);
-        if (lapReport.isPresent()) {
-          report.addLapReport(lapReport.get());
-        }
-
       }
       report.complete();
       LOGGER.info("START" + startSummary);

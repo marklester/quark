@@ -17,12 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import quark.algorithms.SimParams;
-import quark.algorithms.SimulationReport;
 import quark.charts.PlotlyTrace;
 import quark.db.DatabaseManager;
 import quark.model.Balance;
 import quark.orders.ProcessedOrder;
+import quark.report.LapReport;
+import quark.report.SimParams;
+import quark.report.SimulationReport;
 
 @RestController
 public class MarketSimulatorController {
@@ -89,5 +90,15 @@ public class MarketSimulatorController {
         .map(entry -> new Balance(currencyManager.getCurrency(entry.getKey()).get(),
             new BigDecimal(entry.getValue())))
         .collect(Collectors.toSet());
+  }
+
+  @RequestMapping(path = "/api/simulation/{id}/lap-reports", method = RequestMethod.GET)
+  public Set<LapReport> getStartingBalances(@PathVariable String id,
+      @RequestParam(name = "start") Integer start, @RequestParam(name = "pageSize") Integer pageSize) {
+    if (start != null) {
+      return getSimulationReport(id).getLapReports().stream().skip(start).limit(pageSize)
+          .collect(Collectors.toSet());
+    }
+    return getSimulationReport(id).getLapReports();
   }
 }

@@ -1,12 +1,14 @@
-package quark.algorithms;
+package quark.report;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.Sets;
 
+import quark.algorithms.Algorithm;
 import quark.balance.BalanceListing;
 import quark.orders.ProcessedOrder;
 
@@ -16,10 +18,11 @@ public class LapReport implements Comparable<LapReport> {
     return new LapReport(time);
   }
 
-  private LocalDateTime dateTime;
-  private Set<ProcessedOrder> processedOrders = Sets.newHashSet();
-  private Set<DataPoint> dataPoints = Sets.newHashSet();
+  private final LocalDateTime dateTime;
+  private final Set<ProcessedOrder> processedOrders = new ConcurrentSkipListSet<>();
+  private final Set<DataPoint> dataPoints = Sets.newConcurrentHashSet();
   private BalanceListing balanceListing;
+  private final Variables variables = new Variables();
 
   public LapReport(LocalDateTime dateTime) {
     this.dateTime = dateTime;
@@ -67,6 +70,11 @@ public class LapReport implements Comparable<LapReport> {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("time", getDateTime()).toString();
+    return MoreObjects.toStringHelper(this).add("time", getDateTime())
+        .add("total", getBalanceListing().total()).toString();
+  }
+
+  public Variables getVariables() {
+    return variables;
   }
 }

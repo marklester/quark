@@ -8,10 +8,7 @@ import java.time.LocalDateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Optional;
-
-import quark.algorithms.LapReport;
-import quark.algorithms.MovingAverageAlgo;
+import quark.algorithms.so.StochasticOscillatorAlgo;
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
 import quark.db.DatabaseManager;
@@ -19,6 +16,9 @@ import quark.db.PostgresDatabaseManager;
 import quark.model.Balance;
 import quark.model.CurrencyLookup;
 import quark.model.MonetaryAmount;
+import quark.report.LapReport;
+import quark.report.SimParams;
+import quark.report.SimulationReport;
 import quark.simulation.MarketSimulator;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
@@ -36,7 +36,7 @@ public class Quark{
     // new CryptopiaTrader(dbManager, currencyManager, fullMarketHistory, marketManager);
     // MarketHistory testHistory = new MarketHistory(inMemManager, marketManager);
 
-    BalanceManager balanceManager = new MapBalanceManager(currencyManager, 2);
+    BalanceManager balanceManager = new MapBalanceManager(currencyManager, 10);
 
     MonetaryAmount money = currencyLookup.bySymbol("BTC");
     BigDecimal startingFund = new BigDecimal(100).divide(money.getValue(), 8, RoundingMode.HALF_EVEN);
@@ -45,14 +45,14 @@ public class Quark{
     Balance balance = new Balance(currency, startingFund);
     balanceManager.putBalance(balance);
     String startSummary = balanceManager.summary();
-    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofDays(1));
+    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofHours(1));
 
     Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
-
-    AlgoRunner runner = new AlgoRunner(testTrader, new MovingAverageAlgo(Duration.ofDays(1),Duration.ofDays(3)));
+    SimulationReport report = new SimulationReport("1", new SimParams());
+    AlgoRunner runner = new AlgoRunner(report,testTrader, new StochasticOscillatorAlgo(Duration.ofHours(12),3));
     System.out.println(testTrader.getBalanceManager());
     for (LocalDateTime time : simulator) {
-          Optional<LapReport> result = runner.run(time);
+          LapReport result = runner.run(time);
           LOGGER.info("algo lap report:{}",result);
     }
     LOGGER.info("START" + startSummary);

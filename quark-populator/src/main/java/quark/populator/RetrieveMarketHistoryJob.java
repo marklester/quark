@@ -2,8 +2,6 @@ package quark.populator;
 
 import java.time.LocalDateTime;
 import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -13,6 +11,9 @@ import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,25 +28,14 @@ import quark.model.Market;
 import quark.orders.Order;
 import quark.orders.StandardOrder;
 
-class GetMarketHistory implements Callable<Boolean> {
+public class RetrieveMarketHistoryJob implements Job {
   private static final ObjectMapper MAPPER = new ObjectMapper();
+  private static final Logger LOGGER = LoggerFactory.getLogger(RetrieveMarketHistoryJob.class);
+  public static final String MARKET = "market";
+  public static final String POSITION = "position";
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(GetMarketHistory.class);
-  private final Market market;
-  private final Position index;
-  private LocalDateTime lastOrder;
+  public RetrieveMarketHistoryJob() {}
 
-  private OrderDAO orderDao;
-
-  public GetMarketHistory(OrderDAO orderDao, Market market, Position index,
-      LocalDateTime lastOrder) {
-    this.market = market;
-    this.index = index;
-    this.lastOrder = lastOrder;
-    this.orderDao = orderDao;
-  }
-
-  // TODO needs testing specifically for market history for dates
   public Set<Order> createMarketHistory(long tradePairId, LocalDateTime startPoint)
       throws Exception {
     LocalDateTime startPoint2 = MoreObjects.firstNonNull(startPoint, LocalDateTime.MIN);
@@ -63,27 +53,34 @@ class GetMarketHistory implements Callable<Boolean> {
         .collect(Collectors.toSet());
   }
 
-  @Override
-  public Boolean call() throws Exception {
-    try {
-    LOGGER.info("{} retrieving orders for: {}", index, market.getLabel());
-    Stopwatch marketTime = Stopwatch.createStarted();
-    Set<Order> orders = createMarketHistory(market.getTradePair().getId(), lastOrder);
-    LOGGER.info("retrieve of {} with {} new records took: {} ms", index, orders.size(),
-        marketTime.stop().elapsed(TimeUnit.MILLISECONDS));
-    LOGGER.info(orders.size() + " orders to store");
-    insertOrders(orders);
-    }catch(Exception e) {
-      LOGGER.error("could not store orders",e);
-    }
-    return true;
-  }
-
-  void insertOrders(Set<Order> orders) {
+  void insertOrders(OrderDAO orderDao, Set<Order> orders, Position index) {
     Stopwatch sw = Stopwatch.createStarted();
     orderDao.insert(orders);
-    LOGGER.info("{}. insert of {} records took: {}", index, orders.size(),
-        sw.elapsed(TimeUnit.MILLISECONDS));
+    LOGGER.info("{}. insert of {} records took: {}", index, orders.size(), sw.stop());
     orders.clear();
+  }
+
+  @Override
+  public void execute(JobExecutionContext context) throws JobExecutionException {
+    try {
+      Market market = (Market) context.getJobDetail().getJobDataMap().get(MARKET);
+      Position index = (Position) context.getJobDetail().getJobDataMap().get(POSITION);
+      OrderDAO orderDao =
+          (OrderDAO) context.getJobDetail().getJobDataMap().get(RetrieveMarketsJob.ORDER_DAO);
+      int tpId = market.getTradePair().getId();
+      
+      Order lastOrder = orderDao.getLastOrderFor(tpId);
+      LocalDateTime lastTime = lastOrder!=null?lastOrder.getTimestamp():null;
+      LOGGER.info("{} retrieving orders for: {}", index, market.getLabel());
+      Stopwatch marketTime = Stopwatch.createStarted();
+      Set<Order> orders = createMarketHistory(tpId, lastTime);
+      LOGGER.info("retrieve of {} with {} new records took: {} ms", index, orders.size(),
+          marketTime.stop());
+      LOGGER.info(orders.size() + " orders to store");
+      insertOrders(orderDao, orders, index);
+    } catch (Exception e) {
+      LOGGER.error("could not store orders", e);
+    }
+
   }
 }

@@ -84,13 +84,16 @@ public class MockTrader implements Trader {
     BigDecimal amountOfBase = CoinMath.multiply(share, priceOfBase);
     BigDecimal fee = CoinMath.multiply(amountOfBase, tradePair.getTradeFee());
     if (amountOfBase.compareTo(tradePair.getMinimumBaseTrade()) >= 0) {
-      Balance currentBaseBalance = balanceManager.getBalance(tradePair.getBaseCurrency());
+      Balance currentBaseBalance = balanceManager.getBalance(baseCurrency);
       Balance updatedBaseBalance = currentBaseBalance.add(amountOfBase).substract(fee);
       balanceManager.putBalance(updatedBaseBalance);
       Balance left = holdingBalance.substract(share);
       balanceManager.putBalance(left);
+      
+      Balance product = new Balance(baseCurrency,amountOfBase);
+      Balance price = new Balance(holdCurrency, share);
       return new ProcessedOrder(openOrder, true,
-          new Receipt(baseCurrency, amountOfBase, new Balance(holdCurrency, share),fee));
+          new Receipt(product,price ,priceOfBase,fee));
     } else {
       LOGGER.info("could not sell {} amount:{} is less the min of {} or {}", tradePair.getSymbol(),
           amountOfBase, tradePair.getMinimumBaseTrade(), tradePair.getTradeFee());
@@ -118,8 +121,10 @@ public class MockTrader implements Trader {
       balanceManager.putBalance(updatedCoinBalance);
       Balance updatedBaseBalance = baseBalance.substract(baseShare).substract(fee);
       balanceManager.putBalance(updatedBaseBalance);
-      Receipt receipt = new Receipt(curBalance.getCurrency(), boughtAmount,
-          new Balance(baseBalance.getCurrency(), baseShare),fee);
+      
+      Balance product = new Balance(tradePair.getCurrency(), boughtAmount);
+      Balance price = new Balance(baseBalance.getCurrency(), baseShare);
+      Receipt receipt = new Receipt(product,price,priceOfCoin,fee);
       return new ProcessedOrder(openOrder, true, receipt);
     }
   }

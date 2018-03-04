@@ -7,6 +7,9 @@ import java.util.Set;
 import quark.charts.PlotlyTrace;
 import quark.model.Market;
 import quark.orders.ProcessedOrder;
+import quark.report.CoinKey;
+import quark.report.LapReport;
+import quark.report.SimulationReport;
 import quark.trader.Trader;
 
 public interface Algorithm {
@@ -14,7 +17,7 @@ public interface Algorithm {
 
   Set<ProcessedOrder> executeOrders(Trader trader);
 
-  default void init(LapReport lapReport, Trader trader) throws Exception {
+  default void init(SimulationReport simReport,LapReport lapReport, Trader trader) throws Exception {
 
   }
 

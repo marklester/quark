@@ -1,4 +1,4 @@
-package quark.algorithms;
+package quark.report;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -27,7 +27,7 @@ public class SimulationReport {
     this.params = params;
   }
 
-  public Set<LapReport> getLapReports() {
+  public NavigableSet<LapReport> getLapReports() {
     return lapReports;
   }
 

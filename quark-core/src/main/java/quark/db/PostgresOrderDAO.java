@@ -29,6 +29,7 @@ import org.jooq.InsertReturningStep;
 import org.jooq.Record;
 import org.jooq.Record1;
 import org.jooq.Record2;
+import org.jooq.Record3;
 import org.jooq.RecordMapper;
 import org.jooq.Result;
 import org.jooq.SelectConditionStep;
@@ -41,6 +42,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 
+import quark.model.PriceRange;
 import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
@@ -208,5 +210,34 @@ public class PostgresOrderDAO implements OrderDAO {
   @Override
   public Integer getOrderCount() {
     return ctx.selectCount().from(OrderFields.ORDERS).fetchOne().value1();
+  }
+
+  @Override
+  public Map<Integer, Order> getLastOrders() {
+    // SELECT DISTINCT ON (tradepairid) tradepairid,orderdate,* FROM orders ORDER BY tradepairid,
+    // orderdate DESC;
+    List<Order> result = ctx.select(OrderFields.ALL).distinctOn(OrderFields.TRADE_PAIR_ID)
+        .from(table).orderBy(OrderFields.TRADE_PAIR_ID, OrderFields.ORDER_DATE.desc())
+        .fetch(new OrderRecordMapper());
+    return result.stream().collect(Collectors.toMap(o -> o.getTradePairId(), o -> o));
+  }
+
+
+  @Override
+  public Map<Integer, PriceRange> getPriceRanges(LocalDateTime anchor, Duration overTime) {
+    LocalDateTime past = anchor.minus(overTime);
+    Timestamp end = Timestamp.valueOf(anchor);
+    Timestamp start = Timestamp.valueOf(past);
+
+    Field<Timestamp> dateField = OrderFields.ORDER_DATE;
+    Field<BigDecimal> price = OrderFields.PRICE;
+
+    Result<Record3<Integer, BigDecimal, BigDecimal>> result =
+        ctx.select(OrderFields.TRADE_PAIR_ID, DSL.max(price), DSL.min(price)).from(table)
+            .where(dateField.greaterOrEqual(start).and(dateField.lessOrEqual(end)))
+            .groupBy(OrderFields.TRADE_PAIR_ID).fetch();
+    Map<Integer, PriceRange> map = result.stream().collect(
+        Collectors.toMap(k -> k.value1(), v -> new PriceRange(v.value1(), v.value2(), v.value3())));
+    return MoreObjects.firstNonNull(map, Collections.emptyMap());
   }
 }
