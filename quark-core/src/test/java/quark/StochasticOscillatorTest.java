@@ -14,7 +14,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-import quark.algorithms.sma.MovingAverageAlgo;
+import quark.algorithms.so.StochasticOscillatorAlgo;
 import quark.balance.MapBalanceManager;
 import quark.db.OrderDAO;
 import quark.db.cqegine.CollectionOrderDao;
@@ -33,7 +33,7 @@ import quark.report.SimulationReport;
 import quark.trader.MockTrader;
 import quark.trader.Trader;
 
-public class MovingAverageAlgoTest {
+public class StochasticOscillatorTest {
   private static final String MARKET_LABEL = "TZC/BTC";
 
   @Test
@@ -68,7 +68,7 @@ public class MovingAverageAlgoTest {
     orderDao.insert(orders);
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
-    MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
+    StochasticOscillatorAlgo algo = new StochasticOscillatorAlgo(Duration.ofDays(1), 14);
     SimulationReport report = Mockito.mock(SimulationReport.class);
     algo.init(report,LapReport.of(algo, now), trader);
     algo.apply(market, trader);
@@ -132,7 +132,7 @@ public class MovingAverageAlgoTest {
     orderDao.insert(orders);
 
     Trader trader = new MockTrader(orderDao, bm, Mockito.mock(MarketManager.class));
-    MovingAverageAlgo algo = new MovingAverageAlgo(Duration.ofDays(1), longDuration);
+    StochasticOscillatorAlgo algo = new StochasticOscillatorAlgo(Duration.ofDays(1), 14);
     SimulationReport report = Mockito.mock(SimulationReport.class);
     algo.init(report,LapReport.of(algo, now), trader);
     algo.apply(market, trader);

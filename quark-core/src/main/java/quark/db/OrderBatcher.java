@@ -13,11 +13,11 @@ import com.google.common.base.Stopwatch;
 
 import quark.orders.Order;
 
-public class OrderBatch implements Iterable<Set<Order>> {
-  private OrderDAO orderDao;
+public class OrderBatcher implements Iterable<Set<Order>> {
+  private ReadOnlyOrderDAO orderDao;
   private Duration timePartition;
 
-  public OrderBatch(OrderDAO orderDao, Duration timeParititon) {
+  public OrderBatcher(ReadOnlyOrderDAO orderDao, Duration timeParititon) {
     this.orderDao = orderDao;
     this.timePartition = timeParititon;
   }
@@ -33,12 +33,12 @@ public class OrderBatch implements Iterable<Set<Order>> {
 class OrderIterator implements Iterator<Set<Order>> {
   private static final Logger LOGGER = LoggerFactory.getLogger(OrderIterator.class);
   private LocalDateTime bookMark = LocalDateTime.ofEpochSecond(0, 0, ZoneOffset.UTC);
-  private OrderDAO orderDao;
+  private ReadOnlyOrderDAO orderDao;
   private Duration batchSize;
   private Set<Order> orders;
   private LocalDateTime bookEnd;
 
-  public OrderIterator(OrderDAO orderDao, Duration batchSize) {
+  public OrderIterator(ReadOnlyOrderDAO orderDao, Duration batchSize) {
     this.orderDao = orderDao;
     this.batchSize = batchSize;
     bookMark = orderDao.getFirstOrderDate();

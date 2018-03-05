@@ -201,7 +201,6 @@ public class CollectionOrderDao implements OrderDAO {
   public Map<Integer, Order> getLastOrders() {
     Map<Integer, Order> lastOrders = Maps.newHashMap();
     try (ResultSet<Order> orders = backingOrders.retrieve(QueryFactory.all(Order.class),
-
         QueryFactory.queryOptions(QueryFactory.orderBy(QueryFactory.descending(ORDER_DATE))))) {
       for (Order o : orders) {
         lastOrders.compute(o.getTradePairId(), new BiFunction<Integer, Order, Order>() {
@@ -220,5 +219,11 @@ public class CollectionOrderDao implements OrderDAO {
       }
     }
     return lastOrders;
+  }
+
+  @Override
+  public void setTable(Table<Record> table) {
+    // TODO Auto-generated method stub
+    
   }
 }

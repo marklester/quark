@@ -16,6 +16,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import quark.simulation.MarketSimulator;
+import quark.simulation.ViewMarketSimulator;
 
 public class PostgresDatabaseManager implements DatabaseManager {
 
@@ -24,19 +25,8 @@ public class PostgresDatabaseManager implements DatabaseManager {
   String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
 
   public PostgresDatabaseManager() throws Exception {
-    // createDatabase();
     start();
   }
-
-  // private void createDatabase() throws IOException {
-  // String homeDir = System.getProperty("user.home");
-  // Path dataDir = Paths.get(homeDir, ".quark","data");
-  // try(database = EmbeddedPostgres.builder().setDataDirectory(dataDir).start();
-  // ){
-  //
-  // }
-  //
-  // }
 
   public void start() throws Exception {
     HikariConfig config = new HikariConfig();
@@ -53,7 +43,8 @@ public class PostgresDatabaseManager implements DatabaseManager {
     createTables();
     orderDao = new PostgresOrderDAO(getContext(), new OrderRecordMapper());
   }
-
+  
+  @Override
   public OrderDAO getOrderDao() {
     return orderDao;
   }
@@ -71,6 +62,6 @@ public class PostgresDatabaseManager implements DatabaseManager {
 
   @Override
   public MarketSimulator getMarketSimulator(Duration tickRate) {
-    return new MarketSimulator(getContext(), tickRate, getOrderDao());
+    return new ViewMarketSimulator(getContext(), tickRate, getOrderDao());
   }
 }

@@ -15,7 +15,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
 import quark.algorithms.Algorithm;
-import quark.algorithms.Algos;
+import quark.algorithms.Algorithms;
 import quark.charts.PlotlyTrace.PlotType;
 import quark.model.Market;
 import quark.model.TradePair;
@@ -72,7 +72,7 @@ public class MovingAverageAlgo implements Algorithm {
     plot(market, longAvg, longDuration.toString() + " avg");
     SMA sma = new SMA(shortAvg, longAvg);
 
-    if (Algos.canBuy(trader, market) && sma.isValid()
+    if (Algorithms.canBuy(trader, market) && sma.isValid()
         && sma.getShortAvg().compareTo(sma.getLongAvg()) > 0) {
       // if trending up buy
       if (!invested.contains(market.getLabel())) {
@@ -80,7 +80,7 @@ public class MovingAverageAlgo implements Algorithm {
       }
 
 
-    } else if (Algos.canSell(trader, market) && sma.isValid()
+    } else if (Algorithms.canSell(trader, market) && sma.isValid()
         && sma.getShortAvg().compareTo(sma.getLongAvg()) < 0) {
       // if trending down sell
       // TODO add open orders logic

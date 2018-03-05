@@ -16,7 +16,7 @@ import org.mockito.Mockito;
 
 import quark.balance.BalanceManager;
 import quark.balance.MapBalanceManager;
-import quark.db.OrderDAO;
+import quark.db.ReadOnlyOrderDAO;
 import quark.model.Balance;
 import quark.model.CurrencyLookup;
 import quark.model.TradePair;
@@ -37,7 +37,7 @@ public class MockTraderTest {
   @Test
   public void testSell() throws Exception {
     int tpID = 5659;
-    OrderDAO orderDAO = Mockito.mock(OrderDAO.class);
+    ReadOnlyOrderDAO orderDAO = Mockito.mock(ReadOnlyOrderDAO.class);
     BigDecimal price = new BigDecimal(.0001, new MathContext(8, RoundingMode.HALF_EVEN));
     BigDecimal total = new BigDecimal(1);
     BigDecimal amount = new BigDecimal(1);
@@ -64,7 +64,7 @@ public class MockTraderTest {
   @Test
   public void testFailedSell() throws Exception {
     int tpID = 5659;
-    OrderDAO orderDAO = Mockito.mock(OrderDAO.class);
+    ReadOnlyOrderDAO orderDAO = Mockito.mock(ReadOnlyOrderDAO.class);
     BigDecimal price = new BigDecimal(.0001, new MathContext(8, RoundingMode.HALF_EVEN));
     BigDecimal total = new BigDecimal(1);
     BigDecimal amount = new BigDecimal(1);
@@ -97,7 +97,7 @@ public class MockTraderTest {
   @Test
   public void testBuy() throws Exception {
     int tpID = 5659;
-    OrderDAO orderDAO = Mockito.mock(OrderDAO.class);
+    ReadOnlyOrderDAO orderDAO = Mockito.mock(ReadOnlyOrderDAO.class);
 
     BigDecimal price = new BigDecimal(.0001, new MathContext(8, RoundingMode.HALF_EVEN));
     BigDecimal total = new BigDecimal(1);
@@ -127,7 +127,7 @@ public class MockTraderTest {
   @Test
   public void testFailedBuy() throws Exception {
     int tpID = 5659;
-    OrderDAO orderDAO = Mockito.mock(OrderDAO.class);
+    ReadOnlyOrderDAO orderDAO = Mockito.mock(ReadOnlyOrderDAO.class);
 
     BigDecimal price = new BigDecimal(.0001, new MathContext(8, RoundingMode.HALF_EVEN));
     BigDecimal total = new BigDecimal(1);

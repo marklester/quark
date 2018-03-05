@@ -10,7 +10,7 @@ import quark.balance.BalanceListing;
 import quark.balance.BalanceManager;
 import quark.balance.CryptopiaBalanceManager;
 import quark.db.DatabaseManager;
-import quark.db.OrderDAO;
+import quark.db.ReadOnlyOrderDAO;
 import quark.model.OpenOrder;
 import quark.model.TradePair;
 import quark.orders.AlgoOrder;
@@ -72,7 +72,7 @@ public class CryptopiaTrader implements Trader {
   }
 
   @Override
-  public OrderDAO getOrderDao() {
+  public ReadOnlyOrderDAO getOrderDao() {
     // TODO Auto-generated method stub
     return null;
   }

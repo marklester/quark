@@ -11,7 +11,7 @@ import quark.CoinMath;
 import quark.CryptopiaCurrency;
 import quark.MarketManager;
 import quark.balance.BalanceManager;
-import quark.db.OrderDAO;
+import quark.db.ReadOnlyOrderDAO;
 import quark.model.Balance;
 import quark.model.TradePair;
 import quark.orders.AlgoOrder;
@@ -28,9 +28,9 @@ public class MockTrader implements Trader {
 
   private MarketManager marketManager;
 
-  private OrderDAO orderDao;
+  private ReadOnlyOrderDAO orderDao;
 
-  public MockTrader(OrderDAO orderDAO, BalanceManager balanceManager, MarketManager marketManager) {
+  public MockTrader(ReadOnlyOrderDAO orderDAO, BalanceManager balanceManager, MarketManager marketManager) {
     this.orderDao = orderDAO;
     this.balanceManager = balanceManager;
     this.marketManager = marketManager;
@@ -50,7 +50,7 @@ public class MockTrader implements Trader {
   }
 
   @Override
-  public OrderDAO getOrderDao() {
+  public ReadOnlyOrderDAO getOrderDao() {
     return orderDao;
   }
 

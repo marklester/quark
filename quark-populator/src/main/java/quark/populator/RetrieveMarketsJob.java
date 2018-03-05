@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Stopwatch;
 
 import quark.MarketManager;
-import quark.db.OrderDAO;
+import quark.db.ReadOnlyOrderDAO;
 import quark.model.Market;
 
 public class RetrieveMarketsJob implements Job {
@@ -37,7 +37,7 @@ public class RetrieveMarketsJob implements Job {
   public void execute(JobExecutionContext context) throws JobExecutionException {
     MarketManager mktManager =
         (MarketManager) context.getJobDetail().getJobDataMap().get(MKT_MANAGER);
-    OrderDAO orderDao = (OrderDAO) context.getJobDetail().getJobDataMap().get(ORDER_DAO);
+    ReadOnlyOrderDAO orderDao = (ReadOnlyOrderDAO) context.getJobDetail().getJobDataMap().get(ORDER_DAO);
     LocalDateTime lastOrder = orderDao.getLastOrderDate();
     LOGGER.info("Getting orders after: " + lastOrder);
 

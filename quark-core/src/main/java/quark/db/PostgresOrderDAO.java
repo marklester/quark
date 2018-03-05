@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -47,14 +46,10 @@ import quark.orders.Order;
 import quark.orders.Order.OrderType;
 
 public class PostgresOrderDAO implements OrderDAO {
-  private static Logger LOGGER = LoggerFactory.getLogger(PostgresOrderDAO.class);
-
-  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+  private static Logger LOGGER = LoggerFactory.getLogger(PostgresOrderDAO.class);  
   private DSLContext ctx;
-  RecordMapper<Record, Order> mapper;
-
+  private RecordMapper<Record, Order> mapper;
   private Table<Record> table = OrderFields.ORDERS;
-
 
   public PostgresOrderDAO(DSLContext ctx, RecordMapper<Record, Order> mapper, Table<Record> table) {
     this(ctx, mapper);
@@ -66,7 +61,7 @@ public class PostgresOrderDAO implements OrderDAO {
     this.mapper = mapper;
   }
 
-
+  @Override
   public void insert(Order order) {
     createQuery(order).execute();
   }
@@ -77,7 +72,8 @@ public class PostgresOrderDAO implements OrderDAO {
         .set(PRICE, order.getPrice()).set(AMOUNT, order.getAmount()).set(TOTAL, order.getTotal())
         .set(ORDER_TYPE, order.getType().symbol).onConflict(ID).doNothing();
   }
-
+  
+  @Override
   public void insert(Collection<Order> orders) {
     try {
       LOGGER.debug("inserting {} records", orders.size());
@@ -180,7 +176,7 @@ public class PostgresOrderDAO implements OrderDAO {
   @Override
   public int getOrderCount(int tpId, OrderType type) {
     SelectConditionStep<Record1<Integer>> query =
-        ctx.selectCount().from(OrderFields.ORDERS).where(OrderFields.TRADE_PAIR_ID.eq(tpId));
+        ctx.selectCount().from(table).where(OrderFields.TRADE_PAIR_ID.eq(tpId));
     if (type == OrderType.BUY || type == OrderType.SELL) {
       query = query.and(OrderFields.ORDER_TYPE.eq(type.symbol));
     }
@@ -202,14 +198,14 @@ public class PostgresOrderDAO implements OrderDAO {
     String fieldStr = String.format("TO_CHAR(%s,'%s')", OrderFields.ORDER_DATE.getName(), pattern);
     Field<String> timeGrouping = DSL.field(fieldStr, String.class).as("timegroup");
     Map<String, Integer> map =
-        ctx.select(timeGrouping, DSL.count()).from(OrderFields.ORDERS).groupBy(timeGrouping).fetch()
+        ctx.select(timeGrouping, DSL.count()).from(table).groupBy(timeGrouping).fetch()
             .stream().collect(Collectors.toMap(r -> r.value1(), r -> r.value2()));
     return map;
   }
 
   @Override
   public Integer getOrderCount() {
-    return ctx.selectCount().from(OrderFields.ORDERS).fetchOne().value1();
+    return ctx.selectCount().from(table).fetchOne().value1();
   }
 
   @Override
@@ -239,5 +235,10 @@ public class PostgresOrderDAO implements OrderDAO {
     Map<Integer, PriceRange> map = result.stream().collect(
         Collectors.toMap(k -> k.value1(), v -> new PriceRange(v.value1(), v.value2(), v.value3())));
     return MoreObjects.firstNonNull(map, Collections.emptyMap());
+  }
+
+  @Override
+  public void setTable(Table<Record> table) {
+    this.table=table;
   }
 }

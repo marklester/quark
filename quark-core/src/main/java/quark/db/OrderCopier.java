@@ -14,12 +14,12 @@ import com.google.common.base.Stopwatch;
 public class OrderCopier implements Iterator<LocalDateTime> {
   private static final Logger LOGGER = LoggerFactory.getLogger(OrderCopier.class);
   private LocalDateTime bookMark = LocalDateTime.ofEpochSecond(0, 0, ZoneOffset.UTC);
-  private OrderDAO srcDao;
+  private ReadOnlyOrderDAO srcDao;
   private Duration batchSize;
   private LocalDateTime bookEnd;
   private String destTable;
 
-  public OrderCopier(String destTable, OrderDAO srcDao, Duration batchSize) {
+  public OrderCopier(String destTable, ReadOnlyOrderDAO srcDao, Duration batchSize) {
     this.srcDao = srcDao;
     this.batchSize = batchSize;
     bookMark = srcDao.getFirstOrderDate();

@@ -16,7 +16,7 @@ import com.google.common.io.Files;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import quark.simulation.MarketSimulator;
+import quark.simulation.TempTableMarketSimulator;
 
 /**
  * Represent how to interact with the datastore 
@@ -70,7 +70,7 @@ public class CockroachDatabaseManager implements DatabaseManager{
   }
 
   @Override
-  public MarketSimulator getMarketSimulator(Duration tickRate) {
+  public TempTableMarketSimulator getMarketSimulator(Duration tickRate) {
     // TODO Auto-generated method stub
     return null;
   }

@@ -45,11 +45,11 @@ public class Quark{
     Balance balance = new Balance(currency, startingFund);
     balanceManager.putBalance(balance);
     String startSummary = balanceManager.summary();
-    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofHours(1));
+    MarketSimulator simulator = dbManager.getMarketSimulator(Duration.ofDays(1));
 
     Trader testTrader = new MockTrader(simulator.getOrderDao(), balanceManager, marketManager);
     SimulationReport report = new SimulationReport("1", new SimParams());
-    AlgoRunner runner = new AlgoRunner(report,testTrader, new StochasticOscillatorAlgo(Duration.ofHours(12),3));
+    AlgoRunner runner = new AlgoRunner(report,testTrader, new StochasticOscillatorAlgo(Duration.ofDays(14),3));
     System.out.println(testTrader.getBalanceManager());
     for (LocalDateTime time : simulator) {
           LapReport result = runner.run(time);

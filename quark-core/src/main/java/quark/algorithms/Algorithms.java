@@ -9,8 +9,8 @@ import quark.model.Balance;
 import quark.model.Market;
 import quark.trader.Trader;
 
-public class Algos {
-  private static final Logger LOGGER = LoggerFactory.getLogger(Algos.class);
+public class Algorithms {
+  private static final Logger LOGGER = LoggerFactory.getLogger(Algorithms.class);
   
   public static boolean canBuy(Trader trader, Market market) throws Exception {
     Balance baseBalance =
@@ -28,7 +28,7 @@ public class Algos {
     BigDecimal minCoin = market.getTradePair().getMinimumTrade();
     BigDecimal myCoin = holdingBalance.getAvailable();
     if (myCoin.compareTo(BigDecimal.ZERO) > 0) {
-      LOGGER.info("my coin:{} min: {}", holdingBalance, market);
+      LOGGER.debug("held coin balance:{} min: {}", holdingBalance, market);
       if (myCoin.compareTo(minCoin) > 0) {
         return true;
       }

@@ -34,6 +34,7 @@ public class AlgoRunner {
     try {
       report.addLapReport(lapReport);
       algo.init(report,lapReport, trader);
+      LOGGER.info("init took: {}",sw.elapsed());
       LOGGER.debug("applying algorithm to {} markets", markets.size());
       for (Market market : markets) {
         try {

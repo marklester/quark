@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import quark.MarketManager;
 import quark.balance.BalanceManager;
-import quark.db.OrderDAO;
+import quark.db.ReadOnlyOrderDAO;
 import quark.model.TradePair;
 import quark.orders.AlgoOrder;
 import quark.orders.ProcessedOrder;
@@ -17,7 +17,7 @@ public interface Trader {
 
   void order(TradePair tradePair, OrderType type, BigDecimal price, BigDecimal amount);
 
-  OrderDAO getOrderDao();
+  ReadOnlyOrderDAO getOrderDao();
 
   ProcessedOrder execute(AlgoOrder order);
 }

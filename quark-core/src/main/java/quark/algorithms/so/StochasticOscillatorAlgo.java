@@ -16,7 +16,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 
 import quark.algorithms.Algorithm;
-import quark.algorithms.Algos;
+import quark.algorithms.Algorithms;
 import quark.charts.PlotlyTrace.PlotType;
 import quark.model.IPriceRange;
 import quark.model.Market;
@@ -89,13 +89,13 @@ public class StochasticOscillatorAlgo implements Algorithm {
       return;
     }
     KAvg kAvg = createAvg(tpid);
-    LOGGER.info("market:{} kAvg = {}", market.getLabel(),kAvg);
+    //LOGGER.info("market:{} kAvg = {}", market.getLabel(),kAvg);
     plot(market, kAvg.toBigDecimal(), market.getLabel() + "K Avg");
 
-    if (Algos.canSell(trader, market) && kAvg.getkAvg() >= 80.0) {
+    if (Algorithms.canSell(trader, market) && kAvg.getkAvg() >= 80.0) {
       sells.add(new AlgoOrder(currentTime, 1, market.getTradePair(), OrderType.SELL, kAvg));
     }
-    if (Algos.canBuy(trader, market) && kAvg.getkAvg() <= 20.0&&kAvg.getkAvg() > 0.0) {
+    if (Algorithms.canBuy(trader, market) && kAvg.getkAvg() <= 20.0&&kAvg.getkAvg() > 0.0) {
       if (!invested.contains(market.getLabel())) {
         buys.add(new AlgoOrder(currentTime, .1, market.getTradePair(), OrderType.BUY, kAvg));
       }
@@ -109,7 +109,7 @@ public class StochasticOscillatorAlgo implements Algorithm {
   }
 
   private KAvg createAvg(int tpId) {
-    double kAvg = simReport.getLapReports().stream()
+    double kAvg = simReport.getLapReports().descendingSet().stream()
         .map(lr -> MoreObjects.firstNonNull(lr.getVariables().getVariable(tpId, K_VALUE), 0.0))
         .limit(periods).reduce(0.0, Double::sum);
     if(kAvg==0) {
